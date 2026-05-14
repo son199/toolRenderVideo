@@ -11,7 +11,7 @@
   "voice": "vi-VN-HoaiMyNeural",
   "use_agent": true,
   "burn_subtitle": false,
-  "status": "rendering",
+  "status": "completed",
   "storyboard": {
     "title": "Chỉ 1 Router, mở khoá 60+ AI & không ngắt kết nối?!",
     "aspect_ratio": "9:16",
@@ -118,8 +118,8 @@
     "total_duration_sec": 25.0
   },
   "subtitle_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\subtitle.srt",
-  "output_path": null,
-  "error": "Remotion Render failed: Remotion Render Failed: node:internal/modules/cjs/loader:1210\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\cli\\bin\\remotion.js'\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)\r\n    at Module._load (node:internal/modules/cjs/loader:1038:27)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)\r\n    at node:internal/main/run_main_module:28:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v20.20.0",
+  "output_path": "..\\..\\storage\\output\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0.mp4",
+  "error": null,
   "scenes": [
     {
       "id": 0,
@@ -243,5 +243,5 @@
     }
   ],
   "created_at": "2026-05-14T18:30:30.454418Z",
-  "updated_at": "2026-05-14T18:43:33.357932Z"
+  "updated_at": "2026-05-14T18:50:21.636967Z"
 }

@@ -98,7 +98,14 @@ async def render_remotion(
                     await on_progress(f"Đang tải video nền: {video_filename}...")
                 
                 await download_asset(video_url, video_dst)
-                s_copy["video_path"] = f"{project_id}/{video_filename}"
+                
+                # Kiểm tra nếu file quá nhỏ (< 100KB) thì coi như lỗi (tránh file 403 giả danh mp4)
+                if video_dst.stat().st_size < 100 * 1024:
+                    logger.warning(f"Video {video_filename} is too small, likely corrupted. Skipping.")
+                    video_dst.unlink(missing_ok=True)
+                    s_copy["video_path"] = None
+                else:
+                    s_copy["video_path"] = f"{project_id}/{video_filename}"
             except Exception:
                 s_copy["video_path"] = None 
         
@@ -109,14 +116,15 @@ async def render_remotion(
     with props_path.open("w", encoding="utf-8") as f:
         json.dump({"scenes": remotion_scenes, "template": template}, f, ensure_ascii=False)
 
-    # 3. Run Remotion CLI with Stability Optimizations
+    # 3. Run Remotion CLI with Ultimate Stability Flags
     if on_progress:
-        await on_progress("Đang Render ổn định bằng Dual Xeon (8 luồng)...")
+        await on_progress("Đang Render với chế độ chống Crash (ANGLE Engine)...")
         
     cmd = (
         f'npx remotion render src/index.ts MainVideo "{output_path.absolute()}" '
-        f'--props ./props.json --concurrency=8 --codec=h264 --pixel-format=yuv420p '
-        f'--browser=chrome --network-timeout=90000'
+        f'--props ./props.json --concurrency=24 --codec=h264 --pixel-format=yuv420p '
+        f'--browser=chrome --network-timeout=90000 '
+        f'--chromium-flags="--gl=angle --headless=new --ignore-certificate-errors"'
     )
     
     # Tận dụng 128GB RAM của bạn bằng cách nâng giới hạn cho Node.js

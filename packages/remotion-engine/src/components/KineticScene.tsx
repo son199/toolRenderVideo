@@ -210,14 +210,6 @@ export const KineticScene: React.FC<{ scene: any, template: string, theme: strin
 
             return (
               <React.Fragment key={i}>
-                {/* Subtle 'Pop' sound on word entrance */}
-                {frame === startFrame && (
-                  <Audio 
-                    src="https://actions.google.com/sounds/v1/ui/analog_watch_alarm_click.ogg" 
-                    volume={0.1} 
-                  />
-                )}
-                
                 <span 
                   style={{
                     fontSize: "82px",
