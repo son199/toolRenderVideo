@@ -26,21 +26,31 @@ class EdgeTTSProvider(TTSProvider):
         out_path.parent.mkdir(parents=True, exist_ok=True)
 
         word_timings: list[WordTiming] = []
-        try:
-            communicate = edge_tts.Communicate(text, voice)
-            with out_path.open("wb") as f:
-                async for chunk in communicate.stream():
-                    if chunk["type"] == "audio":
-                        f.write(chunk["data"])
-                    elif chunk["type"] == "WordBoundary":
-                        start = chunk["offset"] / HNS_PER_SECOND
-                        end = start + chunk["duration"] / HNS_PER_SECOND
-                        word_timings.append(WordTiming(chunk["text"], start, end))
-        except Exception as exc:
-            raise TTSError(f"Edge-TTS synthesis failed: {exc}") from exc
-
-        if out_path.stat().st_size == 0:
-            raise TTSError("Edge-TTS produced an empty audio file")
+        import asyncio
+        
+        last_error = None
+        for attempt in range(3):
+            try:
+                word_timings.clear()
+                communicate = edge_tts.Communicate(text, voice)
+                with out_path.open("wb") as f:
+                    async for chunk in communicate.stream():
+                        if chunk["type"] == "audio":
+                            f.write(chunk["data"])
+                        elif chunk["type"] == "WordBoundary":
+                            start = chunk["offset"] / HNS_PER_SECOND
+                            end = start + chunk["duration"] / HNS_PER_SECOND
+                            word_timings.append(WordTiming(chunk["text"], start, end))
+                
+                if out_path.stat().st_size > 0:
+                    break # Success!
+                else:
+                    raise Exception("Empty audio file")
+            except Exception as exc:
+                last_error = exc
+                await asyncio.sleep(1.0 * (attempt + 1))
+        else:
+            raise TTSError(f"Edge-TTS synthesis failed after 3 attempts: {last_error}")
 
         duration = word_timings[-1].end if word_timings else _estimate_duration(text)
         logger.info(

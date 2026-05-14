@@ -1,6 +1,9 @@
-"""Rendering pipeline: Playwright records HTML+GSAP, FFmpeg muxes audio & subtitle."""
+"""Rendering pipeline: Remotion Engine (React) renders directly to MP4."""
 
-from app.services.render.playwright_recorder import RenderError, record_template
-from app.services.render.ffmpeg_post import assemble_final_video
+from app.services.render.remotion import render_remotion, RemotionError
 
-__all__ = ["RenderError", "record_template", "assemble_final_video"]
+# Re-exporting for compatibility with old names if needed, 
+# but preferring render_remotion moving forward.
+RenderError = RemotionError
+
+__all__ = ["RenderError", "RemotionError", "render_remotion"]

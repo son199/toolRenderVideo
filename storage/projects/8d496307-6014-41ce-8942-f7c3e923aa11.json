@@ -1,0 +1,301 @@
+{
+  "id": "8d496307-6014-41ce-8942-f7c3e923aa11",
+  "user_id": null,
+  "title": "Giới thiệu về trang web 9router đến người dùng",
+  "input_type": "url",
+  "input_value": "https://9router.com/",
+  "upload_path": null,
+  "raw_text": "One Router.\n60+ AI Providers. Zero Downtime.\nConnect every CLI/IDE to all major AI providers through one OpenAI-compatible endpoint.\n9Router is a smart gateway between your tools (Cursor, Claude Code, Codex, Cline, Copilot…) and 60+ AI providers. Smart 3-tier fallback maximizes your subscriptions and keeps you coding when limits hit. Bonus: built-in RTK & Caveman save 20–65% tokens.\nnpm install -g 9router\n9router\napi9 Service Kinds OpenAI-Compatible\nEvery endpoint is OpenAI-compatible. Point your tool to one URL — run LLM, Embedding, TTS, STT, Image, Video, Web Search and more.\nChat / LLM\nOpenAI-compatible chat completions across 60+ providers.\nEmbeddings\nVoyage, Jina, OpenAI, Cohere, Mistral, NVIDIA, Together, Fireworks.\nText-to-Speech\nElevenLabs, Deepgram, Inworld, AWS Polly, Google/Edge TTS, OpenAI.\nSpeech-to-Text\nDeepgram, AssemblyAI, OpenAI Whisper, Qwen STT.\nImage Generation\nFal, Stability, BFL Flux, Recraft, OpenAI, Gemini, MiniMax.\nVision / Image-to-Text\nOpenAI, Gemini, Anthropic, Groq, xAI, Mistral, HuggingFace.\nVideo Generation\nRunway ML, Topaz.\nWeb Search\nTavily, Brave, Serper, Exa, Linkup, Perplexity, Google PSE, SearchAPI.\nWeb Fetch\nTavily, Exa, Firecrawl, Jina Reader.\nHow 9Router Works\nInstall once, connect providers, code non-stop with smart 3-tier fallback.\nInstall & Connect\nnpm install -g 9router\n- Dashboard opens automatically\n- OAuth or API key per provider\nSmart 3-Tier Routing\n⚡ Auto fallback when quota runs out\nCode Non-Stop\n- Point your CLI to\nlocalhost:20128\n- Zero downtime, automatic switching\n- Track quota & usage in real time\nhub60+ AI Providers\nOAuth, API key or browser cookie. Featured 24 below — full list inside the app.\nterminalCLI / IDE Integrations\nPoint any tool to localhost:20128. Per-tool setup guides included.\nterminalCLI Tools (10)\nClaude Code\nAnthropic Claude CLI\nOpenAI Codex\nOpenAI Codex CLI\nOpenClaw\nOpen Claw assistant\nCursor\nAI code editor\nCline\nAI coding assistant\nKilo Code\nKilo Code AI\nRoo\nRoo AI\nContinue\nContinue AI\nFactory Droid\nFactory AI\nHermes Agent\nSelf-improving agent\nshieldMITM Bridge — IDE Subscription Intercept\nIntercept Antigravity / GitHub Copilot / Kiro IDE traffic — use IDE subscriptions to call any backend through 9Router (mind each tool's policy).\nAntigravity\nGoogle Antigravity IDE\nGitHub Copilot\nVS Code Copilot intercept\nKiro IDE\nAWS Kiro IDE intercept\nauto_awesomeAdvanced Features\nCombos, Translator, RTK, Caveman, Multi-account, Cloud sync, Tunnel, Proxy pools, MITM bridge.\nSmart Combos\nChain providers into one virtual provider with sticky round-robin and automatic fallback.\nReal-time Quota\nLive token tracking, reset countdown, cost estimation per provider.\nFormat Translator\nConvert between OpenAI / Anthropic / Gemini formats — any tool with any provider.\nMulti-Account\nMultiple accounts per provider, round-robin load balancing, automatic failover.\nCloud Sync + Tunnel\nCloudflare edge tunnel — use your router from anywhere, 300+ global locations.\nProxy Pools\nVercel relay, outbound proxy, rotate IPs for region-restricted providers.\nMITM Bridge\nIntercept Antigravity / Copilot / Kiro IDE traffic — use IDE subscriptions with any backend.\nOpenAI-Compatible\nOne endpoint speaks chat, embeddings, TTS, STT, image, video, search and fetch.\nVisual Dashboard\nManage providers, keys, combos and usage from a clean local UI.\nAnd while we're at it, save 20–65% tokens for free\nRTK and Caveman Mode ship with 9Router. They quietly compress what goes in and trim what comes out — same answers, fewer tokens.\nRTK Token Saver\n−20–40%Auto-compress tool_result content (git diff, grep, ls, find, tree…) before it reaches the LLM. Lossless, safe, default ON.\nCaveman Mode\n−65%Inject a terse-style system prompt — LLM replies stay technical but compact. Five intensity levels.\n💡 Combine with FREE-tier providers and you're routing for $0/month with built-in token savings.\nrocket_launchGet Started in Two Commands\nInstall globally, connect providers, code with smart auto-fallback.\nInstall Globally\nOne command installs 9Router system-wide.\nnpm install -g 9router\nConnect Providers\nOpen the dashboard and add OAuth or API keys per tier.\nPoint Your Tool\nSet Cursor / Cline / Claude Code / Codex to the OpenAI-compatible endpoint.\nhttp://localhost:20128/v1\nhttp://localhost:20128/v1\nStop Wasting Your AI Subscriptions\nSubscription quota expires unused every month\nRate limits cut your coding session mid-flow\nManually switching between providers wastes time",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "failed",
+  "storyboard": {
+    "title": "60+ AI chỉ với 1 endpoint — Đừng bao giờ dừng code!",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "success",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 3.0,
+        "visual_prompt": "Dynamic, high-angle cinematic shot of digital nodes rapidly connecting across a dark server grid, orange and neon blue lights pulsing through each connection, fast motion blur, sci-fi tech energy, 4k, hyper-realistic",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Bạn đã từng nghĩ sẽ kết nối 60 AI chỉ với 1 endpoint, không ngắt quãng? 9 Router làm được – ngay bây giờ!",
+        "caption": {
+          "vi": "Bạn đã từng nghĩ sẽ kết nối 60 AI chỉ với 1 endpoint, không ngắt quãng? 9 Router làm được – ngay bây giờ!"
+        }
+      },
+      {
+        "id": 1,
+        "duration_sec": 3.0,
+        "visual_prompt": "Fast zoom-in cinematic shot of vibrant, spinning OpenAI-compatible endpoint logo surrounded by a swirling orbit of 60+ AI provider logos, cyberpunk blue-violet mist, glowing circuit background, 4k",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Toàn bộ CLI và IDE: chỉ cần trỏ về một URL – mọi AI lớn nhỏ đều quy tụ về một nơi.",
+        "caption": {
+          "vi": "Toàn bộ CLI và IDE: chỉ cần trỏ về một URL – mọi AI lớn nhỏ đều quy tụ về một nơi."
+        }
+      },
+      {
+        "id": 2,
+        "duration_sec": 3.0,
+        "visual_prompt": "Isometric cinematic animation of three golden safety nets catching falling AI icons, with a coding terminal in the center always running, cool teal and gold highlights, ultra detailed, studio lighting",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Quota hết? 9 Router tự động chuyển nhà cung cấp, không bao giờ bị cắt giữa chừng!",
+        "caption": {
+          "vi": "Quota hết? 9 Router tự động chuyển nhà cung cấp, không bao giờ bị cắt giữa chừng!"
+        }
+      },
+      {
+        "id": 3,
+        "duration_sec": 2.5,
+        "visual_prompt": "Modern dashboard UI, cinematic overhead shot, widgets updating live: usage stats, quota bars sliding, provider icons glowing green, dark mode with soft blue accents, sharp focus",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Tất cả provider, API key, dung lượng – một bảng điều khiển trực quan, quản lý dễ không tưởng.",
+        "caption": {
+          "vi": "Tất cả provider, API key, dung lượng – một bảng điều khiển trực quan, quản lý dễ không tưởng."
+        }
+      },
+      {
+        "id": 4,
+        "duration_sec": 3.0,
+        "visual_prompt": "Futuristic command line glowing in darkness, animated npm command runs and colorful progress bar explodes into success, digital confetti, high contrast yellow/green, cinematic depth of field",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Chỉ một lệnh: npm install -g 9 router. Thiết lập toàn hệ thống chỉ trong 5 giây.",
+        "caption": {
+          "vi": "Chỉ một lệnh: npm install -g 9 router. Thiết lập toàn hệ thống chỉ trong 5 giây."
+        }
+      },
+      {
+        "id": 5,
+        "duration_sec": 3.0,
+        "visual_prompt": "Sleek 3D scene showing a glowing router at center with branching colored lines connecting icons for Chat, LLM, Embedding, TTS, STT, Image, Video, Search, all circling in sync, deep blue background",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Chat, LLM, Embedding, TTS, STT, Image, Video, Web Search… tất cả chỉ một gateway.",
+        "caption": {
+          "vi": "Chat, LLM, Embedding, TTS, STT, Image, Video, Web Search… tất cả chỉ một gateway."
+        }
+      },
+      {
+        "id": 6,
+        "duration_sec": 2.5,
+        "visual_prompt": "Cinematic split-screen: left—a code editor with Copilot and Kiro icons, right—a locked backend quickly replaced by glowing green connection, MITM bridge animation, futuristic glass UI",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Tận dụng subscription IDE như Copilot hay Kiro, redirect mọi request qua backend tuỳ chọn – không giới hạn sáng tạo!",
+        "caption": {
+          "vi": "Tận dụng subscription IDE như Copilot hay Kiro, redirect mọi request qua backend tuỳ chọn – không giới hạn sáng tạo!"
+        }
+      },
+      {
+        "id": 7,
+        "duration_sec": 2.5,
+        "visual_prompt": "Global map, white glowing tunnel lines connect router icon to hundreds of city points, cloud icons pulse with light, multi-account avatars rotate, orange and navy color scheme, sharp details",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Định tuyến từ 300+ location, proxy thông minh, multi-account, quản lý dễ dàng dù bạn ở đâu.",
+        "caption": {
+          "vi": "Định tuyến từ 300+ location, proxy thông minh, multi-account, quản lý dễ dàng dù bạn ở đâu."
+        }
+      },
+      {
+        "id": 8,
+        "duration_sec": 2.5,
+        "visual_prompt": "Macro shot of two shiny coins labeled 'Token Saver' and 'Caveman', animated numbers counting up to 65% savings, playful energy, digital counter, cinematic crisp lighting",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Chế độ RTK & Caveman gắn sẵn: giảm token hao phí, hiệu quả vượt trội – không cần trả thêm!",
+        "caption": {
+          "vi": "Chế độ RTK & Caveman gắn sẵn: giảm token hao phí, hiệu quả vượt trội – không cần trả thêm!"
+        }
+      },
+      {
+        "id": 9,
+        "duration_sec": 3.0,
+        "visual_prompt": "Cinematic hero shot: hands-free coder celebrates in a glowing workspace, screens display multiple AI flows seamlessly running, bold 'install now' button pulses, warm golden lighting, lens flare",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Đừng để quota hay downtime làm bạn chậm lại. 9 Router – tất cả AI, một lệnh, không lo gián đoạn.",
+        "caption": {
+          "vi": "Đừng để quota hay downtime làm bạn chậm lại. 9 Router – tất cả AI, một lệnh, không lo gián đoạn."
+        }
+      }
+    ],
+    "total_duration_sec": 25.0
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\subtitle.srt",
+  "output_path": null,
+  "error": "Remotion Render failed: Remotion Render Failed: \u001b[31mError: Visited \"http://localhost:3001/index.html\" but got no response.\u001b[39m\n\u001b[31m    at innerSetPropsAndEnv (C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\renderer\\dist\\set-props-and-env.js:64:15)\u001b[39m\n\u001b[31m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\u001b[39m\n\u001b[31m    at async setPropsAndEnv (C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\renderer\\dist\\set-props-and-env.js:182:24)\u001b[39m\n\u001b[31m    at async makePage (C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\renderer\\dist\\render-frames.js:82:9)\u001b[39m\n\u001b[31m    at async Promise.all (index 19)\u001b[39m\n\u001b[31m    at async getPool (C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\renderer\\dist\\render-frames.js:130:32)\u001b[39m",
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 7.0,
+      "visual_prompt": "Dynamic, high-angle cinematic shot of digital nodes rapidly connecting across a dark server grid, orange and neon blue lights pulsing through each connection, fast motion blur, sci-fi tech energy, 4k, hyper-realistic",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Bạn đã từng nghĩ sẽ kết nối 60 AI chỉ với 1 endpoint, không ngắt quãng? 9 Router làm được – ngay bây giờ!",
+      "caption": {
+        "vi": "Bạn đã từng nghĩ sẽ kết nối 60 AI chỉ với 1 endpoint, không ngắt quãng? 9 Router làm được – ngay bây giờ!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_00.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 5.466666666666667,
+      "visual_prompt": "Fast zoom-in cinematic shot of vibrant, spinning OpenAI-compatible endpoint logo surrounded by a swirling orbit of 60+ AI provider logos, cyberpunk blue-violet mist, glowing circuit background, 4k",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Toàn bộ CLI và IDE: chỉ cần trỏ về một URL – mọi AI lớn nhỏ đều quy tụ về một nơi.",
+      "caption": {
+        "vi": "Toàn bộ CLI và IDE: chỉ cần trỏ về một URL – mọi AI lớn nhỏ đều quy tụ về một nơi."
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_01.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 5.4,
+      "visual_prompt": "Isometric cinematic animation of three golden safety nets catching falling AI icons, with a coding terminal in the center always running, cool teal and gold highlights, ultra detailed, studio lighting",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Quota hết? 9 Router tự động chuyển nhà cung cấp, không bao giờ bị cắt giữa chừng!",
+      "caption": {
+        "vi": "Quota hết? 9 Router tự động chuyển nhà cung cấp, không bao giờ bị cắt giữa chừng!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_02.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 6.2,
+      "visual_prompt": "Modern dashboard UI, cinematic overhead shot, widgets updating live: usage stats, quota bars sliding, provider icons glowing green, dark mode with soft blue accents, sharp focus",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Tất cả provider, API key, dung lượng – một bảng điều khiển trực quan, quản lý dễ không tưởng.",
+      "caption": {
+        "vi": "Tất cả provider, API key, dung lượng – một bảng điều khiển trực quan, quản lý dễ không tưởng."
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_03.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.333333333333333,
+      "visual_prompt": "Futuristic command line glowing in darkness, animated npm command runs and colorful progress bar explodes into success, digital confetti, high contrast yellow/green, cinematic depth of field",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Chỉ một lệnh: npm install -g 9 router. Thiết lập toàn hệ thống chỉ trong 5 giây.",
+      "caption": {
+        "vi": "Chỉ một lệnh: npm install -g 9 router. Thiết lập toàn hệ thống chỉ trong 5 giây."
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_04.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 5.4,
+      "visual_prompt": "Sleek 3D scene showing a glowing router at center with branching colored lines connecting icons for Chat, LLM, Embedding, TTS, STT, Image, Video, Search, all circling in sync, deep blue background",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Chat, LLM, Embedding, TTS, STT, Image, Video, Web Search… tất cả chỉ một gateway.",
+      "caption": {
+        "vi": "Chat, LLM, Embedding, TTS, STT, Image, Video, Web Search… tất cả chỉ một gateway."
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_05.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 7.733333333333333,
+      "visual_prompt": "Cinematic split-screen: left—a code editor with Copilot and Kiro icons, right—a locked backend quickly replaced by glowing green connection, MITM bridge animation, futuristic glass UI",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Tận dụng subscription IDE như Copilot hay Kiro, redirect mọi request qua backend tuỳ chọn – không giới hạn sáng tạo!",
+      "caption": {
+        "vi": "Tận dụng subscription IDE như Copilot hay Kiro, redirect mọi request qua backend tuỳ chọn – không giới hạn sáng tạo!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_06.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 6.066666666666666,
+      "visual_prompt": "Global map, white glowing tunnel lines connect router icon to hundreds of city points, cloud icons pulse with light, multi-account avatars rotate, orange and navy color scheme, sharp details",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Định tuyến từ 300+ location, proxy thông minh, multi-account, quản lý dễ dàng dù bạn ở đâu.",
+      "caption": {
+        "vi": "Định tuyến từ 300+ location, proxy thông minh, multi-account, quản lý dễ dàng dù bạn ở đâu."
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_07.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 8,
+      "duration_sec": 6.0,
+      "visual_prompt": "Macro shot of two shiny coins labeled 'Token Saver' and 'Caveman', animated numbers counting up to 65% savings, playful energy, digital counter, cinematic crisp lighting",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Chế độ RTK & Caveman gắn sẵn: giảm token hao phí, hiệu quả vượt trội – không cần trả thêm!",
+      "caption": {
+        "vi": "Chế độ RTK & Caveman gắn sẵn: giảm token hao phí, hiệu quả vượt trội – không cần trả thêm!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_08.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 9,
+      "duration_sec": 6.4,
+      "visual_prompt": "Cinematic hero shot: hands-free coder celebrates in a glowing workspace, screens display multiple AI flows seamlessly running, bold 'install now' button pulses, warm golden lighting, lens flare",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Đừng để quota hay downtime làm bạn chậm lại. 9 Router – tất cả AI, một lệnh, không lo gián đoạn.",
+      "caption": {
+        "vi": "Đừng để quota hay downtime làm bạn chậm lại. 9 Router – tất cả AI, một lệnh, không lo gián đoạn."
+      },
+      "audio_path": "..\\..\\storage\\audio\\8d496307-6014-41ce-8942-f7c3e923aa11\\scene_09.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-server-room-with-rows-of-computer-servers-and-blinking-lights-15822-large.mp4",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T18:08:31.969930Z",
+  "updated_at": "2026-05-14T18:15:00.973777Z"
+}

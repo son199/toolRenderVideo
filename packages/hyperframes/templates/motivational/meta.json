@@ -1,8 +1,0 @@
-{
-  "id": "motivational",
-  "name": "Motivational",
-  "description": "Quote-driven, cinematic — slow Ken Burns, serif type, amber/teal palette.",
-  "supported_aspects": ["9:16", "16:9"],
-  "max_scenes": 6,
-  "default_duration_sec": 6.0
-}

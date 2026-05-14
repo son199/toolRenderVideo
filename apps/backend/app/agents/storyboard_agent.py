@@ -1,9 +1,8 @@
-"""StoryboardAgent — LLM call 2 in the chain.
+"""StoryboardAgent — Bước 2 trong chuỗi xử lý AI.
 
-Takes an ``AnalyzerResult`` plus raw text and drafts a ``Storyboard`` JSON. The
-system prompt is the per-niche SKILL.md (same as Phase 1 one-shot path) so the
-template's style guide still drives structure; the user prompt extends with
-analyzer hints to anchor the hook, tone, and key facts.
+Nhận kết quả từ ContentAnalyzer và nội dung thô để biên soạn Storyboard JSON.
+Hệ thống sử dụng các chỉ dẫn từ Analyzer để tối ưu hóa Hook, Tone và Key Facts
+cho Remotion Engine, đảm bảo video có nhịp điệu và hình ảnh sống động.
 """
 
 from __future__ import annotations
@@ -31,7 +30,7 @@ class StoryboardAgent(BaseAgent):
         aspect_ratio: str,
         voice: str | None,
     ) -> Storyboard:
-        await self._emit(self.stage_name, 0.30, "Đang sinh storyboard draft...")
+        await self._emit(self.stage_name, 0.30, "AI đang biên soạn kịch bản hình ảnh (Remotion Optimized)...")
         raw = await self._complete(
             system=build_system_prompt(template),
             user=build_storyboard_user_prompt_with_analysis(
@@ -48,19 +47,14 @@ class StoryboardAgent(BaseAgent):
         except LLMError as exc:
             raise AgentError(self.stage_name, str(exc)) from exc
 
-        # Phase 2G: ensure storyboard.theme reflects the analyzer's classification.
-        # If LLM already populated theme matching analyzer.theme → no-op.
-        # If LLM left default or wrote something else → analyzer is authoritative
-        # because it ran first with full content access. Skips override only when
-        # the LLM explicitly set a non-default theme that disagrees and the
-        # analyzer also disagrees (rare — usually they align).
+        # Đồng bộ theme từ analyzer nếu LLM để mặc định
         if storyboard.theme == "default" and analyzer.theme != "default":
             storyboard = storyboard.model_copy(update={"theme": analyzer.theme})
 
         await self._emit(
             self.stage_name,
             0.45,
-            f"Draft ready: {len(storyboard.scenes)} scenes, "
-            f"{storyboard.total_duration_sec:.1f}s, theme={storyboard.theme}",
+            f"Kịch bản đã sẵn sàng: {len(storyboard.scenes)} scenes, "
+            f"{storyboard.total_duration_sec:.1f}s, sắc thái={storyboard.theme}",
         )
         return storyboard

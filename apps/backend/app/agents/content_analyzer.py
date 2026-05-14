@@ -32,11 +32,11 @@ class AnalyzerResult(BaseModel):
     theme: Literal["danger", "warning", "default", "success"] = "default"
     tone: Literal["factual", "urgent", "inspiring", "playful", "educational"]
     key_facts: list[str] = Field(default_factory=list)
-    suggested_scene_count: int = Field(ge=4, le=7)
+    suggested_scene_count: int = Field(ge=3, le=20)
     language_register: str
     content_summary: str
-    # Optional: visual style hint for Hyperframes render engine
-    visual_style: Literal["text-dominant", "split-screen", "kinetic-typography", "b-roll"] = "text-dominant"
+    # Optional: visual style hint for Remotion/Hyperframes render engine
+    visual_style: Literal["text-dominant", "split-screen", "kinetic-typography", "b-roll", "kinetic-remotion"] = "kinetic-remotion"
 
 
 class ContentAnalyzerAgent(BaseAgent):

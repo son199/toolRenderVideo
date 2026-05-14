@@ -1,0 +1,328 @@
+{
+  "id": "0672b13b-fcff-4d3f-a2c8-a248888f3f6f",
+  "user_id": null,
+  "title": "Giới thiệu về trang web 9router đến người dùng",
+  "input_type": "url",
+  "input_value": "https://9router.com/",
+  "upload_path": null,
+  "raw_text": "One Router.\n60+ AI Providers. Zero Downtime.\nConnect every CLI/IDE to all major AI providers through one OpenAI-compatible endpoint.\n9Router is a smart gateway between your tools (Cursor, Claude Code, Codex, Cline, Copilot…) and 60+ AI providers. Smart 3-tier fallback maximizes your subscriptions and keeps you coding when limits hit. Bonus: built-in RTK & Caveman save 20–65% tokens.\nnpm install -g 9router\n9router\napi9 Service Kinds OpenAI-Compatible\nEvery endpoint is OpenAI-compatible. Point your tool to one URL — run LLM, Embedding, TTS, STT, Image, Video, Web Search and more.\nChat / LLM\nOpenAI-compatible chat completions across 60+ providers.\nEmbeddings\nVoyage, Jina, OpenAI, Cohere, Mistral, NVIDIA, Together, Fireworks.\nText-to-Speech\nElevenLabs, Deepgram, Inworld, AWS Polly, Google/Edge TTS, OpenAI.\nSpeech-to-Text\nDeepgram, AssemblyAI, OpenAI Whisper, Qwen STT.\nImage Generation\nFal, Stability, BFL Flux, Recraft, OpenAI, Gemini, MiniMax.\nVision / Image-to-Text\nOpenAI, Gemini, Anthropic, Groq, xAI, Mistral, HuggingFace.\nVideo Generation\nRunway ML, Topaz.\nWeb Search\nTavily, Brave, Serper, Exa, Linkup, Perplexity, Google PSE, SearchAPI.\nWeb Fetch\nTavily, Exa, Firecrawl, Jina Reader.\nHow 9Router Works\nInstall once, connect providers, code non-stop with smart 3-tier fallback.\nInstall & Connect\nnpm install -g 9router\n- Dashboard opens automatically\n- OAuth or API key per provider\nSmart 3-Tier Routing\n⚡ Auto fallback when quota runs out\nCode Non-Stop\n- Point your CLI to\nlocalhost:20128\n- Zero downtime, automatic switching\n- Track quota & usage in real time\nhub60+ AI Providers\nOAuth, API key or browser cookie. Featured 24 below — full list inside the app.\nterminalCLI / IDE Integrations\nPoint any tool to localhost:20128. Per-tool setup guides included.\nterminalCLI Tools (10)\nClaude Code\nAnthropic Claude CLI\nOpenAI Codex\nOpenAI Codex CLI\nOpenClaw\nOpen Claw assistant\nCursor\nAI code editor\nCline\nAI coding assistant\nKilo Code\nKilo Code AI\nRoo\nRoo AI\nContinue\nContinue AI\nFactory Droid\nFactory AI\nHermes Agent\nSelf-improving agent\nshieldMITM Bridge — IDE Subscription Intercept\nIntercept Antigravity / GitHub Copilot / Kiro IDE traffic — use IDE subscriptions to call any backend through 9Router (mind each tool's policy).\nAntigravity\nGoogle Antigravity IDE\nGitHub Copilot\nVS Code Copilot intercept\nKiro IDE\nAWS Kiro IDE intercept\nauto_awesomeAdvanced Features\nCombos, Translator, RTK, Caveman, Multi-account, Cloud sync, Tunnel, Proxy pools, MITM bridge.\nSmart Combos\nChain providers into one virtual provider with sticky round-robin and automatic fallback.\nReal-time Quota\nLive token tracking, reset countdown, cost estimation per provider.\nFormat Translator\nConvert between OpenAI / Anthropic / Gemini formats — any tool with any provider.\nMulti-Account\nMultiple accounts per provider, round-robin load balancing, automatic failover.\nCloud Sync + Tunnel\nCloudflare edge tunnel — use your router from anywhere, 300+ global locations.\nProxy Pools\nVercel relay, outbound proxy, rotate IPs for region-restricted providers.\nMITM Bridge\nIntercept Antigravity / Copilot / Kiro IDE traffic — use IDE subscriptions with any backend.\nOpenAI-Compatible\nOne endpoint speaks chat, embeddings, TTS, STT, image, video, search and fetch.\nVisual Dashboard\nManage providers, keys, combos and usage from a clean local UI.\nAnd while we're at it, save 20–65% tokens for free\nRTK and Caveman Mode ship with 9Router. They quietly compress what goes in and trim what comes out — same answers, fewer tokens.\nRTK Token Saver\n−20–40%Auto-compress tool_result content (git diff, grep, ls, find, tree…) before it reaches the LLM. Lossless, safe, default ON.\nCaveman Mode\n−65%Inject a terse-style system prompt — LLM replies stay technical but compact. Five intensity levels.\n💡 Combine with FREE-tier providers and you're routing for $0/month with built-in token savings.\nrocket_launchGet Started in Two Commands\nInstall globally, connect providers, code with smart auto-fallback.\nInstall Globally\nOne command installs 9Router system-wide.\nnpm install -g 9router\nConnect Providers\nOpen the dashboard and add OAuth or API keys per tier.\nPoint Your Tool\nSet Cursor / Cline / Claude Code / Codex to the OpenAI-compatible endpoint.\nhttp://localhost:20128/v1\nhttp://localhost:20128/v1\nStop Wasting Your AI Subscriptions\nSubscription quota expires unused every month\nRate limits cut your coding session mid-flow\nManually switching between providers wastes time",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "rendering",
+  "storyboard": {
+    "title": "Một endpoint, 60+ AI providers, không gián đoạn!",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "success",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 2.5,
+        "visual_prompt": "Ultrawide macro shot of code editors glowing at night, streaks of neon light tracing data flows across dark glass, cinematic bokeh, blue-orange color grade, dynamic lighting",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Bạn muốn chuyển mọi nơi chỉ với MỘ T endpoint?",
+        "caption": {
+          "vi": "Bạn muốn chuyển mọi nơi chỉ với MỘ T endpoint?"
+        }
+      },
+      {
+        "id": 1,
+        "duration_sec": 2.8,
+        "visual_prompt": "Isometric 3D render of digital highways connecting glowing server clusters, gold data packets racing, OpenAI-style cyber grid, vaporwave aesthetic",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "9 Router kết nối mọi CLI và IDE của bạn với hơn 60 nhà cung cấp AI. Duy nhất qua MỘ T cổng Open AI!",
+        "caption": {
+          "vi": "9 Router kết nối mọi CLI và IDE của bạn với hơn 60 nhà cung cấp AI. Duy nhất qua MỘ T cổng Open AI!"
+        }
+      },
+      {
+        "id": 2,
+        "duration_sec": 2.5,
+        "visual_prompt": "Top-down animated flow of provider logos (Anthropic, OpenAI, Gemini, NVIDIA...) orbiting a central glowing router chip, purple-blue rimlight",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Mỗi khi hết hạn mức? 9 Router tự động chuyển, đảm bảo bạn không bao giờ bị ngắt coding!",
+        "caption": {
+          "vi": "Mỗi khi hết hạn mức? 9 Router tự động chuyển, đảm bảo bạn không bao giờ bị ngắt coding!"
+        }
+      },
+      {
+        "id": 3,
+        "duration_sec": 2.3,
+        "visual_prompt": "Split-screen: left shows coding in a terminal, right shows quota bars refilling automatically, real-time dashboard, tech blue UI",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Bạn theo dõi quota, cloud sync, token từng provider — TẤ T CẢ trong cùng một dashboard siêu trực quan.",
+        "caption": {
+          "vi": "Bạn theo dõi quota, cloud sync, token từng provider — TẤ T CẢ trong cùng một dashboard siêu trực quan."
+        }
+      },
+      {
+        "id": 4,
+        "duration_sec": 2.3,
+        "visual_prompt": "An animated command line installs a package, dashboard auto-pops-up, OAuth icons flash, rainbow stingers",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Chỉ h ai lệnh: Cài 9 Router, mở dashboard, kết nối key hoặc OAuth từng nhà cung cấp là xong!",
+        "caption": {
+          "vi": "Chỉ h ai lệnh: Cài 9 Router, mở dashboard, kết nối key hoặc OAuth từng nhà cung cấp là xong!"
+        }
+      },
+      {
+        "id": 5,
+        "duration_sec": 2.2,
+        "visual_prompt": "CLI tools (Cursor, Codex, Claude Code) icons snap to a glowing localhost endpoint, kinetic OpenAI swirl in background",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Dùng được mọi IDE, CLI: Cursor, Claude Code, Codex, Copilot... Chỉ cần trỏ vào localhost là chạy!",
+        "caption": {
+          "vi": "Dùng được mọi IDE, CLI: Cursor, Claude Code, Codex, Copilot... Chỉ cần trỏ vào localhost là chạy!"
+        }
+      },
+      {
+        "id": 6,
+        "duration_sec": 2.1,
+        "visual_prompt": "Cinematic GUI: provider list, multi-account tabs flickering, animated combo chains between providers, gold and cyan accents",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Gộp nhiều provider thành một tổ hợp, tự động cân bằng tải và dự phòng khi 'lag' hoặc hết quota!",
+        "caption": {
+          "vi": "Gộp nhiều provider thành một tổ hợp, tự động cân bằng tải và dự phòng khi 'lag' hoặc hết quota!"
+        }
+      },
+      {
+        "id": 7,
+        "duration_sec": 2.0,
+        "visual_prompt": "Token symbols shrink and multiply, dashboard gauge flips from red to green, fun kinetic counter drops by 65%",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "RTK & Caveman sẽ tiết kiệm 20–65% token mà không bóp méo kết quả, tiết kiệm cực đỉnh!",
+        "caption": {
+          "vi": "RTK & Caveman sẽ tiết kiệm 20–65% token mà không bóp méo kết quả, tiết kiệm cực đỉnh!"
+        }
+      },
+      {
+        "id": 8,
+        "duration_sec": 2.0,
+        "visual_prompt": "Rapid montage: speech-to-text waveforms, chat bubbles, AI image grids and mini video thumbnails, all plugging into one input node",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Một endpoint duy nhất, hỗ trợ chat, search, embedding, TTS, STT, image, video, web fetch — full kèo!",
+        "caption": {
+          "vi": "Một endpoint duy nhất, hỗ trợ chat, search, embedding, TTS, STT, image, video, web fetch — full kèo!"
+        }
+      },
+      {
+        "id": 9,
+        "duration_sec": 2.3,
+        "visual_prompt": "Snappy animation: browser intercept arrows rerouting traffic, Copilot and Antigravity badges, MITM bridge label pulsing",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Chặn, chuyển hướng hoặc tích hợp proxy pool, dùng trọn gói mọi subscription qua 9 Router. Kể cả các tool kho ai nhất!",
+        "caption": {
+          "vi": "Chặn, chuyển hướng hoặc tích hợp proxy pool, dùng trọn gói mọi subscription qua 9 Router. Kể cả các tool kho ai nhất!"
+        }
+      },
+      {
+        "id": 10,
+        "duration_sec": 2.5,
+        "visual_prompt": "Epic ending: all provider logos burst out from a central router orb, gold sparkles, screen glitch reveals success checkmark",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Dùng 9 Router, tối ưu AI subscription, chuyển provider mượt mà, coding không gián đoạn, chỉ cài một lần rồi tận hưởng!",
+        "caption": {
+          "vi": "Dùng 9 Router, tối ưu AI subscription, chuyển provider mượt mà, coding không gián đoạn, chỉ cài một lần rồi tận hưởng!"
+        }
+      }
+    ],
+    "total_duration_sec": 25.2
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\subtitle.srt",
+  "output_path": null,
+  "error": "Remotion Render failed: Remotion Render Failed: \u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://image.pollinations.ai/prompt/Ultrawide%20macro%20shot%20of%20code%20editors%20glowing%20at%20night%2C%20streaks%20of%20neon%20light%20tracing%20data%20flows%20across%20dark%20glass%2C%20cinematic%20bokeh%2C%20blue-orange%20color%20grade%2C%20dynamic%20lighting?width=1080&height=1920&nologo=true: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[33mBrowser failed to load https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F: net::ERR_BLOCKED_BY_ORB\u001b[39m\n\u001b[31mError: Timeout exceeded rendering the component. Open delayRender() handles: \"1. Loading <Img> with src=https://source.unsplash.com/featured/1080x1920/?mu%E1%BB%91n%2Cchuy%E1%BB%83n%2Cendpoint%3F\"\u001b[39m\n\u001b[31m    at C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\renderer\\dist\\seek-to-frame.js:85:28\u001b[39m\n\u001b[31m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\u001b[39m",
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 3.066666666666667,
+      "visual_prompt": "Ultrawide macro shot of code editors glowing at night, streaks of neon light tracing data flows across dark glass, cinematic bokeh, blue-orange color grade, dynamic lighting",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Bạn muốn chuyển mọi nơi chỉ với MỘ T endpoint?",
+      "caption": {
+        "vi": "Bạn muốn chuyển mọi nơi chỉ với MỘ T endpoint?"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_00.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 6.6,
+      "visual_prompt": "Isometric 3D render of digital highways connecting glowing server clusters, gold data packets racing, OpenAI-style cyber grid, vaporwave aesthetic",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "9 Router kết nối mọi CLI và IDE của bạn với hơn 60 nhà cung cấp AI. Duy nhất qua MỘ T cổng Open AI!",
+      "caption": {
+        "vi": "9 Router kết nối mọi CLI và IDE của bạn với hơn 60 nhà cung cấp AI. Duy nhất qua MỘ T cổng Open AI!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_01.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 5.8,
+      "visual_prompt": "Top-down animated flow of provider logos (Anthropic, OpenAI, Gemini, NVIDIA...) orbiting a central glowing router chip, purple-blue rimlight",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Mỗi khi hết hạn mức? 9 Router tự động chuyển, đảm bảo bạn không bao giờ bị ngắt coding!",
+      "caption": {
+        "vi": "Mỗi khi hết hạn mức? 9 Router tự động chuyển, đảm bảo bạn không bao giờ bị ngắt coding!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_02.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 6.8,
+      "visual_prompt": "Split-screen: left shows coding in a terminal, right shows quota bars refilling automatically, real-time dashboard, tech blue UI",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Bạn theo dõi quota, cloud sync, token từng provider — TẤ T CẢ trong cùng một dashboard siêu trực quan.",
+      "caption": {
+        "vi": "Bạn theo dõi quota, cloud sync, token từng provider — TẤ T CẢ trong cùng một dashboard siêu trực quan."
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_03.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 6.133333333333334,
+      "visual_prompt": "An animated command line installs a package, dashboard auto-pops-up, OAuth icons flash, rainbow stingers",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Chỉ h ai lệnh: Cài 9 Router, mở dashboard, kết nối key hoặc OAuth từng nhà cung cấp là xong!",
+      "caption": {
+        "vi": "Chỉ h ai lệnh: Cài 9 Router, mở dashboard, kết nối key hoặc OAuth từng nhà cung cấp là xong!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_04.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 6.466666666666667,
+      "visual_prompt": "CLI tools (Cursor, Codex, Claude Code) icons snap to a glowing localhost endpoint, kinetic OpenAI swirl in background",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Dùng được mọi IDE, CLI: Cursor, Claude Code, Codex, Copilot... Chỉ cần trỏ vào localhost là chạy!",
+      "caption": {
+        "vi": "Dùng được mọi IDE, CLI: Cursor, Claude Code, Codex, Copilot... Chỉ cần trỏ vào localhost là chạy!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_05.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-server-room-with-rows-of-computer-servers-and-blinking-lights-15822-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 6.333333333333333,
+      "visual_prompt": "Cinematic GUI: provider list, multi-account tabs flickering, animated combo chains between providers, gold and cyan accents",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Gộp nhiều provider thành một tổ hợp, tự động cân bằng tải và dự phòng khi 'lag' hoặc hết quota!",
+      "caption": {
+        "vi": "Gộp nhiều provider thành một tổ hợp, tự động cân bằng tải và dự phòng khi 'lag' hoặc hết quota!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_06.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 5.666666666666667,
+      "visual_prompt": "Token symbols shrink and multiply, dashboard gauge flips from red to green, fun kinetic counter drops by 65%",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "RTK & Caveman sẽ tiết kiệm 20–65% token mà không bóp méo kết quả, tiết kiệm cực đỉnh!",
+      "caption": {
+        "vi": "RTK & Caveman sẽ tiết kiệm 20–65% token mà không bóp méo kết quả, tiết kiệm cực đỉnh!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_07.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 8,
+      "duration_sec": 6.666666666666667,
+      "visual_prompt": "Rapid montage: speech-to-text waveforms, chat bubbles, AI image grids and mini video thumbnails, all plugging into one input node",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Một endpoint duy nhất, hỗ trợ chat, search, embedding, TTS, STT, image, video, web fetch — full kèo!",
+      "caption": {
+        "vi": "Một endpoint duy nhất, hỗ trợ chat, search, embedding, TTS, STT, image, video, web fetch — full kèo!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_08.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 9,
+      "duration_sec": 7.8,
+      "visual_prompt": "Snappy animation: browser intercept arrows rerouting traffic, Copilot and Antigravity badges, MITM bridge label pulsing",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Chặn, chuyển hướng hoặc tích hợp proxy pool, dùng trọn gói mọi subscription qua 9 Router. Kể cả các tool kho ai nhất!",
+      "caption": {
+        "vi": "Chặn, chuyển hướng hoặc tích hợp proxy pool, dùng trọn gói mọi subscription qua 9 Router. Kể cả các tool kho ai nhất!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_09.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 10,
+      "duration_sec": 7.866666666666666,
+      "visual_prompt": "Epic ending: all provider logos burst out from a central router orb, gold sparkles, screen glitch reveals success checkmark",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Dùng 9 Router, tối ưu AI subscription, chuyển provider mượt mà, coding không gián đoạn, chỉ cài một lần rồi tận hưởng!",
+      "caption": {
+        "vi": "Dùng 9 Router, tối ưu AI subscription, chuyển provider mượt mà, coding không gián đoạn, chỉ cài một lần rồi tận hưởng!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\0672b13b-fcff-4d3f-a2c8-a248888f3f6f\\scene_10.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T18:16:04.836355Z",
+  "updated_at": "2026-05-14T18:28:34.356471Z"
+}

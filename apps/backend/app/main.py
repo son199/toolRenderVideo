@@ -37,13 +37,7 @@ def create_app() -> FastAPI:
     app.include_router(jobs.http_router)
     app.include_router(jobs.ws_router)
 
-    # Static mounts — Hyperframes templates and runtime storage (audio, output).
-    # Single-user local Phase 1; revisit auth/scoping when multi-user lands.
-    app.mount(
-        "/static/hyperframes",
-        StaticFiles(directory=settings.hyperframes_dir),
-        name="hyperframes",
-    )
+    # Static mounts — runtime storage (audio, output).
     app.mount(
         "/static/storage",
         StaticFiles(directory=settings.storage_dir),

@@ -87,16 +87,9 @@ class Settings(BaseSettings):
     whisper_device: str = "cpu"
     whisper_language: str = "vi"
 
-    # Hyperframes
-    hyperframes_dir: Path = REPO_ROOT / "packages" / "hyperframes"
-
-    # Render
-    playwright_headless: bool = True
+    # Remotion config
+    remotion_dir: Path = REPO_ROOT / "packages" / "remotion-engine"
     render_fps: int = 30
-    render_width_portrait: int = 1080
-    render_height_portrait: int = 1920
-    render_width_landscape: int = 1920
-    render_height_landscape: int = 1080
 
     # Logging
     log_level: str = "INFO"

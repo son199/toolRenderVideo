@@ -1,9 +1,8 @@
-"""ReviewAgent — LLM call 3 (+ optional call 4 for refine, + call 5 post-verify).
+"""ReviewAgent — Chuyên gia kiểm duyệt và tinh chỉnh kịch bản.
 
-Scores the draft Storyboard against a rubric. If ``ReviewResult.passed`` is
-False, callers invoke ``refine()`` to get a revised Storyboard (LLM call 4).
-Both ``run()`` and ``refine()`` use ``_complete_with_retry`` to handle
-occasional JSON parse failures gracefully.
+Đánh giá Storyboard dựa trên các tiêu chí về nhịp điệu, hình ảnh và độ chính xác
+nội dung cho Remotion Engine. Nếu kịch bản không đạt yêu cầu, agent sẽ tự động
+thực hiện bước tinh chỉnh (refine) để cải thiện chất lượng.
 """
 
 from __future__ import annotations
@@ -51,7 +50,7 @@ class ReviewAgent(BaseAgent):
         analyzer: AnalyzerResult,
         template: str,
     ) -> ReviewResult:
-        await self._emit(self.stage_name, 0.50, "Reviewer đang chấm storyboard...")
+        await self._emit(self.stage_name, 0.50, "Reviewer đang kiểm tra chất lượng kịch bản...")
         raw = await self._complete_with_retry(
             system=REVIEWER_SYSTEM_PROMPT,
             user=build_review_user_prompt(
@@ -77,7 +76,7 @@ class ReviewAgent(BaseAgent):
         await self._emit(
             self.stage_name,
             0.65,
-            f"Score {result.score:.1f}/10 · {len(result.issues)} issues · passed={result.passed}",
+            f"Điểm chất lượng: {result.score:.1f}/10 · {len(result.issues)} vấn đề · Vượt qua: {result.passed}",
         )
         return result
 
@@ -89,8 +88,8 @@ class ReviewAgent(BaseAgent):
         raw_text: str,
         template: str,
     ) -> Storyboard:
-        """One-shot refine: feed draft + reviewer feedback → revised Storyboard."""
-        await self._emit("refine", 0.70, "Đang refine storyboard theo feedback...")
+        """Tinh chỉnh storyboard dựa trên phản hồi của Reviewer."""
+        await self._emit("refine", 0.70, "AI đang tự động sửa lỗi và tối ưu hóa kịch bản...")
         raw = await self._complete_with_retry(
             system=build_system_prompt(template),
             user=build_refine_user_prompt(

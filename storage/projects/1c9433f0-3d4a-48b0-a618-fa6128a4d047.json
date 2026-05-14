@@ -1,0 +1,461 @@
+{
+  "id": "1c9433f0-3d4a-48b0-a618-fa6128a4d047",
+  "user_id": null,
+  "title": "Giới thiệu chi tiết về trang web bên dưới cho người dùng ",
+  "input_type": "url",
+  "input_value": "https://9router.com/",
+  "upload_path": null,
+  "raw_text": "One Router.\n60+ AI Providers. Zero Downtime.\nConnect every CLI/IDE to all major AI providers through one OpenAI-compatible endpoint.\n9Router is a smart gateway between your tools (Cursor, Claude Code, Codex, Cline, Copilot…) and 60+ AI providers. Smart 3-tier fallback maximizes your subscriptions and keeps you coding when limits hit. Bonus: built-in RTK & Caveman save 20–65% tokens.\nnpm install -g 9router\n9router\napi9 Service Kinds OpenAI-Compatible\nEvery endpoint is OpenAI-compatible. Point your tool to one URL — run LLM, Embedding, TTS, STT, Image, Video, Web Search and more.\nChat / LLM\nOpenAI-compatible chat completions across 60+ providers.\nEmbeddings\nVoyage, Jina, OpenAI, Cohere, Mistral, NVIDIA, Together, Fireworks.\nText-to-Speech\nElevenLabs, Deepgram, Inworld, AWS Polly, Google/Edge TTS, OpenAI.\nSpeech-to-Text\nDeepgram, AssemblyAI, OpenAI Whisper, Qwen STT.\nImage Generation\nFal, Stability, BFL Flux, Recraft, OpenAI, Gemini, MiniMax.\nVision / Image-to-Text\nOpenAI, Gemini, Anthropic, Groq, xAI, Mistral, HuggingFace.\nVideo Generation\nRunway ML, Topaz.\nWeb Search\nTavily, Brave, Serper, Exa, Linkup, Perplexity, Google PSE, SearchAPI.\nWeb Fetch\nTavily, Exa, Firecrawl, Jina Reader.\nHow 9Router Works\nInstall once, connect providers, code non-stop with smart 3-tier fallback.\nInstall & Connect\nnpm install -g 9router\n- Dashboard opens automatically\n- OAuth or API key per provider\nSmart 3-Tier Routing\n⚡ Auto fallback when quota runs out\nCode Non-Stop\n- Point your CLI to\nlocalhost:20128\n- Zero downtime, automatic switching\n- Track quota & usage in real time\nhub60+ AI Providers\nOAuth, API key or browser cookie. Featured 24 below — full list inside the app.\nterminalCLI / IDE Integrations\nPoint any tool to localhost:20128. Per-tool setup guides included.\nterminalCLI Tools (10)\nClaude Code\nAnthropic Claude CLI\nOpenAI Codex\nOpenAI Codex CLI\nOpenClaw\nOpen Claw assistant\nCursor\nAI code editor\nCline\nAI coding assistant\nKilo Code\nKilo Code AI\nRoo\nRoo AI\nContinue\nContinue AI\nFactory Droid\nFactory AI\nHermes Agent\nSelf-improving agent\nshieldMITM Bridge — IDE Subscription Intercept\nIntercept Antigravity / GitHub Copilot / Kiro IDE traffic — use IDE subscriptions to call any backend through 9Router (mind each tool's policy).\nAntigravity\nGoogle Antigravity IDE\nGitHub Copilot\nVS Code Copilot intercept\nKiro IDE\nAWS Kiro IDE intercept\nauto_awesomeAdvanced Features\nCombos, Translator, RTK, Caveman, Multi-account, Cloud sync, Tunnel, Proxy pools, MITM bridge.\nSmart Combos\nChain providers into one virtual provider with sticky round-robin and automatic fallback.\nReal-time Quota\nLive token tracking, reset countdown, cost estimation per provider.\nFormat Translator\nConvert between OpenAI / Anthropic / Gemini formats — any tool with any provider.\nMulti-Account\nMultiple accounts per provider, round-robin load balancing, automatic failover.\nCloud Sync + Tunnel\nCloudflare edge tunnel — use your router from anywhere, 300+ global locations.\nProxy Pools\nVercel relay, outbound proxy, rotate IPs for region-restricted providers.\nMITM Bridge\nIntercept Antigravity / Copilot / Kiro IDE traffic — use IDE subscriptions with any backend.\nOpenAI-Compatible\nOne endpoint speaks chat, embeddings, TTS, STT, image, video, search and fetch.\nVisual Dashboard\nManage providers, keys, combos and usage from a clean local UI.\nAnd while we're at it, save 20–65% tokens for free\nRTK and Caveman Mode ship with 9Router. They quietly compress what goes in and trim what comes out — same answers, fewer tokens.\nRTK Token Saver\n−20–40%Auto-compress tool_result content (git diff, grep, ls, find, tree…) before it reaches the LLM. Lossless, safe, default ON.\nCaveman Mode\n−65%Inject a terse-style system prompt — LLM replies stay technical but compact. Five intensity levels.\n💡 Combine with FREE-tier providers and you're routing for $0/month with built-in token savings.\nrocket_launchGet Started in Two Commands\nInstall globally, connect providers, code with smart auto-fallback.\nInstall Globally\nOne command installs 9Router system-wide.\nnpm install -g 9router\nConnect Providers\nOpen the dashboard and add OAuth or API keys per tier.\nPoint Your Tool\nSet Cursor / Cline / Claude Code / Codex to the OpenAI-compatible endpoint.\nhttp://localhost:20128/v1\nhttp://localhost:20128/v1\nStop Wasting Your AI Subscriptions\nSubscription quota expires unused every month\nRate limits cut your coding session mid-flow\nManually switching between providers wastes time",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "completed",
+  "storyboard": {
+    "title": "9Router — Tiết kiệm token AI, một endpoint kết nối 60+ providers",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "default",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 3.5,
+        "visual_prompt": "Split-screen style: bên trái là màn hình quản lý provider với token bị burn đỏ (ghi rõ tên công cụ như Cursor, Claude Code, Copilot), bên phải là đồng hồ quota đếm ngược. Dash glow xanh biển, tone factual, viền particle shimmer.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "emoji": "💸",
+        "headline": "Bạn vẫn để lãng phí 65% token AI mỗi tháng?",
+        "sub": "Quota hết hạn, downtime bất ngờ, chi phí đội lên",
+        "accent": true,
+        "caption": {
+          "vi": "💸 Bạn vẫn để lãng phí 65% token AI chỉ vì chuyển provider thủ công?",
+          "en": "Still wasting 65% of AI tokens each month?"
+        },
+        "text": "💸 Bạn vẫn để lãng phí 65% token AI chỉ vì chuyển provider thủ công?",
+        "animation_phases": {
+          "intro": {
+            "emoji": "bounce-in 0.3s spring",
+            "headline_words": "stagger-up 0.08s/word ease-out"
+          },
+          "hold": {
+            "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+            "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "blur-out + scale 1→0.95 0.3s ease-in"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "duration_sec": 3.5,
+        "visual_prompt": "Split view network map: 60+ logo AI provider (OpenAI, Anthropic, Gemini, Copilot...) gom về một endpoint glowing, route tới các app như Cursor, Claude Code, Cline. Phía dưới là hiệu ứng flow animate.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "headline": "Chỉ một endpoint, kết nối 60+ AI providers",
+        "sub": "CLI, IDE, code tools—all in one flow",
+        "accent": true,
+        "caption": {
+          "vi": "Chỉ một endpoint, kết nối liền mạch với 60+ AI providers trên mọi công cụ.",
+          "en": "One endpoint, 60+ AI providers, seamless tools."
+        },
+        "text": "Chỉ một endpoint, kết nối liền mạch với 60+ AI providers trên mọi công cụ.",
+        "animation_phases": {
+          "intro": {
+            "emoji": "bounce-in 0.3s spring",
+            "headline_words": "stagger-up 0.08s/word ease-out"
+          },
+          "hold": {
+            "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+            "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "blur-out + scale 1→0.95 0.3s ease-in"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "duration_sec": 4.0,
+        "visual_prompt": "Card sản phẩm trung tâm: logo 9Router phát sáng, vây quanh là icon OpenAI, Anthropic, Gemini, Copilot, Cursor... mạng lưới phát sáng xanh lam, hiệu ứng wired gateway, badge LAUNCH nổi bật.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "product-card",
+        "name": "9Router",
+        "tagline": "Gateway AI duy nhất bạn cần",
+        "badge": "🚀 LAUNCH",
+        "subtext": "BEFORE: Quota phí, downtime\nAFTER: 1 endpoint, không gián đoạn",
+        "caption": {
+          "vi": "9 Router — gateway AI thông minh, kết nối 60+ providers trên mọi công cụ qua một endpoint duy nhất.",
+          "en": "9 Router—smart AI gateway, connects all tools and 60+ providers."
+        },
+        "text": "9 Router — gateway AI thông minh, kết nối 60+ providers trên mọi công cụ qua một endpoint duy nhất.",
+        "animation_phases": {
+          "intro": {
+            "logo": "pop-in 0.3s",
+            "badge": "fade-in 0.2s"
+          },
+          "hold": {
+            "logo": "float y:-6px 2s repeat:-1 yoyo:true",
+            "badge": "pulse-glow 2s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "fade-out scale:1→1.02 0.3s"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "duration_sec": 4.5,
+        "visual_prompt": "Feature grid split-blocks: từng feature gồm icon nổi, nền dạng sóng token, dashboard realtime glowing diagram, mỗi block nhấn hiệu ứng border glow hoặc icon oscillate. Accent xanh lam - xanh lục.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "feature-grid",
+        "features": [
+          {
+            "icon": "🔀",
+            "title": "3-tier fallback thông minh",
+            "desc": "Tự động chuyển giữa 60+ provider, không downtime"
+          },
+          {
+            "icon": "💡",
+            "title": "Tiết kiệm 20–65% token",
+            "desc": "RTK & Caveman tự nén, giảm lãng phí"
+          },
+          {
+            "icon": "🖥️",
+            "title": "Cài 2 lệnh, quản lý tập trung",
+            "desc": "npm install -g 9router, dashboard realtime"
+          }
+        ],
+        "caption": {
+          "vi": "3-tier fallback thông minh, tiết kiệm token tối đa, cài đặt cực nhanh, quản lý quota realtime.",
+          "en": "Smart fallback, save tokens, fast setup, live dashboard."
+        },
+        "text": "3-tier fallback thông minh, tiết kiệm token tối đa, cài đặt cực nhanh, quản lý quota realtime.",
+        "animation_phases": {
+          "intro": {
+            "items": "stagger-pop-in 0.12s/item spring delay:0.2s"
+          },
+          "hold": {
+            "card_float": "subtle-float y:-4px 2.5s repeat:-1 yoyo:true",
+            "border_glow": "border-glow pulse 1.6s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "stagger-fade-down 0.08s/item"
+          }
+        },
+        "tts_beats": [
+          {
+            "at_word": 0,
+            "action": "focus_item",
+            "item": 0
+          },
+          {
+            "at_word": 8,
+            "action": "focus_item",
+            "item": 1
+          },
+          {
+            "at_word": 16,
+            "action": "focus_item",
+            "item": 2
+          },
+          {
+            "at_word": 22,
+            "action": "hold_start"
+          },
+          {
+            "at_word": -1,
+            "action": "outro_start"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "duration_sec": 4.0,
+        "visual_prompt": "Quote card: một dev đang code với Cursor, bên cạnh là dialog dashboard quota color bar xanh lục ghi rõ: 'Tiết kiệm 40% token mỗi tháng nhờ auto fallback'. Hiệu ứng quote glowing, thông tin honest.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "quote",
+        "text": "Mỗi tháng tiết kiệm 40% token mà không còn lo tool bị ngắt giữa chừng.",
+        "attr": "Nguyễn Khoi — code dev, dùng Cursor/Claude",
+        "caption": {
+          "vi": "Rất nhiều developer dùng 9 Router để tiết kiệm token và không bị gián đoạn khi code.",
+          "en": "Developers use 9 Router to save tokens and prevent interruptions."
+        },
+        "animation_phases": {
+          "intro": {},
+          "hold": {
+            "bg": "float y:-3px 2.5s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "fade-out 0.3s"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "duration_sec": 4.0,
+        "visual_prompt": "CLI terminal đang chạy npm install lệnh màu xanh, hiệu ứng dòng code xuất hiện mượt, dashboard realtime hiện cạnh nút 'Bắt đầu' sáng lên. Glowing outline blue-green.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "cta-url",
+        "label": "Cài đặt miễn phí chỉ với 2 lệnh!",
+        "url": "9router.dev",
+        "sub": "npm install -g 9 router · Quản lý realtime",
+        "caption": {
+          "vi": "Tải và cài 9 Router chỉ với 2 dòng lệnh tại 9 router.dev, gateway AI cho mọi công cụ.",
+          "en": "Install 9 Router in 2 commands at 9 router.dev."
+        },
+        "text": "Tải và cài 9 Router chỉ với 2 dòng lệnh tại 9 router.dev, gateway AI cho mọi công cụ.",
+        "animation_phases": {
+          "intro": {
+            "label": "bounce-in 0.4s spring",
+            "url_box": "fade-slide-up 0.3s delay:0.3s"
+          },
+          "hold": {
+            "label": "text-glow pulse amber 2s repeat:-1 yoyo:true",
+            "urgency_badge": "scale 1.0↔1.06 1.5s repeat:-1 yoyo:true",
+            "bg": "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "fade-out scale:1→1.02 0.3s"
+          }
+        }
+      }
+    ],
+    "total_duration_sec": 23.5
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\subtitle.srt",
+  "output_path": "..\\..\\storage\\output\\1c9433f0-3d4a-48b0-a618-fa6128a4d047.mp4",
+  "error": null,
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 4.466666666666667,
+      "visual_prompt": "Split-screen style: bên trái là màn hình quản lý provider với token bị burn đỏ (ghi rõ tên công cụ như Cursor, Claude Code, Copilot), bên phải là đồng hồ quota đếm ngược. Dash glow xanh biển, tone factual, viền particle shimmer.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "emoji": "💸",
+      "headline": "Bạn vẫn để lãng phí 65% token AI mỗi tháng?",
+      "sub": "Quota hết hạn, downtime bất ngờ, chi phí đội lên",
+      "accent": true,
+      "caption": {
+        "vi": "💸 Bạn vẫn để lãng phí 65% token AI chỉ vì chuyển provider thủ công?",
+        "en": "Still wasting 65% of AI tokens each month?"
+      },
+      "text": "💸 Bạn vẫn để lãng phí 65% token AI chỉ vì chuyển provider thủ công?",
+      "animation_phases": {
+        "intro": {
+          "emoji": "bounce-in 0.3s spring",
+          "headline_words": "stagger-up 0.08s/word ease-out"
+        },
+        "hold": {
+          "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+          "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "blur-out + scale 1→0.95 0.3s ease-in"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\scene_00.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 4.933333333333334,
+      "visual_prompt": "Split view network map: 60+ logo AI provider (OpenAI, Anthropic, Gemini, Copilot...) gom về một endpoint glowing, route tới các app như Cursor, Claude Code, Cline. Phía dưới là hiệu ứng flow animate.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "headline": "Chỉ một endpoint, kết nối 60+ AI providers",
+      "sub": "CLI, IDE, code tools—all in one flow",
+      "accent": true,
+      "caption": {
+        "vi": "Chỉ một endpoint, kết nối liền mạch với 60+ AI providers trên mọi công cụ.",
+        "en": "One endpoint, 60+ AI providers, seamless tools."
+      },
+      "text": "Chỉ một endpoint, kết nối liền mạch với 60+ AI providers trên mọi công cụ.",
+      "animation_phases": {
+        "intro": {
+          "emoji": "bounce-in 0.3s spring",
+          "headline_words": "stagger-up 0.08s/word ease-out"
+        },
+        "hold": {
+          "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+          "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "blur-out + scale 1→0.95 0.3s ease-in"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\scene_01.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 6.6,
+      "visual_prompt": "Card sản phẩm trung tâm: logo 9Router phát sáng, vây quanh là icon OpenAI, Anthropic, Gemini, Copilot, Cursor... mạng lưới phát sáng xanh lam, hiệu ứng wired gateway, badge LAUNCH nổi bật.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "product-card",
+      "name": "9Router",
+      "tagline": "Gateway AI duy nhất bạn cần",
+      "badge": "🚀 LAUNCH",
+      "subtext": "BEFORE: Quota phí, downtime\nAFTER: 1 endpoint, không gián đoạn",
+      "caption": {
+        "vi": "9 Router — gateway AI thông minh, kết nối 60+ providers trên mọi công cụ qua một endpoint duy nhất.",
+        "en": "9 Router—smart AI gateway, connects all tools and 60+ providers."
+      },
+      "text": "9 Router — gateway AI thông minh, kết nối 60+ providers trên mọi công cụ qua một endpoint duy nhất.",
+      "animation_phases": {
+        "intro": {
+          "logo": "pop-in 0.3s",
+          "badge": "fade-in 0.2s"
+        },
+        "hold": {
+          "logo": "float y:-6px 2s repeat:-1 yoyo:true",
+          "badge": "pulse-glow 2s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out scale:1→1.02 0.3s"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\scene_02.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 6.266666666666667,
+      "visual_prompt": "Feature grid split-blocks: từng feature gồm icon nổi, nền dạng sóng token, dashboard realtime glowing diagram, mỗi block nhấn hiệu ứng border glow hoặc icon oscillate. Accent xanh lam - xanh lục.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "feature-grid",
+      "features": [
+        {
+          "icon": "🔀",
+          "title": "3-tier fallback thông minh",
+          "desc": "Tự động chuyển giữa 60+ provider, không downtime"
+        },
+        {
+          "icon": "💡",
+          "title": "Tiết kiệm 20–65% token",
+          "desc": "RTK & Caveman tự nén, giảm lãng phí"
+        },
+        {
+          "icon": "🖥️",
+          "title": "Cài 2 lệnh, quản lý tập trung",
+          "desc": "npm install -g 9router, dashboard realtime"
+        }
+      ],
+      "caption": {
+        "vi": "3-tier fallback thông minh, tiết kiệm token tối đa, cài đặt cực nhanh, quản lý quota realtime.",
+        "en": "Smart fallback, save tokens, fast setup, live dashboard."
+      },
+      "text": "3-tier fallback thông minh, tiết kiệm token tối đa, cài đặt cực nhanh, quản lý quota realtime.",
+      "animation_phases": {
+        "intro": {
+          "items": "stagger-pop-in 0.12s/item spring delay:0.2s"
+        },
+        "hold": {
+          "card_float": "subtle-float y:-4px 2.5s repeat:-1 yoyo:true",
+          "border_glow": "border-glow pulse 1.6s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "stagger-fade-down 0.08s/item"
+        }
+      },
+      "tts_beats": [
+        {
+          "at_word": 0,
+          "action": "focus_item",
+          "item": 0
+        },
+        {
+          "at_word": 8,
+          "action": "focus_item",
+          "item": 1
+        },
+        {
+          "at_word": 16,
+          "action": "focus_item",
+          "item": 2
+        },
+        {
+          "at_word": 22,
+          "action": "hold_start"
+        },
+        {
+          "at_word": -1,
+          "action": "outro_start"
+        }
+      ],
+      "audio_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\scene_03.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.6,
+      "visual_prompt": "Quote card: một dev đang code với Cursor, bên cạnh là dialog dashboard quota color bar xanh lục ghi rõ: 'Tiết kiệm 40% token mỗi tháng nhờ auto fallback'. Hiệu ứng quote glowing, thông tin honest.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "quote",
+      "text": "Mỗi tháng tiết kiệm 40% token mà không còn lo tool bị ngắt giữa chừng.",
+      "attr": "Nguyễn Khoi — code dev, dùng Cursor/Claude",
+      "caption": {
+        "vi": "Rất nhiều developer dùng 9 Router để tiết kiệm token và không bị gián đoạn khi code.",
+        "en": "Developers use 9 Router to save tokens and prevent interruptions."
+      },
+      "animation_phases": {
+        "intro": {},
+        "hold": {
+          "bg": "float y:-3px 2.5s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out 0.3s"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\scene_04.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 5.666666666666667,
+      "visual_prompt": "CLI terminal đang chạy npm install lệnh màu xanh, hiệu ứng dòng code xuất hiện mượt, dashboard realtime hiện cạnh nút 'Bắt đầu' sáng lên. Glowing outline blue-green.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "cta-url",
+      "label": "Cài đặt miễn phí chỉ với 2 lệnh!",
+      "url": "9router.dev",
+      "sub": "npm install -g 9 router · Quản lý realtime",
+      "caption": {
+        "vi": "Tải và cài 9 Router chỉ với 2 dòng lệnh tại 9 router.dev, gateway AI cho mọi công cụ.",
+        "en": "Install 9 Router in 2 commands at 9 router.dev."
+      },
+      "text": "Tải và cài 9 Router chỉ với 2 dòng lệnh tại 9 router.dev, gateway AI cho mọi công cụ.",
+      "animation_phases": {
+        "intro": {
+          "label": "bounce-in 0.4s spring",
+          "url_box": "fade-slide-up 0.3s delay:0.3s"
+        },
+        "hold": {
+          "label": "text-glow pulse amber 2s repeat:-1 yoyo:true",
+          "urgency_badge": "scale 1.0↔1.06 1.5s repeat:-1 yoyo:true",
+          "bg": "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out scale:1→1.02 0.3s"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\1c9433f0-3d4a-48b0-a618-fa6128a4d047\\scene_05.mp3",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T16:01:57.290823Z",
+  "updated_at": "2026-05-14T16:04:51.876612Z"
+}

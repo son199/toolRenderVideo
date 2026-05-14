@@ -1,8 +1,0 @@
-{
-  "id": "promo",
-  "name": "Promo",
-  "description": "Quảng cáo sản phẩm — gradient tím-hồng, features bullet, CTA mạnh.",
-  "supported_aspects": ["9:16", "16:9"],
-  "max_scenes": 6,
-  "default_duration_sec": 4.0
-}

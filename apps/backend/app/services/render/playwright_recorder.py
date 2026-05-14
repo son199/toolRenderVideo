@@ -93,7 +93,15 @@ async def record_template(
         try:
             browser = await pw.chromium.launch(
                 headless=settings.playwright_headless,
-                args=["--autoplay-policy=no-user-gesture-required"],
+                args=[
+                    "--autoplay-policy=no-user-gesture-required",
+                    "--enable-gpu",
+                    "--use-gl=egl",
+                    "--ignore-gpu-blocklist",
+                    "--disable-software-rasterizer",
+                    "--enable-webgl",
+                    "--disable-dev-shm-usage"
+                ],
             )
         except Exception as exc:
             raise RenderError(f"Failed to launch chromium: {exc}") from exc

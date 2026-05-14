@@ -20,8 +20,6 @@ from app.events import ProgressEvent, get_bus
 from app.services.ingest import IngestError, ingest
 from app.services.llm import get_provider as get_llm_provider
 from app.services.llm.base import LLMError
-from app.services.render import RenderError, assemble_final_video, record_template
-from app.services.render.ffmpeg_post import FFmpegError
 from app.services.scene_text import narration_text
 from app.services.subtitle import timings_to_dict, write_srt
 from app.services.tts import get_provider as get_tts_provider
@@ -109,7 +107,6 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
 
             # Patch: Đảm bảo mọi scene đều có trường text (dùng narration_text),
             # tự động sửa lỗi dính chữ, và sinh tts_beats cho feature-grid.
-            from app.services.scene_text import narration_text
             import re
             sb_obj = getattr(storyboard, "storyboard", storyboard)
             if hasattr(sb_obj, "model_dump"):
@@ -150,101 +147,14 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
             scenes = sb_dict.get("scenes")
             if isinstance(scenes, list):
                 for scene in scenes:
-                    # Sửa spacing cho các trường text/caption/headline/sub...
-                    for key in ("text", "headline", "sub"):
-                        if key in scene and isinstance(scene[key], str):
-                            scene[key] = fix_spacing(scene[key])
+                    # Sửa spacing cho các trường text/caption...
                     if "caption" in scene and isinstance(scene["caption"], dict):
                         for capk in ("vi", "en"):
                             if capk in scene["caption"] and isinstance(scene["caption"][capk], str):
                                 scene["caption"][capk] = fix_spacing(scene["caption"][capk])
-                    # Đảm bảo luôn có text
-                    text_val = scene.get("text")
-                    narr = narration_text(scene)
-                    if not isinstance(text_val, str) or not text_val.strip():
-                        scene["text"] = narr
-
-                    # Nếu thiếu animation_phases, tự động sinh mặc định
-                    if "animation_phases" not in scene or not isinstance(scene["animation_phases"], dict):
-                        scene_type = scene.get("type")
-                        if scene_type == "hero-text":
-                            scene["animation_phases"] = {
-                                "intro": {"emoji": "bounce-in 0.3s spring", "headline_words": "stagger-up 0.08s/word ease-out"},
-                                "hold": {"emoji": "float y:-6px 1.8s repeat:-1 yoyo:true", "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"},
-                                "outro": {"all": "blur-out + scale 1→0.95 0.3s ease-in"}
-                            }
-                        elif scene_type == "product-card":
-                            scene["animation_phases"] = {
-                                "intro": {"logo": "pop-in 0.3s", "badge": "fade-in 0.2s"},
-                                "hold": {"logo": "float y:-6px 2s repeat:-1 yoyo:true", "badge": "pulse-glow 2s repeat:-1 yoyo:true"},
-                                "outro": {"all": "fade-out scale:1→1.02 0.3s"}
-                            }
-                        elif scene_type == "feature-grid":
-                            scene["animation_phases"] = {
-                                "intro": {"items": "stagger-pop-in 0.12s/item spring delay:0.2s"},
-                                "hold": {"card_float": "subtle-float y:-4px 2.5s repeat:-1 yoyo:true", "border_glow": "border-glow pulse 1.6s repeat:-1 yoyo:true"},
-                                "outro": {"all": "stagger-fade-down 0.08s/item"}
-                            }
-                        elif scene_type == "cta-url":
-                            scene["animation_phases"] = {
-                                "intro": {"label": "bounce-in 0.4s spring", "url_box": "fade-slide-up 0.3s delay:0.3s"},
-                                "hold": {"label": "text-glow pulse amber 2s repeat:-1 yoyo:true", "urgency_badge": "scale 1.0↔1.06 1.5s repeat:-1 yoyo:true", "bg": "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"},
-                                "outro": {"all": "fade-out scale:1→1.02 0.3s"}
-                            }
-                        else:
-                            scene["animation_phases"] = {
-                                "intro": {},
-                                "hold": {"bg": "float y:-3px 2.5s repeat:-1 yoyo:true"},
-                                "outro": {"all": "fade-out 0.3s"}
-                            }
-
-                    # Tự động bổ sung hiệu ứng động vào hold phase nếu thiếu
-                    anim = scene.get("animation_phases")
-                    if isinstance(anim, dict):
-                        hold = anim.get("hold")
-                        if not isinstance(hold, dict):
-                            hold = {}
-                        n_effect = sum(
-                            1 for v in hold.values() if isinstance(v, str) and ("repeat" in v or "yoyo" in v)
-                        )
-                        scene_type = scene.get("type")
-                        if n_effect < 1:
-                            if scene_type == "hero-text":
-                                hold["emoji"] = "float y:-6px 1.8s repeat:-1 yoyo:true"
-                                hold["bg_gradient"] = "shift-hue 4s repeat:-1 yoyo:true"
-                            elif scene_type == "feature-grid":
-                                hold["card_float"] = "subtle-float y:-4px 2.5s repeat:-1 yoyo:true"
-                                hold["border_glow"] = "border-glow pulse 1.6s repeat:-1 yoyo:true"
-                            elif scene_type == "product-card":
-                                hold["logo"] = "float y:-6px 2s repeat:-1 yoyo:true"
-                                hold["badge"] = "pulse-glow 2s repeat:-1 yoyo:true"
-                            elif scene_type == "quote":
-                                hold["text"] = "breathe scale:1.0↔1.005 3s repeat:-1 yoyo:true"
-                                hold["highlight_words"] = "pulse amber 2.5s repeat:-1 yoyo:true"
-                            elif scene_type == "cta-url":
-                                hold["label"] = "text-glow pulse amber 2s repeat:-1 yoyo:true"
-                                hold["urgency_badge"] = "scale 1.0↔1.06 1.5s repeat:-1 yoyo:true"
-                                hold["bg"] = "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"
-                            else:
-                                hold["bg"] = "float y:-3px 2.5s repeat:-1 yoyo:true"
-                        anim["hold"] = hold
-                        scene["animation_phases"] = anim
-
-                # Tự động sinh tts_beats cho feature-grid (focus từng item)
-                for scene in scenes:
-                    if scene.get("type") == "feature-grid" and "features" in scene:
-                        features = scene["features"]
-                        if isinstance(features, list):
-                            beats = []
-                            word_idx = 0
-                            for i, feat in enumerate(features):
-                                desc = feat.get("desc") or feat.get("title") or ""
-                                n_words = len(desc.split()) if desc else 5
-                                beats.append({"at_word": word_idx, "action": "focus_item", "item": i})
-                                word_idx += n_words
-                            beats.append({"at_word": word_idx, "action": "hold_start"})
-                            beats.append({"at_word": -1, "action": "outro_start"})
-                            scene["tts_beats"] = beats
+                    
+                    # Đảm bảo luôn có text (Remotion sẽ dùng word_timings là chính, nhưng cần text dự phòng)
+                    scene["text"] = narration_text(scene)
 
             repository.update_project(
                 project_id,
@@ -264,42 +174,52 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
             tts = get_tts_provider()
             audio_dir = settings.storage_audio / pid
             audio_dir.mkdir(parents=True, exist_ok=True)
-            # Fix: Đảm bảo scenes_input luôn là list, tránh lỗi NoneType khi lặp
+            
             scenes_input = []
             if project.storyboard and isinstance(project.storyboard, dict):
                 scenes_input = project.storyboard.get("scenes") or []
-                if not isinstance(scenes_input, list):
-                    scenes_input = []
-            total = max(len(scenes_input), 1)
-            updated_scenes: list[dict] = []
 
             try:
-                for i, scene in enumerate(scenes_input):
+                # 2. Định nghĩa hàm xử lý cho từng scene
+                async def process_scene(i, scene):
                     scene_id = int(scene["id"])
-                    voice = (
-                        scene.get("voice") or project.voice or settings.tts_default_voice
-                    )
+                    voice = scene.get("voice") or project.voice or settings.tts_default_voice
                     out_path = audio_dir / f"scene_{scene_id:02d}.mp3"
-                    await emit(
-                        "tts",
-                        0.30 + 0.30 * i / total,
-                        f"Scene {i + 1}/{total}: sinh audio...",
-                    )
                     text = narration_text(scene)
-                    result = await tts.synthesize(
-                        text=text, voice=voice, out_path=out_path
-                    )
-                    timings = result.word_timings
-                    updated_scenes.append(
-                        {
-                            **scene,
-                            "audio_path": str(result.audio_path),
-                            "duration_sec": result.duration_sec,
-                            "word_timings": (
-                                timings_to_dict(timings) if timings else None
-                            ),
-                        }
-                    )
+                    import re
+                    if not text or not re.search(r'[a-zA-Z0-9À-ỹ]', text):
+                        text = "Chuyển cảnh."
+
+                    result = await tts.synthesize(text=text, voice=voice, out_path=out_path)
+                    
+                    import random
+                    def get_mixkit_video(prompt: str) -> str:
+                        prompt = (prompt or "").lower()
+                        if "tech" in prompt or "hacker" in prompt or "server" in prompt or "code" in prompt:
+                            return random.choice([
+                                "https://assets.mixkit.co/videos/preview/mixkit-server-room-with-rows-of-computer-servers-and-blinking-lights-15822-large.mp4",
+                                "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4"
+                            ])
+                        if "money" in prompt or "finance" in prompt or "crypto" in prompt or "business" in prompt:
+                            return "https://assets.mixkit.co/videos/preview/mixkit-falling-crypto-coins-39908-large.mp4"
+                        return random.choice([
+                            "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+                            "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+                            "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4"
+                        ])
+
+                    return {
+                        **scene,
+                        "audio_path": str(result.audio_path),
+                        "video_path": get_mixkit_video(scene.get("visual_prompt", "")),
+                        "duration_sec": result.duration_sec,
+                        "word_timings": (timings_to_dict(result.word_timings) if result.word_timings else None),
+                    }
+
+                # 3. Thực thi song song toàn bộ các tác vụ TTS
+                await emit("tts", 0.35, f"Đang sinh song song audio cho {len(scenes_input)} scenes...")
+                tasks = [process_scene(i, scene) for i, scene in enumerate(scenes_input)]
+                updated_scenes = await asyncio.gather(*tasks)
             except TTSError as exc:
                 await fail(f"TTS failed: {exc}")
                 return
@@ -315,53 +235,30 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
                 },
             )
 
-        # ----- 4. Render -----
+        # ----- 4. Render (Remotion Engine) -----
         project = repository.get_project(project_id) or project
         repository.update_project(project_id, {"status": "rendering"})
-        await emit("render", 0.65, "Mở Playwright và record template...")
+        await emit("render", 0.65, "Đang Render Video bằng Remotion Engine (React)...")
 
-        frames_dir = settings.storage_frames / pid
         output_path = settings.storage_output / f"{project_id}.mp4"
-        audio_meta = [
-            {
-                "scene_id": s["id"],
-                "duration_sec": s["duration_sec"],
-                "word_timings": s.get("word_timings"),
-            }
-            for s in (project.scenes or [])
-        ]
-
+        
         try:
-            result = await record_template(
+            from app.services.render import RemotionError, render_remotion
+            
+            async def render_progress(msg: str) -> None:
+                await emit("render", 0.75, msg)
+                
+            await render_remotion(
+                project_id=str(project.id),
+                scenes=project.scenes or [],
                 template=project.template,
-                storyboard=project.storyboard or {},
-                audio_meta=audio_meta,
-                aspect_ratio=project.aspect_ratio,
-                out_dir=frames_dir,
+                output_path=output_path,
+                on_progress=render_progress,
             )
-        except RenderError as exc:
-            await fail(f"Render (Playwright) failed: {exc}")
-            return
-
-        await emit("render", 0.88, "FFmpeg mux audio + burn subtitle...")
-        try:
-            audio_files = [Path(s["audio_path"]) for s in (project.scenes or [])]
-            srt_path = Path(project.subtitle_path) if project.subtitle_path else None
-            # Honor project.burn_subtitle: only burn SRT into video if user
-            # opted in AND SRT exists. When False, SRT stays as sidecar file
-            # but video has no on-screen burn-in (subtitle band shown via
-            # template's caption.en layer only).
-            should_burn = bool(getattr(project, "burn_subtitle", True)) and srt_path is not None
-            await asyncio.to_thread(
-                assemble_final_video,
-                raw_video=result.webm_path,
-                audio_files=audio_files,
-                srt_path=srt_path if should_burn else None,
-                out_path=output_path,
-                burn_subtitle=should_burn,
-            )
-        except FFmpegError as exc:
-            await fail(f"FFmpeg failed: {exc}")
+            await emit("render", 0.95, "Render thành công!")
+        except RemotionError as exc:
+            logger.exception("Remotion Render failed for %s", project.id)
+            await fail(f"Remotion Render failed: {exc}")
             return
 
         repository.update_project(

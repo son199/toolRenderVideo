@@ -1,0 +1,193 @@
+{
+  "id": "6b33f117-df0f-48bc-ab58-1ae9dab2732f",
+  "user_id": null,
+  "title": "Giới thiệu về trang web 9router đến người dùng",
+  "input_type": "url",
+  "input_value": "https://9router.com/",
+  "upload_path": null,
+  "raw_text": "One Router.\n60+ AI Providers. Zero Downtime.\nConnect every CLI/IDE to all major AI providers through one OpenAI-compatible endpoint.\n9Router is a smart gateway between your tools (Cursor, Claude Code, Codex, Cline, Copilot…) and 60+ AI providers. Smart 3-tier fallback maximizes your subscriptions and keeps you coding when limits hit. Bonus: built-in RTK & Caveman save 20–65% tokens.\nnpm install -g 9router\n9router\napi9 Service Kinds OpenAI-Compatible\nEvery endpoint is OpenAI-compatible. Point your tool to one URL — run LLM, Embedding, TTS, STT, Image, Video, Web Search and more.\nChat / LLM\nOpenAI-compatible chat completions across 60+ providers.\nEmbeddings\nVoyage, Jina, OpenAI, Cohere, Mistral, NVIDIA, Together, Fireworks.\nText-to-Speech\nElevenLabs, Deepgram, Inworld, AWS Polly, Google/Edge TTS, OpenAI.\nSpeech-to-Text\nDeepgram, AssemblyAI, OpenAI Whisper, Qwen STT.\nImage Generation\nFal, Stability, BFL Flux, Recraft, OpenAI, Gemini, MiniMax.\nVision / Image-to-Text\nOpenAI, Gemini, Anthropic, Groq, xAI, Mistral, HuggingFace.\nVideo Generation\nRunway ML, Topaz.\nWeb Search\nTavily, Brave, Serper, Exa, Linkup, Perplexity, Google PSE, SearchAPI.\nWeb Fetch\nTavily, Exa, Firecrawl, Jina Reader.\nHow 9Router Works\nInstall once, connect providers, code non-stop with smart 3-tier fallback.\nInstall & Connect\nnpm install -g 9router\n- Dashboard opens automatically\n- OAuth or API key per provider\nSmart 3-Tier Routing\n⚡ Auto fallback when quota runs out\nCode Non-Stop\n- Point your CLI to\nlocalhost:20128\n- Zero downtime, automatic switching\n- Track quota & usage in real time\nhub60+ AI Providers\nOAuth, API key or browser cookie. Featured 24 below — full list inside the app.\nterminalCLI / IDE Integrations\nPoint any tool to localhost:20128. Per-tool setup guides included.\nterminalCLI Tools (10)\nClaude Code\nAnthropic Claude CLI\nOpenAI Codex\nOpenAI Codex CLI\nOpenClaw\nOpen Claw assistant\nCursor\nAI code editor\nCline\nAI coding assistant\nKilo Code\nKilo Code AI\nRoo\nRoo AI\nContinue\nContinue AI\nFactory Droid\nFactory AI\nHermes Agent\nSelf-improving agent\nshieldMITM Bridge — IDE Subscription Intercept\nIntercept Antigravity / GitHub Copilot / Kiro IDE traffic — use IDE subscriptions to call any backend through 9Router (mind each tool's policy).\nAntigravity\nGoogle Antigravity IDE\nGitHub Copilot\nVS Code Copilot intercept\nKiro IDE\nAWS Kiro IDE intercept\nauto_awesomeAdvanced Features\nCombos, Translator, RTK, Caveman, Multi-account, Cloud sync, Tunnel, Proxy pools, MITM bridge.\nSmart Combos\nChain providers into one virtual provider with sticky round-robin and automatic fallback.\nReal-time Quota\nLive token tracking, reset countdown, cost estimation per provider.\nFormat Translator\nConvert between OpenAI / Anthropic / Gemini formats — any tool with any provider.\nMulti-Account\nMultiple accounts per provider, round-robin load balancing, automatic failover.\nCloud Sync + Tunnel\nCloudflare edge tunnel — use your router from anywhere, 300+ global locations.\nProxy Pools\nVercel relay, outbound proxy, rotate IPs for region-restricted providers.\nMITM Bridge\nIntercept Antigravity / Copilot / Kiro IDE traffic — use IDE subscriptions with any backend.\nOpenAI-Compatible\nOne endpoint speaks chat, embeddings, TTS, STT, image, video, search and fetch.\nVisual Dashboard\nManage providers, keys, combos and usage from a clean local UI.\nAnd while we're at it, save 20–65% tokens for free\nRTK and Caveman Mode ship with 9Router. They quietly compress what goes in and trim what comes out — same answers, fewer tokens.\nRTK Token Saver\n−20–40%Auto-compress tool_result content (git diff, grep, ls, find, tree…) before it reaches the LLM. Lossless, safe, default ON.\nCaveman Mode\n−65%Inject a terse-style system prompt — LLM replies stay technical but compact. Five intensity levels.\n💡 Combine with FREE-tier providers and you're routing for $0/month with built-in token savings.\nrocket_launchGet Started in Two Commands\nInstall globally, connect providers, code with smart auto-fallback.\nInstall Globally\nOne command installs 9Router system-wide.\nnpm install -g 9router\nConnect Providers\nOpen the dashboard and add OAuth or API keys per tier.\nPoint Your Tool\nSet Cursor / Cline / Claude Code / Codex to the OpenAI-compatible endpoint.\nhttp://localhost:20128/v1\nhttp://localhost:20128/v1\nStop Wasting Your AI Subscriptions\nSubscription quota expires unused every month\nRate limits cut your coding session mid-flow\nManually switching between providers wastes time",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "failed",
+  "storyboard": {
+    "title": "Dừng hoang phí AI tokens với 9Router: Kết nối 60+ provider qua 1 endpoint!",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "success",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 4.0,
+        "visual_prompt": "split-screen tokens burning and shocked programmer with laptop, neon glow, success vibes",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "caption": {
+          "vi": "Bạn vẫn mất đến 65% token AI mỗi tháng?"
+        },
+        "text": "Bạn vẫn mất đến 65% token AI mỗi tháng?"
+      },
+      {
+        "id": 1,
+        "duration_sec": 4.0,
+        "visual_prompt": "split-screen floating logos of 60+ AI providers connected to one central endpoint, high-tech futuristic",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "caption": {
+          "vi": "Kết nối 60+ AI providers chỉ qua một endpoint duy nhất!"
+        },
+        "text": "Kết nối 60+ AI providers chỉ qua một endpoint duy nhất!"
+      },
+      {
+        "id": 2,
+        "duration_sec": 4.5,
+        "visual_prompt": "code editor, zero-downtime banner, auto-fallback arrows between AI sources, vibrant success colors",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "caption": {
+          "vi": "Zero downtime, auto 3-tier fallback tiết kiệm tối đa, code liên tục không gián đoạn!"
+        },
+        "text": "Zero downtime, auto 3-tier fallback tiết kiệm tối đa, code liên tục không gián đoạn!"
+      },
+      {
+        "id": 3,
+        "duration_sec": 4.5,
+        "visual_prompt": "split-screen animated token counters dropping, RTK Caveman icons compressing data, money flying back to wallet",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "caption": {
+          "vi": "Tiết kiệm đến 65% tokens nhờ RTK & Caveman. Cùng token, được nhiều hơn hẳn!"
+        },
+        "text": "Tiết kiệm đến 65% tokens nhờ RTK & Caveman. Cùng token, được nhiều hơn hẳn!"
+      },
+      {
+        "id": 4,
+        "duration_sec": 3.5,
+        "visual_prompt": "CLI interfaces, Cursor, Claude, Codex icons connecting instantly, code flows across screens",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "caption": {
+          "vi": "Chạy trên mọi CLI/IDE: Cursor, Claude, Codex, Cline… Chỉ cần trỏ về 1 địa chỉ duy nhất!"
+        },
+        "text": "Chạy trên mọi CLI/IDE: Cursor, Claude, Codex, Cline… Chỉ cần trỏ về 1 địa chỉ duy nhất!"
+      },
+      {
+        "id": 5,
+        "duration_sec": 3.5,
+        "visual_prompt": "simple one-line install command animating, dashboard auto-opens, cheerful user clicking",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "caption": {
+          "vi": "Cài đặt chưa tới 1 phút: npm install -g 9 router. Sẵn sàng tối ưu AI của bạn ngay lập tức!"
+        },
+        "text": "Cài đặt chưa tới 1 phút: npm install -g 9 router. Sẵn sàng tối ưu AI của bạn ngay lập tức!"
+      }
+    ],
+    "total_duration_sec": 23.5
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\subtitle.srt",
+  "output_path": null,
+  "error": "Remotion Render failed: Remotion Render Failed: \u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[40m https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4 \u001b[49m \u001b[31mFailed to load resource: the server responded with a status of 403 ()\u001b[39m\n\u001b[31mUnable to close browser tab\u001b[39m \u001b[31mProtocolError: Protocol error (Target.closeTarget): No target with given id found\u001b[39m\n\u001b[31m\u001b[41m\u001b[37m Error \u001b[39m\u001b[31m\u001b[49m\u001b[39m \u001b[31mA delayRender() \"Loading <Video> duration with src=https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4\" was called but not cleared after 28000ms. See https://remotion.dev/docs/timeout for help. \u001b[39m\n\n\u001b[31m🕧 The delayRender() call is located at:\u001b[39m\n",
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 2.6,
+      "visual_prompt": "split-screen tokens burning and shocked programmer with laptop, neon glow, success vibes",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "caption": {
+        "vi": "Bạn vẫn mất đến 65% token AI mỗi tháng?"
+      },
+      "text": "Bạn vẫn mất đến 65% token AI mỗi tháng?",
+      "audio_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\scene_00.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 3.6666666666666665,
+      "visual_prompt": "split-screen floating logos of 60+ AI providers connected to one central endpoint, high-tech futuristic",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "caption": {
+        "vi": "Kết nối 60+ AI providers chỉ qua một endpoint duy nhất!"
+      },
+      "text": "Kết nối 60+ AI providers chỉ qua một endpoint duy nhất!",
+      "audio_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\scene_01.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-server-room-with-rows-of-computer-servers-and-blinking-lights-15822-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 5.6,
+      "visual_prompt": "code editor, zero-downtime banner, auto-fallback arrows between AI sources, vibrant success colors",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "caption": {
+        "vi": "Zero downtime, auto 3-tier fallback tiết kiệm tối đa, code liên tục không gián đoạn!"
+      },
+      "text": "Zero downtime, auto 3-tier fallback tiết kiệm tối đa, code liên tục không gián đoạn!",
+      "audio_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\scene_02.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 5.0,
+      "visual_prompt": "split-screen animated token counters dropping, RTK Caveman icons compressing data, money flying back to wallet",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "caption": {
+        "vi": "Tiết kiệm đến 65% tokens nhờ RTK & Caveman. Cùng token, được nhiều hơn hẳn!"
+      },
+      "text": "Tiết kiệm đến 65% tokens nhờ RTK & Caveman. Cùng token, được nhiều hơn hẳn!",
+      "audio_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\scene_03.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-falling-crypto-coins-39908-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.8,
+      "visual_prompt": "CLI interfaces, Cursor, Claude, Codex icons connecting instantly, code flows across screens",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "caption": {
+        "vi": "Chạy trên mọi CLI/IDE: Cursor, Claude, Codex, Cline… Chỉ cần trỏ về 1 địa chỉ duy nhất!"
+      },
+      "text": "Chạy trên mọi CLI/IDE: Cursor, Claude, Codex, Cline… Chỉ cần trỏ về 1 địa chỉ duy nhất!",
+      "audio_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\scene_04.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-server-room-with-rows-of-computer-servers-and-blinking-lights-15822-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 6.0,
+      "visual_prompt": "simple one-line install command animating, dashboard auto-opens, cheerful user clicking",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "caption": {
+        "vi": "Cài đặt chưa tới 1 phút: npm install -g 9 router. Sẵn sàng tối ưu AI của bạn ngay lập tức!"
+      },
+      "text": "Cài đặt chưa tới 1 phút: npm install -g 9 router. Sẵn sàng tối ưu AI của bạn ngay lập tức!",
+      "audio_path": "..\\..\\storage\\audio\\6b33f117-df0f-48bc-ab58-1ae9dab2732f\\scene_05.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T17:38:04.823168Z",
+  "updated_at": "2026-05-14T17:39:46.542822Z"
+}

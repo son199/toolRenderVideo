@@ -1,8 +1,8 @@
-"""VideoCreatorAgent — master orchestrator of the agent chain.
+"""VideoCreatorAgent — Kiến trúc sư điều phối chuỗi xử lý AI.
 
-Sequences ContentAnalyzer → StoryboardAgent → ReviewAgent and, when review
-fails, one refine pass followed by a second review to verify quality.
-Returns a ``GenerationResult`` with the final storyboard + quality metadata.
+Điều phối luồng: ContentAnalyzer → StoryboardAgent → ReviewAgent. 
+Nếu chất lượng không đạt, hệ thống tự động thực hiện tinh chỉnh và kiểm duyệt lại
+để đảm bảo video đầu ra đạt tiêu chuẩn Remotion Engine cao nhất.
 """
 
 from __future__ import annotations
@@ -35,11 +35,11 @@ class GenerationResult:
         return self.review.passed
 
     def summary(self) -> str:
-        parts = [f"score={self.review.score:.1f}/10"]
+        parts = [f"điểm={self.review.score:.1f}/10"]
         if self.was_refined and self.pre_refine_score is not None:
             parts.append(f"(trước refine: {self.pre_refine_score:.1f})")
         parts.append(f"scenes={len(self.storyboard.scenes)}")
-        parts.append(f"duration={self.storyboard.total_duration_sec:.1f}s")
+        parts.append(f"thời lượng={self.storyboard.total_duration_sec:.1f}s")
         return " · ".join(parts)
 
 
@@ -87,7 +87,7 @@ class VideoCreatorAgent(BaseAgent):
         )
 
         if review.passed:
-            await self._emit("agent", 0.95, f"Review pass (score {review.score:.1f}/10) — không cần refine")
+            await self._emit("agent", 0.95, f"Chất lượng đạt (điểm {review.score:.1f}/10) — Sẵn sàng Render")
             return GenerationResult(
                 storyboard=draft,
                 analyzer=analyzer_result,
@@ -107,7 +107,7 @@ class VideoCreatorAgent(BaseAgent):
         )
 
         # 5 — Re-review để có quality signal chính xác sau refine
-        await self._emit("agent", 0.88, "Đang verify storyboard sau refine...")
+        await self._emit("agent", 0.88, "Đang xác minh lại kịch bản sau khi tối ưu...")
         post_review = await self._reviewer.run(
             storyboard=refined,
             raw_text=raw_text,
@@ -121,7 +121,7 @@ class VideoCreatorAgent(BaseAgent):
                 pre_refine_score, post_review.score,
             )
 
-        await self._emit("agent", 0.95, f"Refined: {pre_refine_score:.1f} → {post_review.score:.1f}/10")
+        await self._emit("agent", 0.95, f"Đã tối ưu: {pre_refine_score:.1f} → {post_review.score:.1f}/10")
         return GenerationResult(
             storyboard=refined,
             analyzer=analyzer_result,

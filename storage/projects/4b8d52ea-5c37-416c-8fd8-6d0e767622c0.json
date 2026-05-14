@@ -1,0 +1,247 @@
+{
+  "id": "4b8d52ea-5c37-416c-8fd8-6d0e767622c0",
+  "user_id": null,
+  "title": "Giới thiệu về trang web 9router đến người dùng",
+  "input_type": "url",
+  "input_value": "https://9router.com/",
+  "upload_path": null,
+  "raw_text": "One Router.\n60+ AI Providers. Zero Downtime.\nConnect every CLI/IDE to all major AI providers through one OpenAI-compatible endpoint.\n9Router is a smart gateway between your tools (Cursor, Claude Code, Codex, Cline, Copilot…) and 60+ AI providers. Smart 3-tier fallback maximizes your subscriptions and keeps you coding when limits hit. Bonus: built-in RTK & Caveman save 20–65% tokens.\nnpm install -g 9router\n9router\napi9 Service Kinds OpenAI-Compatible\nEvery endpoint is OpenAI-compatible. Point your tool to one URL — run LLM, Embedding, TTS, STT, Image, Video, Web Search and more.\nChat / LLM\nOpenAI-compatible chat completions across 60+ providers.\nEmbeddings\nVoyage, Jina, OpenAI, Cohere, Mistral, NVIDIA, Together, Fireworks.\nText-to-Speech\nElevenLabs, Deepgram, Inworld, AWS Polly, Google/Edge TTS, OpenAI.\nSpeech-to-Text\nDeepgram, AssemblyAI, OpenAI Whisper, Qwen STT.\nImage Generation\nFal, Stability, BFL Flux, Recraft, OpenAI, Gemini, MiniMax.\nVision / Image-to-Text\nOpenAI, Gemini, Anthropic, Groq, xAI, Mistral, HuggingFace.\nVideo Generation\nRunway ML, Topaz.\nWeb Search\nTavily, Brave, Serper, Exa, Linkup, Perplexity, Google PSE, SearchAPI.\nWeb Fetch\nTavily, Exa, Firecrawl, Jina Reader.\nHow 9Router Works\nInstall once, connect providers, code non-stop with smart 3-tier fallback.\nInstall & Connect\nnpm install -g 9router\n- Dashboard opens automatically\n- OAuth or API key per provider\nSmart 3-Tier Routing\n⚡ Auto fallback when quota runs out\nCode Non-Stop\n- Point your CLI to\nlocalhost:20128\n- Zero downtime, automatic switching\n- Track quota & usage in real time\nhub60+ AI Providers\nOAuth, API key or browser cookie. Featured 24 below — full list inside the app.\nterminalCLI / IDE Integrations\nPoint any tool to localhost:20128. Per-tool setup guides included.\nterminalCLI Tools (10)\nClaude Code\nAnthropic Claude CLI\nOpenAI Codex\nOpenAI Codex CLI\nOpenClaw\nOpen Claw assistant\nCursor\nAI code editor\nCline\nAI coding assistant\nKilo Code\nKilo Code AI\nRoo\nRoo AI\nContinue\nContinue AI\nFactory Droid\nFactory AI\nHermes Agent\nSelf-improving agent\nshieldMITM Bridge — IDE Subscription Intercept\nIntercept Antigravity / GitHub Copilot / Kiro IDE traffic — use IDE subscriptions to call any backend through 9Router (mind each tool's policy).\nAntigravity\nGoogle Antigravity IDE\nGitHub Copilot\nVS Code Copilot intercept\nKiro IDE\nAWS Kiro IDE intercept\nauto_awesomeAdvanced Features\nCombos, Translator, RTK, Caveman, Multi-account, Cloud sync, Tunnel, Proxy pools, MITM bridge.\nSmart Combos\nChain providers into one virtual provider with sticky round-robin and automatic fallback.\nReal-time Quota\nLive token tracking, reset countdown, cost estimation per provider.\nFormat Translator\nConvert between OpenAI / Anthropic / Gemini formats — any tool with any provider.\nMulti-Account\nMultiple accounts per provider, round-robin load balancing, automatic failover.\nCloud Sync + Tunnel\nCloudflare edge tunnel — use your router from anywhere, 300+ global locations.\nProxy Pools\nVercel relay, outbound proxy, rotate IPs for region-restricted providers.\nMITM Bridge\nIntercept Antigravity / Copilot / Kiro IDE traffic — use IDE subscriptions with any backend.\nOpenAI-Compatible\nOne endpoint speaks chat, embeddings, TTS, STT, image, video, search and fetch.\nVisual Dashboard\nManage providers, keys, combos and usage from a clean local UI.\nAnd while we're at it, save 20–65% tokens for free\nRTK and Caveman Mode ship with 9Router. They quietly compress what goes in and trim what comes out — same answers, fewer tokens.\nRTK Token Saver\n−20–40%Auto-compress tool_result content (git diff, grep, ls, find, tree…) before it reaches the LLM. Lossless, safe, default ON.\nCaveman Mode\n−65%Inject a terse-style system prompt — LLM replies stay technical but compact. Five intensity levels.\n💡 Combine with FREE-tier providers and you're routing for $0/month with built-in token savings.\nrocket_launchGet Started in Two Commands\nInstall globally, connect providers, code with smart auto-fallback.\nInstall Globally\nOne command installs 9Router system-wide.\nnpm install -g 9router\nConnect Providers\nOpen the dashboard and add OAuth or API keys per tier.\nPoint Your Tool\nSet Cursor / Cline / Claude Code / Codex to the OpenAI-compatible endpoint.\nhttp://localhost:20128/v1\nhttp://localhost:20128/v1\nStop Wasting Your AI Subscriptions\nSubscription quota expires unused every month\nRate limits cut your coding session mid-flow\nManually switching between providers wastes time",
+  "template": "news",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "rendering",
+  "storyboard": {
+    "title": "Chỉ 1 Router, mở khoá 60+ AI & không ngắt kết nối?!",
+    "aspect_ratio": "9:16",
+    "template": "news",
+    "theme": "success",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 4.0,
+        "visual_prompt": "Dynamic cinematic close-up of a futuristic network router glowing with animated neon circuits, surrounded by floating icons for AI services (chat, image, voice), deep blue and purple backlight, 4k detail",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Bạn tin nổi không? Chỉ với 1 router, kết nối được hơn 60 AI providers, chạy liên tục không gián đoạn!",
+        "caption": {
+          "vi": "Bạn tin nổi không? Chỉ với 1 router, kết nối được hơn 60 AI providers, chạy liên tục không gián đoạn!"
+        }
+      },
+      {
+        "id": 1,
+        "duration_sec": 3.5,
+        "visual_prompt": "Wide-angle view of dozens of glowing AI logos orbiting around a central router, electric sparks connecting each one, modern cyberpunk atmosphere",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Chỉ cần trỏ CLI hoặc IDE về một endpoint duy nhất — mọi AI lớn nhất đều nằm trong tầm tay bạn!",
+        "caption": {
+          "vi": "Chỉ cần trỏ CLI hoặc IDE về một endpoint duy nhất — mọi AI lớn nhất đều nằm trong tầm tay bạn!"
+        }
+      },
+      {
+        "id": 2,
+        "duration_sec": 3.0,
+        "visual_prompt": "Cinematic UI overlay showing multiple API keys and provider logos filling up a dashboard screen in a sleek, high-tech workspace, glowing data charts animate in real time",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Dashboard trực quan: quản lý provider, key, combo, quota, token sử dụng và chi phí trong thời gian thực!",
+        "caption": {
+          "vi": "Dashboard trực quan: quản lý provider, key, combo, quota, token sử dụng và chi phí trong thời gian thực!"
+        }
+      },
+      {
+        "id": 3,
+        "duration_sec": 3.0,
+        "visual_prompt": "Seamless motion of CLI terminal windows auto-switching between OpenAI, Cohere, Anthropic with speed lines, fallback chain illuminated in green, digital matrix background",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Smart 3-tier fallback: hết quota là tự động chuyển provider, phiên làm việc không bao giờ ngắt giữa chừng.",
+        "caption": {
+          "vi": "Smart 3-tier fallback: hết quota là tự động chuyển provider, phiên làm việc không bao giờ ngắt giữa chừng."
+        }
+      },
+      {
+        "id": 4,
+        "duration_sec": 3.0,
+        "visual_prompt": "Macro shot of code editor, single command 'npm install -g 9router' typed, shimmering effect as installation completes instantly, soft light and sharp focus on code lines",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Cài đặt cực dễ – chỉ cần một dòng npm, tích hợp bất kỳ IDE hoặc CLI qua một URL duy nhất.",
+        "caption": {
+          "vi": "Cài đặt cực dễ – chỉ cần một dòng npm, tích hợp bất kỳ IDE hoặc CLI qua một URL duy nhất."
+        }
+      },
+      {
+        "id": 5,
+        "duration_sec": 3.5,
+        "visual_prompt": "Fast montage: Multiple windows showing token counters dropping sharply, percentage saved with green overlay (-20%, -65%), icons for RTK & Caveman morphing and glowing, sparkling visual effects",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Tích hợp RTK & Caveman giúp tiết kiệm 20 đến 65% token mỗi lần gọi AI – tối ưu cả chất lượng lẫn chi phí!",
+        "caption": {
+          "vi": "Tích hợp RTK & Caveman giúp tiết kiệm 20 đến 65% token mỗi lần gọi AI – tối ưu cả chất lượng lẫn chi phí!"
+        }
+      },
+      {
+        "id": 6,
+        "duration_sec": 3.0,
+        "visual_prompt": "Close-up of IDE screens, text auto-translating and formatting between OpenAI, Anthropic, Gemini formats; multi-account icons, proxy pool animation swirling in background",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Smart combos, chuyển format, multi-account, cloud sync, proxy pools, interception cho mọi IDE bản quyền — tất cả đều trong 9 Router!",
+        "caption": {
+          "vi": "Smart combos, chuyển format, multi-account, cloud sync, proxy pools, interception cho mọi IDE bản quyền — tất cả đều trong 9 Router!"
+        }
+      },
+      {
+        "id": 7,
+        "duration_sec": 2.5,
+        "visual_prompt": "Final shot: Camera pans out from router to cityscape at night, luminous digital lines connecting every building, text “Stop wasting your AI. Start routing smarter”, success flare",
+        "style": null,
+        "voice": null,
+        "type": "kinetic",
+        "text": "Đừng lãng phí subscription và token nữa. Dùng 9 Router — kết nối 60+ AI providers, tiết kiệm tối đa, chỉ với 1 router duy nhất!",
+        "caption": {
+          "vi": "Đừng lãng phí subscription và token nữa. Dùng 9 Router — kết nối 60+ AI providers, tiết kiệm tối đa, chỉ với 1 router duy nhất!"
+        }
+      }
+    ],
+    "total_duration_sec": 25.0
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\subtitle.srt",
+  "output_path": null,
+  "error": "Remotion Render failed: Remotion Render Failed: node:internal/modules/cjs/loader:1210\r\n  throw err;\r\n  ^\r\n\r\nError: Cannot find module 'C:\\Users\\VT COM\\Desktop\\code\\toolRenderVideo\\packages\\remotion-engine\\node_modules\\@remotion\\cli\\bin\\remotion.js'\r\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)\r\n    at Module._load (node:internal/modules/cjs/loader:1038:27)\r\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)\r\n    at node:internal/main/run_main_module:28:49 {\r\n  code: 'MODULE_NOT_FOUND',\r\n  requireStack: []\r\n}\r\n\r\nNode.js v20.20.0",
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 6.733333333333333,
+      "visual_prompt": "Dynamic cinematic close-up of a futuristic network router glowing with animated neon circuits, surrounded by floating icons for AI services (chat, image, voice), deep blue and purple backlight, 4k detail",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Bạn tin nổi không? Chỉ với 1 router, kết nối được hơn 60 AI providers, chạy liên tục không gián đoạn!",
+      "caption": {
+        "vi": "Bạn tin nổi không? Chỉ với 1 router, kết nối được hơn 60 AI providers, chạy liên tục không gián đoạn!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_00.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 6.266666666666667,
+      "visual_prompt": "Wide-angle view of dozens of glowing AI logos orbiting around a central router, electric sparks connecting each one, modern cyberpunk atmosphere",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Chỉ cần trỏ CLI hoặc IDE về một endpoint duy nhất — mọi AI lớn nhất đều nằm trong tầm tay bạn!",
+      "caption": {
+        "vi": "Chỉ cần trỏ CLI hoặc IDE về một endpoint duy nhất — mọi AI lớn nhất đều nằm trong tầm tay bạn!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_01.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 6.933333333333334,
+      "visual_prompt": "Cinematic UI overlay showing multiple API keys and provider logos filling up a dashboard screen in a sleek, high-tech workspace, glowing data charts animate in real time",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Dashboard trực quan: quản lý provider, key, combo, quota, token sử dụng và chi phí trong thời gian thực!",
+      "caption": {
+        "vi": "Dashboard trực quan: quản lý provider, key, combo, quota, token sử dụng và chi phí trong thời gian thực!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_02.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 7.066666666666666,
+      "visual_prompt": "Seamless motion of CLI terminal windows auto-switching between OpenAI, Cohere, Anthropic with speed lines, fallback chain illuminated in green, digital matrix background",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Smart 3-tier fallback: hết quota là tự động chuyển provider, phiên làm việc không bao giờ ngắt giữa chừng.",
+      "caption": {
+        "vi": "Smart 3-tier fallback: hết quota là tự động chuyển provider, phiên làm việc không bao giờ ngắt giữa chừng."
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_03.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.933333333333334,
+      "visual_prompt": "Macro shot of code editor, single command 'npm install -g 9router' typed, shimmering effect as installation completes instantly, soft light and sharp focus on code lines",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Cài đặt cực dễ – chỉ cần một dòng npm, tích hợp bất kỳ IDE hoặc CLI qua một URL duy nhất.",
+      "caption": {
+        "vi": "Cài đặt cực dễ – chỉ cần một dòng npm, tích hợp bất kỳ IDE hoặc CLI qua một URL duy nhất."
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_04.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 7.0,
+      "visual_prompt": "Fast montage: Multiple windows showing token counters dropping sharply, percentage saved with green overlay (-20%, -65%), icons for RTK & Caveman morphing and glowing, sparkling visual effects",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Tích hợp RTK & Caveman giúp tiết kiệm 20 đến 65% token mỗi lần gọi AI – tối ưu cả chất lượng lẫn chi phí!",
+      "caption": {
+        "vi": "Tích hợp RTK & Caveman giúp tiết kiệm 20 đến 65% token mỗi lần gọi AI – tối ưu cả chất lượng lẫn chi phí!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_05.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 8.8,
+      "visual_prompt": "Close-up of IDE screens, text auto-translating and formatting between OpenAI, Anthropic, Gemini formats; multi-account icons, proxy pool animation swirling in background",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Smart combos, chuyển format, multi-account, cloud sync, proxy pools, interception cho mọi IDE bản quyền — tất cả đều trong 9 Router!",
+      "caption": {
+        "vi": "Smart combos, chuyển format, multi-account, cloud sync, proxy pools, interception cho mọi IDE bản quyền — tất cả đều trong 9 Router!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_06.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 8.466666666666667,
+      "visual_prompt": "Final shot: Camera pans out from router to cityscape at night, luminous digital lines connecting every building, text “Stop wasting your AI. Start routing smarter”, success flare",
+      "style": null,
+      "voice": null,
+      "type": "kinetic",
+      "text": "Đừng lãng phí subscription và token nữa. Dùng 9 Router — kết nối 60+ AI providers, tiết kiệm tối đa, chỉ với 1 router duy nhất!",
+      "caption": {
+        "vi": "Đừng lãng phí subscription và token nữa. Dùng 9 Router — kết nối 60+ AI providers, tiết kiệm tối đa, chỉ với 1 router duy nhất!"
+      },
+      "audio_path": "..\\..\\storage\\audio\\4b8d52ea-5c37-416c-8fd8-6d0e767622c0\\scene_07.mp3",
+      "video_path": "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T18:30:30.454418Z",
+  "updated_at": "2026-05-14T18:43:33.357932Z"
+}

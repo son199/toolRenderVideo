@@ -1,0 +1,413 @@
+{
+  "id": "f292240b-d56b-4c01-b79a-25d10b3fa6a1",
+  "user_id": null,
+  "title": "Giới thiệu 1 dự án đang hot trên github",
+  "input_type": "url",
+  "input_value": "https://github.com/obra/superpowers",
+  "upload_path": null,
+  "raw_text": "Superpowers is a complete software development methodology for your coding agents, built on top of a set of composable skills and some initial instructions that make sure your agent uses them.\nGive your agent Superpowers: Claude Code, Codex CLI, Codex App, Factory Droid, Gemini CLI, OpenCode, Cursor, GitHub Copilot CLI.\nIt starts from the moment you fire up your coding agent. As soon as it sees that you're building something, it doesn't just jump into trying to write code. Instead, it steps back and asks you what you're really trying to do.\nOnce it's teased a spec out of the conversation, it shows it to you in chunks short enough to actually read and digest.\nAfter you've signed off on the design, your agent puts together an implementation plan that's clear enough for an enthusiastic junior engineer with poor taste, no judgement, no project context, and an aversion to testing to follow. It emphasizes true red/green TDD, YAGNI (You Aren't Gonna Need It), and DRY.\nNext up, once you say \"go\", it launches a subagent-driven-development process, having agents work through each engineering task, inspecting and reviewing their work, and continuing forward. It's not uncommon for Claude to be able to work autonomously for a couple hours at a time without deviating from the plan you put together.\nThere's a bunch more to it, but that's the core of the system. And because the skills trigger automatically, you don't need to do anything special. Your coding agent just has Superpowers.\nIf Superpowers has helped you do stuff that makes money and you are so inclined, I'd greatly appreciate it if you'd consider sponsoring my opensource work.\nThanks!\n- Jesse\nInstallation differs by harness. If you use more than one, install Superpowers separately for each one.\nSuperpowers is available via the official Claude plugin marketplace\n-\nInstall the plugin from Anthropic's official marketplace:\n/plugin install superpowers@claude-plugins-official\nThe Superpowers marketplace provides Superpowers and some other related plugins for Claude Code.\n-\nRegister the marketplace:\n/plugin marketplace add obra/superpowers-marketplace\n-\nInstall the plugin from this marketplace:\n/plugin install superpowers@superpowers-marketplace\nSuperpowers is available via the official Codex plugin marketplace.\n-\nOpen the plugin search interface:\n/plugins\n-\nSearch for Superpowers:\nsuperpowers\n-\nSelect\nInstall Plugin\n.\nSuperpowers is available via the official Codex plugin marketplace.\n- In the Codex app, click on Plugins in the sidebar.\n- You should see\nSuperpowers\nin the Coding section. - Click the\n+\nnext to Superpowers and follow the prompts.\n-\nRegister the marketplace:\ndroid plugin marketplace add https://github.com/obra/superpowers\n-\nInstall the plugin:\ndroid plugin install superpowers@superpowers\n-\nInstall the extension:\ngemini extensions install https://github.com/obra/superpowers\n-\nUpdate later:\ngemini extensions update superpowers\nOpenCode uses its own plugin install; install Superpowers separately even if you already use it in another harness.\n-\nTell OpenCode:\nFetch and follow instructions from https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.opencode/INSTALL.md\n-\nDetailed docs: docs/README.opencode.md\n-\nIn Cursor Agent chat, install from marketplace:\n/add-plugin superpowers\n-\nOr search for \"superpowers\" in the plugin marketplace.\n-\nRegister the marketplace:\ncopilot plugin marketplace add obra/superpowers-marketplace\n-\nInstall the plugin:\ncopilot plugin install superpowers@superpowers-marketplace\n-\nbrainstorming - Activates before writing code. Refines rough ideas through questions, explores alternatives, presents design in sections for validation. Saves design document.\n-\nusing-git-worktrees - Activates after design approval. Creates isolated workspace on new branch, runs project setup, verifies clean test baseline.\n-\nwriting-plans - Activates with approved design. Breaks work into bite-sized tasks (2-5 minutes each). Every task has exact file paths, complete code, verification steps.\n-\nsubagent-driven-development or executing-plans - Activates with plan. Dispatches fresh subagent per task with two-stage review (spec compliance, then code quality), or executes in batches with human checkpoints.\n-\ntest-driven-development - Activates during implementation. Enforces RED-GREEN-REFACTOR: write failing test, watch it fail, write minimal code, watch it pass, commit. Deletes code written before tests.\n-\nrequesting-code-review - Activates between tasks. Reviews against plan, reports issues by severity. Critical issues block progress.\n-\nfinishing-a-development-branch - Activates when tasks complete. Verifies tests, presents options (merge/PR/keep/discard), cleans up worktree.\nThe agent checks for relevant skills before any task. Mandatory workflows, not suggestions.\nTesting\n- test-driven-development - RED-GREEN-REFACTOR cycle (includes testing anti-patterns reference)\nDebugging\n- systematic-debugging - 4-phase root cause process (includes root-cause-tracing, defense-in-depth, condition-based-waiting techniques)\n- verification-before-completion - Ensure it's actually fixed\nCollaboration\n- brainstorming - Socratic design refinement\n- writing-plans - Detailed implementation plans\n- executing-plans - Batch execution with checkpoints\n- dispatching-parallel-agents - Concurrent subagent workflows\n- requesting-code-review - Pre-review checklist\n- receiving-code-review - Responding to feedback\n- using-git-worktrees - Parallel development branches\n- finishing-a-development-branch - Merge/PR decision workflow\n- subagent-driven-development - Fast iteration with two-stage review (spec compliance, then code quality)\nMeta\n- writing-skills - Create new skills following best practices (includes testing methodology)\n- using-superpowers - Introduction to the skills system\n- Test-Driven Development - Write tests first, always\n- Systematic over ad-hoc - Process over guessing\n- Complexity reduction - Simplicity as primary goal\n- Evidence over claims - Verify before declaring success\nRead the original release announcement.\nThe general contribution process for Superpowers is below. Keep in mind that we don't generally accept contributions of new skills and that any updates to skills must work across all of the coding agents we support.\n- Fork the repository\n- Switch to the 'dev' branch\n- Create a branch for your work\n- Follow the\nwriting-skills\nskill for creating and testing new and modified skills - Submit a PR, being sure to fill in the pull request template.\nSee skills/writing-skills/SKILL.md\nfor the complete guide.\nSuperpowers updates are somewhat coding-agent dependent, but are often automatic.\nMIT License - see LICENSE file for details\nSuperpowers is built by Jesse Vincent and the rest of the folks at Prime Radiant.\n- Discord: Join us for community support, questions, and sharing what you're building with Superpowers\n- Issues: https://github.com/obra/superpowers/issues\n- Release announcements: Sign up to get notified about new versions",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "completed",
+  "storyboard": {
+    "title": "Superpowers — Cài plugin một lần, chạy trên 7 coding agent tự động",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "default",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 3.7,
+        "visual_prompt": "Split-screen, lập trình viên ngồi trước màn hình, cố gắng quản lý cài đặt plugin riêng cho từng agent AI; UI hiện cảnh đa cửa sổ và tab plugin trên nhiều nền máy tính hiện đại, ánh sáng xanh dương digital và bóng tối nhẹ trên mặt coder.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "emoji": "🤖",
+        "headline": "Bạn vẫn loay hoay triển kh ai 5 plugin cho mỗi agent?",
+        "sub": "Đồng bộ thao tác trên đa nền tảng",
+        "accent": true,
+        "caption": {
+          "vi": "🤖 Bạn vẫn loay hoay triển kh ai 5 plugin cho từng agent lập trình một?",
+          "en": "Still juggling 5 plugins for every coding agent?"
+        },
+        "text": "🤖 Bạn vẫn loay hoay triển kh ai 5 plugin cho từng agent lập trình một?",
+        "animation_phases": {
+          "intro": {
+            "emoji": "bounce-in 0.3s spring",
+            "headline_words": "stagger-up 0.08s/word ease-out"
+          },
+          "hold": {
+            "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+            "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "blur-out + scale 1→0.95 0.3s ease-in"
+          }
+        }
+      },
+      {
+        "id": 1,
+        "duration_sec": 3.7,
+        "visual_prompt": "Giao diện desktop hiện đại với 7 logo agent AI lớn (Claude, Codex, Copilot, Gemini, Cursor, Droid, OpenCode) kết nối thành dải sáng trung tâm, hiệu ứng ánh sáng nối liền từng logo bằng luồng xanh ngọc, nền hơi mờ đậm chiều sâu.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "headline": "Giờ chỉ cần 1 kỹ năng hợp nhất cho 7 nền tảng",
+        "sub": "Claude, Codex, Gemini, Copilot, Cursor...",
+        "accent": true,
+        "caption": {
+          "vi": "Chỉ với một bộ kỹ năng, bạn hỗ trợ đồng thời 7 nền tảng agent nổi bật.",
+          "en": "One skillset powers 7 top coding agents."
+        },
+        "text": "Chỉ với một bộ kỹ năng, bạn hỗ trợ đồng thời 7 nền tảng agent nổi bật.",
+        "animation_phases": {
+          "intro": {
+            "emoji": "bounce-in 0.3s spring",
+            "headline_words": "stagger-up 0.08s/word ease-out"
+          },
+          "hold": {
+            "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+            "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "blur-out + scale 1→0.95 0.3s ease-in"
+          }
+        }
+      },
+      {
+        "id": 2,
+        "duration_sec": 4.3,
+        "visual_prompt": "Logo Superpowers phát sáng xanh lục neon ở trung tâm, xung quanh là các icon agent (Claude, Codex, Gemini, Cursor, Copilot, Droid, OpenCode) trên nền tối có hiệu ứng depth-of-field; nền có gradient tím-xanh, ánh sáng phản chiếu mạnh tạo không khí công nghệ cao sáng tạo, overlay chiselled với các đường circuit glow uốn quanh.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "product-card",
+        "name": "Superpowers",
+        "tagline": "Triển khai đa nền tảng, hợp nhất quy trình",
+        "badge": "🚀 LAUNCH",
+        "subtext": "BEFORE: plugin lặp lại → AFTER: cài 1 lần cho nhiều agent",
+        "caption": {
+          "vi": "Superpowers — triển kh ai plugin đồng loạt trên mọi agent chỉ với một lần cài đặt.",
+          "en": "Superpowers — deploy plugins across agents, install once."
+        },
+        "text": "Superpowers — triển kh ai plugin đồng loạt trên mọi agent chỉ với một lần cài đặt.",
+        "animation_phases": {
+          "intro": {
+            "logo": "pop-in 0.3s",
+            "badge": "fade-in 0.2s"
+          },
+          "hold": {
+            "logo": "float y:-6px 2s repeat:-1 yoyo:true",
+            "badge": "pulse-glow 2s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "fade-out scale:1→1.02 0.3s"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "duration_sec": 4.7,
+        "visual_prompt": "Ba block lớn, mỗi block nổi bật bằng card màu sáng, icon động và hiệu ứng hover nổi, nền split-screen lần lượt hiện cảnh agent AI khác nhau đang hoạt động: brainstom (Claude), workflow automation (Codex), marketplace install (Copilot). Các hiệu ứng border glow và dòng dữ liệu chạy nền.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "feature-grid",
+        "features": [
+          {
+            "icon": "⚡",
+            "title": "Kích hoạt auto quy trình chuyên sâu",
+            "desc": "brainstorm, TDD, code review, debug"
+          },
+          {
+            "icon": "🔄",
+            "title": "Workflow subagent tự vận hành",
+            "desc": "Tự động hóa chia task & kiểm thử"
+          },
+          {
+            "icon": "📦",
+            "title": "Cài chính thức trên 7 marketplace",
+            "desc": "Claude, Codex, Gemini, Copilot, Cursor, OpenCode, Droid"
+          }
+        ],
+        "caption": {
+          "vi": "Kích hoạt quy trình br ainstorming, TDD và review tự động hóa trên 7 nền tảng chỉ với Superpowers.",
+          "en": "Auto workflow, TDD, review — all 7 agents, one skill."
+        },
+        "text": "Kích hoạt quy trình br ainstorming, TDD và review tự động hóa trên 7 nền tảng chỉ với Superpowers.",
+        "animation_phases": {
+          "intro": {
+            "items": "stagger-pop-in 0.12s/item spring delay:0.2s"
+          },
+          "hold": {
+            "card_float": "subtle-float y:-4px 2.5s repeat:-1 yoyo:true",
+            "border_glow": "border-glow pulse 1.6s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "stagger-fade-down 0.08s/item"
+          }
+        },
+        "tts_beats": [
+          {
+            "at_word": 0,
+            "action": "focus_item",
+            "item": 0
+          },
+          {
+            "at_word": 5,
+            "action": "focus_item",
+            "item": 1
+          },
+          {
+            "at_word": 13,
+            "action": "focus_item",
+            "item": 2
+          },
+          {
+            "at_word": 20,
+            "action": "hold_start"
+          },
+          {
+            "at_word": -1,
+            "action": "outro_start"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "duration_sec": 4.1,
+        "visual_prompt": "Giao diện command line hiện command 'plugin install', nền sáng-tối tech, hiệu ứng code blink, badge MIT license hiện lớn với viền xanh. Góc dưới có icon hồ sơ Jesse Vincent và logo Prime Radiant.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "cta-url",
+        "label": "Tải ngay Superpowers miễn phí",
+        "url": "github.com/obra/superpowers",
+        "sub": "MIT License · Jesse Vincent (Prime Radiant)",
+        "caption": {
+          "vi": "Tải ngay Superpowers miễn phí tại github.com/ob ra/superpowers — hỗ trợ MIT license bởi Jesse Vincent.",
+          "en": "Install Superpowers free at github.com/ob ra/superpowers now."
+        },
+        "text": "Tải ngay Superpowers miễn phí tại github.com/ob ra/superpowers — hỗ trợ MIT license bởi Jesse Vincent.",
+        "animation_phases": {
+          "intro": {
+            "label": "bounce-in 0.4s spring",
+            "url_box": "fade-slide-up 0.3s delay:0.3s"
+          },
+          "hold": {
+            "label": "text-glow pulse amber 2s repeat:-1 yoyo:true",
+            "urgency_badge": "scale 1.0↔1.06 1.5s repeat:-1 yoyo:true",
+            "bg": "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"
+          },
+          "outro": {
+            "all": "fade-out scale:1→1.02 0.3s"
+          }
+        }
+      }
+    ],
+    "total_duration_sec": 20.5
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\f292240b-d56b-4c01-b79a-25d10b3fa6a1\\subtitle.srt",
+  "output_path": "..\\..\\storage\\output\\f292240b-d56b-4c01-b79a-25d10b3fa6a1.mp4",
+  "error": null,
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 4.666666666666667,
+      "visual_prompt": "Split-screen, lập trình viên ngồi trước màn hình, cố gắng quản lý cài đặt plugin riêng cho từng agent AI; UI hiện cảnh đa cửa sổ và tab plugin trên nhiều nền máy tính hiện đại, ánh sáng xanh dương digital và bóng tối nhẹ trên mặt coder.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "emoji": "🤖",
+      "headline": "Bạn vẫn loay hoay triển kh ai 5 plugin cho mỗi agent?",
+      "sub": "Đồng bộ thao tác trên đa nền tảng",
+      "accent": true,
+      "caption": {
+        "vi": "🤖 Bạn vẫn loay hoay triển kh ai 5 plugin cho từng agent lập trình một?",
+        "en": "Still juggling 5 plugins for every coding agent?"
+      },
+      "text": "🤖 Bạn vẫn loay hoay triển kh ai 5 plugin cho từng agent lập trình một?",
+      "animation_phases": {
+        "intro": {
+          "emoji": "bounce-in 0.3s spring",
+          "headline_words": "stagger-up 0.08s/word ease-out"
+        },
+        "hold": {
+          "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+          "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "blur-out + scale 1→0.95 0.3s ease-in"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\f292240b-d56b-4c01-b79a-25d10b3fa6a1\\scene_00.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 4.666666666666667,
+      "visual_prompt": "Giao diện desktop hiện đại với 7 logo agent AI lớn (Claude, Codex, Copilot, Gemini, Cursor, Droid, OpenCode) kết nối thành dải sáng trung tâm, hiệu ứng ánh sáng nối liền từng logo bằng luồng xanh ngọc, nền hơi mờ đậm chiều sâu.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "headline": "Giờ chỉ cần 1 kỹ năng hợp nhất cho 7 nền tảng",
+      "sub": "Claude, Codex, Gemini, Copilot, Cursor...",
+      "accent": true,
+      "caption": {
+        "vi": "Chỉ với một bộ kỹ năng, bạn hỗ trợ đồng thời 7 nền tảng agent nổi bật.",
+        "en": "One skillset powers 7 top coding agents."
+      },
+      "text": "Chỉ với một bộ kỹ năng, bạn hỗ trợ đồng thời 7 nền tảng agent nổi bật.",
+      "animation_phases": {
+        "intro": {
+          "emoji": "bounce-in 0.3s spring",
+          "headline_words": "stagger-up 0.08s/word ease-out"
+        },
+        "hold": {
+          "emoji": "float y:-6px 1.8s repeat:-1 yoyo:true",
+          "bg_gradient": "shift-hue 4s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "blur-out + scale 1→0.95 0.3s ease-in"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\f292240b-d56b-4c01-b79a-25d10b3fa6a1\\scene_01.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 5.466666666666667,
+      "visual_prompt": "Logo Superpowers phát sáng xanh lục neon ở trung tâm, xung quanh là các icon agent (Claude, Codex, Gemini, Cursor, Copilot, Droid, OpenCode) trên nền tối có hiệu ứng depth-of-field; nền có gradient tím-xanh, ánh sáng phản chiếu mạnh tạo không khí công nghệ cao sáng tạo, overlay chiselled với các đường circuit glow uốn quanh.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "product-card",
+      "name": "Superpowers",
+      "tagline": "Triển khai đa nền tảng, hợp nhất quy trình",
+      "badge": "🚀 LAUNCH",
+      "subtext": "BEFORE: plugin lặp lại → AFTER: cài 1 lần cho nhiều agent",
+      "caption": {
+        "vi": "Superpowers — triển kh ai plugin đồng loạt trên mọi agent chỉ với một lần cài đặt.",
+        "en": "Superpowers — deploy plugins across agents, install once."
+      },
+      "text": "Superpowers — triển kh ai plugin đồng loạt trên mọi agent chỉ với một lần cài đặt.",
+      "animation_phases": {
+        "intro": {
+          "logo": "pop-in 0.3s",
+          "badge": "fade-in 0.2s"
+        },
+        "hold": {
+          "logo": "float y:-6px 2s repeat:-1 yoyo:true",
+          "badge": "pulse-glow 2s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out scale:1→1.02 0.3s"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\f292240b-d56b-4c01-b79a-25d10b3fa6a1\\scene_02.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 6.533333333333333,
+      "visual_prompt": "Ba block lớn, mỗi block nổi bật bằng card màu sáng, icon động và hiệu ứng hover nổi, nền split-screen lần lượt hiện cảnh agent AI khác nhau đang hoạt động: brainstom (Claude), workflow automation (Codex), marketplace install (Copilot). Các hiệu ứng border glow và dòng dữ liệu chạy nền.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "feature-grid",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "Kích hoạt auto quy trình chuyên sâu",
+          "desc": "brainstorm, TDD, code review, debug"
+        },
+        {
+          "icon": "🔄",
+          "title": "Workflow subagent tự vận hành",
+          "desc": "Tự động hóa chia task & kiểm thử"
+        },
+        {
+          "icon": "📦",
+          "title": "Cài chính thức trên 7 marketplace",
+          "desc": "Claude, Codex, Gemini, Copilot, Cursor, OpenCode, Droid"
+        }
+      ],
+      "caption": {
+        "vi": "Kích hoạt quy trình br ainstorming, TDD và review tự động hóa trên 7 nền tảng chỉ với Superpowers.",
+        "en": "Auto workflow, TDD, review — all 7 agents, one skill."
+      },
+      "text": "Kích hoạt quy trình br ainstorming, TDD và review tự động hóa trên 7 nền tảng chỉ với Superpowers.",
+      "animation_phases": {
+        "intro": {
+          "items": "stagger-pop-in 0.12s/item spring delay:0.2s"
+        },
+        "hold": {
+          "card_float": "subtle-float y:-4px 2.5s repeat:-1 yoyo:true",
+          "border_glow": "border-glow pulse 1.6s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "stagger-fade-down 0.08s/item"
+        }
+      },
+      "tts_beats": [
+        {
+          "at_word": 0,
+          "action": "focus_item",
+          "item": 0
+        },
+        {
+          "at_word": 5,
+          "action": "focus_item",
+          "item": 1
+        },
+        {
+          "at_word": 13,
+          "action": "focus_item",
+          "item": 2
+        },
+        {
+          "at_word": 20,
+          "action": "hold_start"
+        },
+        {
+          "at_word": -1,
+          "action": "outro_start"
+        }
+      ],
+      "audio_path": "..\\..\\storage\\audio\\f292240b-d56b-4c01-b79a-25d10b3fa6a1\\scene_03.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 6.8,
+      "visual_prompt": "Giao diện command line hiện command 'plugin install', nền sáng-tối tech, hiệu ứng code blink, badge MIT license hiện lớn với viền xanh. Góc dưới có icon hồ sơ Jesse Vincent và logo Prime Radiant.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "cta-url",
+      "label": "Tải ngay Superpowers miễn phí",
+      "url": "github.com/obra/superpowers",
+      "sub": "MIT License · Jesse Vincent (Prime Radiant)",
+      "caption": {
+        "vi": "Tải ngay Superpowers miễn phí tại github.com/ob ra/superpowers — hỗ trợ MIT license bởi Jesse Vincent.",
+        "en": "Install Superpowers free at github.com/ob ra/superpowers now."
+      },
+      "text": "Tải ngay Superpowers miễn phí tại github.com/ob ra/superpowers — hỗ trợ MIT license bởi Jesse Vincent.",
+      "animation_phases": {
+        "intro": {
+          "label": "bounce-in 0.4s spring",
+          "url_box": "fade-slide-up 0.3s delay:0.3s"
+        },
+        "hold": {
+          "label": "text-glow pulse amber 2s repeat:-1 yoyo:true",
+          "urgency_badge": "scale 1.0↔1.06 1.5s repeat:-1 yoyo:true",
+          "bg": "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out scale:1→1.02 0.3s"
+        }
+      },
+      "audio_path": "..\\..\\storage\\audio\\f292240b-d56b-4c01-b79a-25d10b3fa6a1\\scene_04.mp3",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T16:50:01.272209Z",
+  "updated_at": "2026-05-14T16:54:30.665060Z"
+}

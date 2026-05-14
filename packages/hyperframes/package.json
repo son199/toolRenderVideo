@@ -1,8 +1,0 @@
-{
-  "name": "@aividforge/hyperframes",
-  "version": "0.1.0",
-  "private": true,
-  "description": "Hyperframes - HTML + CSS + GSAP video templates rendered by Playwright",
-  "type": "module",
-  "main": "index.js"
-}

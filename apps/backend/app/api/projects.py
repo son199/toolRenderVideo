@@ -14,8 +14,7 @@ from app.schemas.project import Project, ProjectCreate, ProjectUpdate
 from app.services.ingest import IngestError, ingest
 from app.services.llm import get_provider as get_llm_provider
 from app.services.llm.base import LLMError
-from app.services.render import RenderError, assemble_final_video, record_template
-from app.services.render.ffmpeg_post import FFmpegError
+from app.services.render import RemotionError, render_remotion
 from app.services.scene_text import narration_text
 from app.services.subtitle import timings_to_dict, whisper_align, write_srt
 from app.services.tts import get_provider as get_tts_provider
@@ -229,16 +228,15 @@ async def generate_tts(project_id: uuid.UUID, use_whisper_fallback: bool = False
     responses={
         **_NOT_FOUND,
         **_VALIDATION,
-        500: {"description": "Playwright / FFmpeg render failed"},
+        500: {"description": "Remotion render failed"},
     },
 )
-async def render_video(project_id: uuid.UUID, burn_subtitle: bool = True) -> Project:
-    """Drive Hyperframes via Playwright, then mux audio + burn SRT into final MP4.
+async def render_video(project_id: uuid.UUID) -> Project:
+    """Render video directly via Remotion Engine.
 
     Pre-requirements (returns 422 if missing):
     - project.storyboard populated
     - project.scenes[].audio_path populated (run /tts first)
-    - project.subtitle_path populated (only when ``burn_subtitle=true``)
     """
     project = repository.get_project(project_id)
     if project is None:
@@ -252,7 +250,6 @@ async def render_video(project_id: uuid.UUID, burn_subtitle: bool = True) -> Pro
         )
 
     settings = get_settings()
-    frames_dir = settings.storage_frames / str(project.id)
     output_dir = settings.storage_output
     output_path = output_dir / f"{project.id}.mp4"
 
@@ -262,34 +259,13 @@ async def render_video(project_id: uuid.UUID, burn_subtitle: bool = True) -> Pro
     project = repository.get_project(project_id) or project
 
     try:
-        audio_meta = [
-            {
-                "scene_id": s["id"],
-                "duration_sec": s["duration_sec"],
-                "word_timings": s.get("word_timings"),
-            }
-            for s in project.scenes
-        ]
-
-        result = await record_template(
+        await render_remotion(
+            project_id=str(project.id),
+            scenes=project.scenes,
             template=project.template,
-            storyboard=project.storyboard,
-            audio_meta=audio_meta,
-            aspect_ratio=project.aspect_ratio,
-            out_dir=frames_dir,
+            output_path=output_path,
         )
-
-        audio_files = [Path(s["audio_path"]) for s in project.scenes]
-        srt_path = Path(project.subtitle_path) if project.subtitle_path else None
-
-        assemble_final_video(
-            raw_video=result.webm_path,
-            audio_files=audio_files,
-            srt_path=srt_path if burn_subtitle else None,
-            out_path=output_path,
-            burn_subtitle=burn_subtitle and srt_path is not None,
-        )
-    except (RenderError, FFmpegError) as exc:
+    except RemotionError as exc:
         logger.exception("Render failed for %s", project.id)
         repository.update_project(
             project.id, {"status": "failed", "error": f"Render failed: {exc}"}
