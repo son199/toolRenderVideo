@@ -1,0 +1,77 @@
+{
+  "storyboard": {
+    "title": "AIVidForge — tạo video Shorts trong 3 phút",
+    "slug": "aividforge-launch",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "default",
+    "voice": "vi-VN-HoaiMyNeural",
+    "scenes": [
+      {
+        "id": 0,
+        "type": "hero-text",
+        "duration_sec": 3.5,
+        "emoji": "💸",
+        "headline": "Bạn vẫn mất 2 tiếng mỗi ngày để dựng video?",
+        "sub": "Thủ công, mệt mỏi, mất cảm hứng",
+        "accent": true,
+        "caption": {
+          "vi": "💸 Bạn vẫn mất 2 tiếng mỗi ngày chỉ để dựng một video ngắn?",
+          "en": "Still burning 2 hours daily on video editing?"
+        }
+      },
+      {
+        "id": 1,
+        "type": "hero-text",
+        "duration_sec": 3.5,
+        "headline": "Quy trình thủ công ngốn thời gian quý báu",
+        "sub": "Trong khi nội dung phải đăng mỗi ngày",
+        "caption": {
+          "vi": "Quy trình thủ công ngốn thời gian và cảm hứng sáng tạo của bạn.",
+          "en": "Manual workflow eats time and creative energy"
+        }
+      },
+      {
+        "id": 2,
+        "type": "product-card",
+        "duration_sec": 4.0,
+        "name": "AIVidForge",
+        "tagline": "Video Shorts hoàn chỉnh trong 3 phút",
+        "badge": "🚀 LAUNCH",
+        "subtext": "BEFORE 2h → AFTER 3min",
+        "caption": {
+          "vi": "AIVidForge — video Shorts hoàn chỉnh chỉ trong 3 phút, AI tự lo từ A đến Z.",
+          "en": "AIVidForge — full Shorts videos in 3 minutes"
+        }
+      },
+      {
+        "id": 3,
+        "type": "feature-grid",
+        "duration_sec": 4.5,
+        "features": [
+          { "icon": "🇻🇳", "title": "Tiếng Việt tự nhiên", "desc": "voice AI cảm xúc, không robot" },
+          { "icon": "⚡", "title": "Render trong 3 phút", "desc": "9:16 + 16:9 tự động" },
+          { "icon": "🎨", "title": "Template chuyên ngách", "desc": "news, promo, motivational" }
+        ],
+        "caption": {
+          "vi": "Tiếng Việt tự nhiên, render trong 3 phút, template chuyên ngành.",
+          "en": "Natural Vietnamese · 3-min render · niche templates"
+        }
+      },
+      {
+        "id": 4,
+        "type": "cta-url",
+        "duration_sec": 4.0,
+        "label": "Đăng ký miễn phí ngay hôm nay",
+        "url": "aividforge.com",
+        "sub": "Trial 7 ngày · Không cần thẻ tín dụng",
+        "caption": {
+          "vi": "Đăng ký dùng thử miễn phí 7 ngày tại aividforge.com — bắt đầu ngay!",
+          "en": "Sign up free · 7-day trial · No card"
+        }
+      }
+    ],
+    "total_duration_sec": 19.5
+  },
+  "audio_meta": null
+}

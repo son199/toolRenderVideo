@@ -1,0 +1,100 @@
+{
+  "storyboard": {
+    "title": "Ransomware tê liệt 3 bệnh viện Bắc Mỹ",
+    "slug": "ransomware-hospital-72h",
+    "aspect_ratio": "9:16",
+    "template": "news",
+    "variant": "INCIDENT",
+    "theme": "danger",
+    "voice": "vi-VN-HoaiMyNeural",
+    "scenes": [
+      {
+        "id": 0,
+        "type": "hero-text",
+        "duration_sec": 3.5,
+        "emoji": "🚨",
+        "headline": "3 bệnh viện Bắc Mỹ bị ransomware tê liệt",
+        "sub": "72 giờ — chưa khôi phục được",
+        "accent": true,
+        "caption": {
+          "vi": "🚨 3 bệnh viện Bắc Mỹ bị ransomware tê liệt trong 72 giờ.",
+          "en": "3 North American hospitals offline for 72 hours"
+        }
+      },
+      {
+        "id": 1,
+        "type": "stats-grid",
+        "duration_sec": 5.0,
+        "layout": "grid-4",
+        "stats": [
+          { "big": "12000", "label": "hồ sơ bị mã hoá", "counter_animate": true },
+          { "big": "450M $", "label": "tiền chuộc yêu cầu", "accent": true },
+          { "big": "72h", "label": "hệ thống tê liệt" },
+          { "big": "3", "label": "bệnh viện bị tấn công", "counter_animate": true }
+        ],
+        "caption": {
+          "vi": "12,000 hồ sơ bị mã hoá. 450 triệu USD đòi chuộc. 72 giờ chưa khôi phục.",
+          "en": "12K records · $450M ransom · 72h downtime · 3 hospitals"
+        }
+      },
+      {
+        "id": 2,
+        "type": "terminal",
+        "duration_sec": 5.0,
+        "title": "exploit — CVE-2026-1234",
+        "shell_prompt": "root@attacker:~#",
+        "lines": [
+          { "type": "prompt",  "text": "nmap -p 445 --script smb-vuln-ms17-010 192.168.1.0/24" },
+          { "type": "output",  "text": "Scanning 256 hosts..." },
+          { "type": "error",   "text": "VULNERABLE: CVE-2026-1234 (CVSS 9.8) — SMB port 445" },
+          { "type": "prompt",  "text": "python3 exploit.py --target 192.168.1.105 --port 445" },
+          { "type": "success", "text": "[+] Shell obtained. Deploying ransomware payload..." }
+        ],
+        "caption": {
+          "vi": "Khai thác CVE-2026-1234 trong giao thức SMB qua cổng 445 — chưa có patch.",
+          "en": "CVE-2026-1234 exploited via SMB port 445 · unpatched"
+        }
+      },
+      {
+        "id": 3,
+        "type": "quote",
+        "duration_sec": 4.5,
+        "size": "normal",
+        "text": "Chiến dịch đang nhắm vào cơ sở hạ tầng y tế toàn Bắc Mỹ, kêu gọi vá khẩn.",
+        "attr": "CISA — 2026-05-13",
+        "caption": {
+          "vi": "CISA xác nhận chiến dịch nhắm vào ngành y tế Bắc Mỹ, kêu gọi vá khẩn cấp.",
+          "en": "CISA confirms healthcare-targeted ransomware campaign"
+        }
+      },
+      {
+        "id": 4,
+        "type": "hero-text",
+        "duration_sec": 4.0,
+        "emoji": "🏥",
+        "headline": "Bệnh nhân cấp cứu phải chuyển bệnh viện",
+        "sub": "Dịch vụ y tế gián đoạn toàn bộ",
+        "accent": false,
+        "caption": {
+          "vi": "Bệnh nhân cấp cứu buộc phải chuyển sang bệnh viện lân cận.",
+          "en": "ER patients rerouted · medical services disrupted"
+        }
+      },
+      {
+        "id": 5,
+        "type": "cta-url",
+        "duration_sec": 4.0,
+        "label": "Vá lỗ hổng SMB ngay hôm nay",
+        "url": "cisa.gov/known-exploited-vulnerabilities",
+        "sub": "Deadline 48 giờ · Microsoft KB5034441",
+        "urgency_badge": "⏰ 48h",
+        "caption": {
+          "vi": "Vá patch khẩn từ Microsoft ngay trong 48 giờ tới.",
+          "en": "Patch now · 48h deadline · KB5034441"
+        }
+      }
+    ],
+    "total_duration_sec": 26.0
+  },
+  "audio_meta": null
+}

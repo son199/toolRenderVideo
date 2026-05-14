@@ -1,0 +1,874 @@
+/* ============================================================
+   NEWS FLASH — Production-grade TikTok/Reels video template
+   Design: cinematic dark, red urgency, editorial type system
+   ============================================================ */
+
+/* ─── Design tokens ─── */
+:root {
+  --red:        #e63030;
+  --red-bright: #ff4040;
+  --red-deep:   #9b1c1c;
+  --red-glow:   rgba(230, 48, 48, 0.18);
+  --amber:      #f59e0b;
+  --amber-dim:  rgba(245, 158, 11, 0.15);
+  --white:      #ffffff;
+  --off-white:  #f1f0ed;
+  --muted:      #a8a7a2;
+  --faint:      #4a4945;
+  --bg:         #080808;
+  --bg-mid:     #111110;
+  --bg-card:    rgba(255,255,255,0.04);
+  --border:     rgba(255,255,255,0.07);
+  --easing-snap:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --easing-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --easing-sharp:   cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Base ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.stage {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Film grain overlay — legacy fallback when .cinema class is absent.
+ * When .stage has class .cinema, shared/cinematic.css's .cinema-grain takes over. */
+.stage:not(.cinema)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 256px 256px;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.6;
+  mix-blend-mode: overlay;
+}
+
+/* ─── Left accent bar (thicker, gradient) ─── */
+.stage::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    var(--red) 12%,
+    var(--red-bright) 50%,
+    var(--red) 88%,
+    transparent 100%
+  );
+  z-index: 50;
+}
+
+/* ─── Ticker ─── */
+.ticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 20px 12px 26px;
+  background: linear-gradient(90deg, var(--red-deep) 0%, rgba(155,28,28,0.85) 60%, transparent 100%);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ticker-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--white);
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(255,255,255,0.9);
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+.ticker-text { flex: 1; }
+.ticker-badge {
+  background: var(--white);
+  color: var(--red-deep);
+  font-size: 9px;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 2px;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+/* ─── Scene container ─── */
+#scenes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+/* ─── Scene base ─── */
+.scene {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 68px 26px 80px 32px;
+  opacity: 0;
+  visibility: hidden;
+  will-change: opacity, transform;
+}
+
+/* Scene-type specific backgrounds */
+.scene[data-type="hook"] {
+  background: radial-gradient(ellipse 120% 80% at 20% 60%, rgba(180,18,18,0.22) 0%, transparent 65%);
+}
+.scene[data-type="stats"] {
+  background: radial-gradient(ellipse 100% 100% at 80% 20%, rgba(245,158,11,0.06) 0%, transparent 60%);
+}
+.scene[data-type="detail"] {
+  background: radial-gradient(ellipse 140% 70% at 10% 80%, rgba(30,30,40,0.8) 0%, transparent 70%);
+}
+.scene[data-type="impact"] {}
+.scene[data-type="quote"] {
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%);
+}
+.scene[data-type="cta"] {
+  background: radial-gradient(ellipse 120% 80% at 80% 30%, rgba(180,18,18,0.18) 0%, transparent 65%);
+}
+
+/* ─── Scene: HOOK (id=0) ─── */
+.hook-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red-bright);
+  margin-bottom: 14px;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hook-headline {
+  font-size: clamp(38px, 7vw, 88px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  color: var(--white);
+  margin-bottom: 0;
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+.hook-headline .hook-number {
+  color: var(--red-bright);
+  display: block;
+  font-size: 1.15em;
+  text-shadow:
+    0 0 40px rgba(255,64,64,0.5),
+    0 0 80px rgba(255,64,64,0.2);
+}
+
+.hook-headline .hook-emoji {
+  font-style: normal;
+}
+
+.hook-line {
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red-bright), var(--red-deep), transparent);
+  margin-top: 18px;
+  border-radius: 2px;
+}
+
+/* ─── Scene: STATS (id=1) ─── */
+.stats-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+  opacity: 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--red);
+  border-radius: 10px;
+  padding: 16px 14px;
+  opacity: 0;
+  transform: translateY(20px) scale(0.97);
+  transition: border-top-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(230,48,48,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.stat-card:nth-child(even) { border-top-color: var(--amber); }
+.stat-card:nth-child(even)::before {
+  background: linear-gradient(135deg, rgba(245,158,11,0.06) 0%, transparent 60%);
+}
+
+.stat-value {
+  font-size: clamp(26px, 4.5vw, 52px);
+  font-weight: 900;
+  color: var(--red-bright);
+  line-height: 1;
+  margin-bottom: 5px;
+  letter-spacing: -0.03em;
+}
+
+.stat-card:nth-child(even) .stat-value { color: var(--amber); }
+
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  line-height: 1.3;
+}
+
+/* ─── Scene: DETAIL (id=2) ─── */
+.detail-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(230,48,48,0.12);
+  border: 1px solid rgba(230,48,48,0.3);
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--red-bright);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0;
+  transform: translateX(-12px);
+}
+
+.detail-tag-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red-bright);
+}
+
+.detail-body {
+  font-size: clamp(20px, 3.2vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--off-white);
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.detail-body .detail-code {
+  font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.88em;
+  color: var(--amber);
+  background: var(--amber-dim);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.detail-divider {
+  width: 32px;
+  height: 2px;
+  background: var(--red);
+  border-radius: 2px;
+  margin-top: 16px;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+/* ─── Scene: IMPACT (id=3) ─── */
+.impact-visual {
+  width: 4px;
+  height: 0;
+  background: linear-gradient(180deg, var(--red-bright), var(--red-deep));
+  border-radius: 2px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.impact-text {
+  font-size: clamp(22px, 3.6vw, 44px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--off-white);
+  opacity: 0;
+  transform: translateX(16px);
+}
+
+.impact-text em {
+  font-style: normal;
+  color: var(--red-bright);
+}
+
+/* ─── Scene: QUOTE (id=4) ─── */
+.quote-mark {
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--red);
+  line-height: 0.8;
+  margin-bottom: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  font-family: Georgia, serif;
+}
+
+.quote-text {
+  font-size: clamp(19px, 3vw, 36px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--off-white);
+  opacity: 0;
+  transform: translateY(14px);
+  font-style: italic;
+}
+
+.quote-source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.quote-source-line {
+  width: 24px;
+  height: 1px;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+
+.quote-source-text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ─── Scene: CTA (id=5) ─── */
+.cta-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  opacity: 0;
+}
+
+.cta-main {
+  font-size: clamp(26px, 4.5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.cta-main .cta-verb {
+  color: var(--red-bright);
+  display: block;
+}
+
+.cta-deadline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(230,48,48,0.15);
+  border: 1px solid rgba(230,48,48,0.35);
+  border-radius: 100px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--red-bright);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 20px;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.cta-deadline-icon {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--red-bright);
+  animation: live-pulse 1.2s infinite;
+}
+
+/* ─── Bottom CTA bar ─── */
+.cta-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, var(--red-deep) 0%, rgba(155,28,28,0.9) 100%);
+  padding: 22px 28px;
+  text-align: center;
+  font-size: clamp(16px, 2.6vw, 30px);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  transform: translateY(100%);
+  z-index: 35;
+  border-top: 2px solid var(--red-bright);
+}
+
+/* ─── Subtitle layer ─── */
+.subtitle-layer {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  z-index: 45;
+  pointer-events: none;
+}
+
+.subtitle-text {
+  display: inline-block;
+  background: rgba(0,0,0,0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-left: 3px solid var(--red-bright);
+  padding: 7px 12px;
+  font-size: clamp(13px, 1.8vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--off-white);
+  border-radius: 0 4px 4px 0;
+  max-width: 100%;
+  min-height: 32px;
+  transition: opacity 0.15s;
+}
+
+/* ─── 9:16 mobile adjustments ─── */
+body[data-aspect="9:16"] .stats-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+body[data-aspect="9:16"] .scene {
+  padding: 64px 22px 90px 28px;
+}
+/* ─── bg-animated ─────────────────────────────────── */
+@keyframes hue-drift {
+  from { filter: hue-rotate(0deg); }
+  to   { filter: hue-rotate(360deg); }
+}
+.bg-animated {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 20% 30%, rgba(99,102,241,.18) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 70%, rgba(16,185,129,.13) 0%, transparent 60%);
+  animation: hue-drift 18s linear infinite;
+}
+.stage { position: relative; }
+
+/* ─── sticker-emoji ────────────────────────────────── */
+@keyframes sticker-float {
+  0%,100% { transform: translateY(0) rotate(-8deg); }
+  50%      { transform: translateY(-6px) rotate(4deg); }
+}
+.sticker-emoji {
+  position: absolute; top: 12px; right: 14px; z-index: 10;
+  font-size: 2.2rem; opacity: 0.22;
+  animation: sticker-float 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ─── hero-text scene ──────────────────────────────── */
+.hero-emoji {
+  font-size: 3.6rem; line-height: 1; margin-bottom: 0.3rem;
+  display: inline-block;
+}
+.hero-headline {
+  font-size: clamp(1.7rem, 5.5vw, 2.8rem);
+  font-weight: 900; line-height: 1.15;
+  color: #fff; margin: 0 0 0.5rem;
+  text-wrap: balance;
+}
+.hero-word { display: inline-block; will-change: transform, opacity; }
+.hero-headline--accent .hero-word:first-child { color: #f59e0b; }
+.hero-accent-bar {
+  height: 4px; width: 64px; border-radius: 2px;
+  background: linear-gradient(90deg, #f59e0b, #ef4444);
+  transform-origin: left; margin: 0.35rem 0;
+}
+.hero-sub {
+  font-size: 0.95rem; color: rgba(255,255,255,.72);
+  margin: 0.4rem 0 0; line-height: 1.5;
+}
+
+/* ─── stats-grid scene ─────────────────────────────── */
+.stat-card--accent {
+  border: 1px solid rgba(245,158,11,.45);
+  background: rgba(245,158,11,.08);
+}
+
+/* ─── terminal scene ───────────────────────────────── */
+.term-window {
+  width: 100%; background: #0d1117;
+  border: 1px solid #30363d; border-radius: 8px;
+  overflow: hidden; font-family: 'Cascadia Code', 'Fira Code', monospace;
+}
+.term-titlebar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 10px; background: #161b22; border-bottom: 1px solid #30363d;
+}
+.term-dots { display: flex; gap: 5px; }
+.term-dot {
+  width: 11px; height: 11px; border-radius: 50%;
+}
+.term-dot.red    { background: #ff5f57; }
+.term-dot.yellow { background: #ffbd2e; }
+.term-dot.green  { background: #28c840; }
+.term-title {
+  font-size: 0.72rem; color: #8b949e; margin-left: 6px;
+}
+.term-body {
+  padding: 10px 14px; display: flex; flex-direction: column; gap: 3px;
+}
+.term-line {
+  display: flex; align-items: flex-start; gap: 4px;
+  font-size: 0.82rem; line-height: 1.5;
+}
+.term-ps         { color: #58a6ff; flex-shrink: 0; }
+.term-ps--error  { color: #f85149; flex-shrink: 0; }
+.term-ps--success { color: #3fb950; flex-shrink: 0; }
+.term-text { color: #e6edf3; }
+.term-prompt .term-text { color: #79c0ff; }
+.term-error  .term-text { color: #f85149; }
+.term-success .term-text { color: #3fb950; }
+
+/* ─── code-diff scene ──────────────────────────────── */
+.diff-wrap {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; width: 100%;
+}
+.diff-panel {
+  border-radius: 6px; overflow: hidden;
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+}
+.diff-panel.bad  { background: rgba(248,81,73,.08); border: 1px solid rgba(248,81,73,.35); }
+.diff-panel.good { background: rgba(63,185,80,.08);  border: 1px solid rgba(63,185,80,.35); }
+.diff-label {
+  padding: 5px 10px; font-size: 0.72rem; font-weight: 700;
+  letter-spacing: .03em; text-transform: uppercase;
+}
+.diff-panel.bad  .diff-label { color: #f85149; background: rgba(248,81,73,.12); }
+.diff-panel.good .diff-label { color: #3fb950; background: rgba(63,185,80,.12); }
+.diff-code {
+  padding: 8px 10px; font-size: 0.75rem; color: #e6edf3;
+  white-space: pre-wrap; word-break: break-all; line-height: 1.55;
+  margin: 0;
+}
+
+/* ─── quote scene ──────────────────────────────────── */
+.quote-mark {
+  font-size: 5rem; line-height: 0.7; color: #f59e0b;
+  font-family: Georgia, serif; margin-bottom: 0.1rem;
+  opacity: 0.8;
+}
+.quote-text {
+  font-size: clamp(1.1rem, 3.5vw, 1.55rem);
+  font-style: italic; color: #f0f6fc; line-height: 1.55;
+  margin: 0 0 0.9rem;
+}
+.quote-source {
+  display: flex; align-items: center; gap: 8px;
+}
+.quote-source-line {
+  width: 24px; height: 2px;
+  background: linear-gradient(90deg, #f59e0b, transparent);
+}
+.quote-source-text {
+  font-size: 0.72rem; color: rgba(255,255,255,.55);
+  letter-spacing: .08em;
+}
+
+/* ─── cta-url scene ────────────────────────────────── */
+.cta-url-label {
+  font-size: clamp(1.4rem, 4.5vw, 2.2rem);
+  font-weight: 900; color: #fff; line-height: 1.2;
+  margin-bottom: 0.7rem;
+}
+.cta-url-href {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.88rem; color: #58a6ff;
+  font-family: 'Cascadia Code', monospace;
+  background: rgba(88,166,255,.1); border: 1px solid rgba(88,166,255,.25);
+  border-radius: 6px; padding: 6px 12px; margin-bottom: 0.5rem;
+  word-break: break-all;
+}
+.cta-url-icon { flex-shrink: 0; }
+.cta-url-sub {
+  font-size: 0.82rem; color: rgba(255,255,255,.55); margin: 0;
+}
+
+/* ============================================================
+ * Cinematic palette tokens (Phase 2E) — consumed by shared/cinematic.css
+ * via [data-grade="news"] selector.
+ * ============================================================ */
+.stage.cinema[data-grade="news"] {
+  --cinema-grade-color: #ff5a3d;
+  --cinema-grade-opacity: 0.14;
+  --cinema-vignette-strength: 0.55;
+  --cinema-grain-opacity: 0.06;
+  --cinema-display-font: "Inter Display Variable", "Inter", system-ui, sans-serif;
+}
+
+/* News-themed glow blob colors (placed inside .cinema-mid) */
+.glow-blob--red {
+  width: 60%;
+  height: 60%;
+  top: -10%;
+  left: -15%;
+  background: rgba(230, 48, 48, 0.45);
+  opacity: 0.7;
+}
+.glow-blob--cyan {
+  width: 50%;
+  height: 50%;
+  bottom: -10%;
+  right: -15%;
+  background: rgba(34, 211, 238, 0.30);
+  opacity: 0.55;
+}
+
+/* Ensure scenes container is positioned relative for absolute children */
+.cinema-fg#scenes {
+  position: absolute;
+  inset: 0;
+}
+
+
+/* ============================================================
+   ANIMATION ENGINE v4 — Additive styles
+   New elements: term-cursor, term-scanline, cta-urgency-badge,
+   quote-word, term-warning, stat-card--accent counter animation
+   ============================================================ */
+
+/* ─── Terminal: cursor blink ──────────────────────────────── */
+.term-cursor {
+  display: inline-block;
+  font-family: 'Cascadia Code', 'Fira Code', monospace;
+  font-size: 0.82rem;
+  color: #58a6ff;
+  opacity: 0;           /* shown/hidden by GSAP */
+  margin-left: 2px;
+  user-select: none;
+}
+
+/* ─── Terminal: scanline CRT overlay ─────────────────────── */
+.term-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(255,255,255,0.035) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  opacity: 0;           /* GSAP sets to 1 and animates y */
+  z-index: 5;
+}
+
+/* Make term-window position:relative so scanline is contained */
+.term-window {
+  position: relative;
+  overflow: hidden;     /* clip scanline */
+}
+
+/* ─── Terminal: warning line type ─────────────────────────── */
+.term-ps--warning { color: #f59e0b; flex-shrink: 0; }
+.term-warning .term-text { color: #fbbf24; }
+
+/* ─── Quote: word spans for stagger intro ─────────────────── */
+.quote-word {
+  display: inline;
+  opacity: 0;           /* GSAP drives each word */
+  will-change: opacity, transform;
+}
+
+/* ─── CTA: urgency badge ──────────────────────────────────── */
+.cta-urgency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(230, 48, 48, 0.18);
+  border: 1.5px solid rgba(230, 48, 48, 0.55);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #ff4040;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: 0;           /* GSAP intro: scale 0→1 */
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+/* ─── Stats: counter element — ensure mono so digits don't jump ─ */
+[data-counter-target] {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ─── Scene backgrounds for new typed scenes ─────────────── */
+.scene[data-type="hero-text"] {
+  background: radial-gradient(
+    ellipse 120% 80% at 20% 60%,
+    rgba(180, 18, 18, 0.22) 0%,
+    transparent 65%
+  );
+}
+.scene[data-type="stats-grid"] {
+  background: radial-gradient(
+    ellipse 100% 100% at 80% 20%,
+    rgba(245, 158, 11, 0.06) 0%,
+    transparent 60%
+  );
+}
+.scene[data-type="terminal"] {
+  background: radial-gradient(
+    ellipse 140% 70% at 10% 80%,
+    rgba(10, 20, 30, 0.9) 0%,
+    transparent 70%
+  );
+}
+.scene[data-type="quote"] {
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    rgba(255, 255, 255, 0.025) 0%,
+    transparent 70%
+  );
+}
+.scene[data-type="cta-url"] {
+  background: radial-gradient(
+    ellipse 120% 80% at 80% 30%,
+    rgba(180, 18, 18, 0.18) 0%,
+    transparent 65%
+  );
+}
+.scene[data-type="code-diff"] {
+  background: radial-gradient(
+    ellipse 120% 80% at 50% 50%,
+    rgba(15, 25, 15, 0.85) 0%,
+    transparent 70%
+  );
+}
+
+/* ─── Accent card glow override (GSAP drives boxShadow) ──── */
+.stat-card--accent {
+  will-change: box-shadow;
+}
+
+/* ─── Hero word will-change for perf ─────────────────────── */
+.hero-word {
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+ * Phase 2G — Per-storyboard theme palette overrides for NEWS
+ *
+ * data-theme drives accent colour + glow blob hue. Template stays
+ * dark+editorial baseline; theme only flips highlights / grade tint.
+ *
+ * Selectors: .stage.cinema[data-grade="news"][data-theme="X"]
+ * Defaults (no data-theme) = same as data-theme="danger" (current look).
+ * ============================================================ */
+
+/* danger (default) — red urgency, current behaviour kept */
+.stage.cinema[data-grade="news"][data-theme="danger"],
+.stage.cinema[data-grade="news"]:not([data-theme]) {
+  --cinema-grade-color: #ff5a3d;
+  --cinema-grade-opacity: 0.14;
+}
+.stage.cinema[data-grade="news"][data-theme="danger"] .glow-blob--red {
+  background: rgba(230, 48, 48, 0.45);
+}
+.stage.cinema[data-grade="news"][data-theme="danger"] .glow-blob--cyan {
+  background: rgba(34, 211, 238, 0.30);
+}
+
+/* warning — amber alert (patch available / vulnerability has fix) */
+.stage.cinema[data-grade="news"][data-theme="warning"] {
+  --cinema-grade-color: #fbbf24;
+  --cinema-grade-opacity: 0.12;
+}
+.stage.cinema[data-grade="news"][data-theme="warning"] .glow-blob--red {
+  background: rgba(251, 191, 36, 0.50);  /* amber */
+}
+.stage.cinema[data-grade="news"][data-theme="warning"] .glow-blob--cyan {
+  background: rgba(234, 88, 12, 0.30);   /* orange */
+}
+
+/* default — neutral tech announcement (launch, funding, product news) */
+.stage.cinema[data-grade="news"][data-theme="default"] {
+  --cinema-grade-color: #22d3ee;
+  --cinema-grade-opacity: 0.10;
+}
+.stage.cinema[data-grade="news"][data-theme="default"] .glow-blob--red {
+  background: rgba(59, 130, 246, 0.40);  /* blue */
+}
+.stage.cinema[data-grade="news"][data-theme="default"] .glow-blob--cyan {
+  background: rgba(34, 211, 238, 0.35);  /* cyan */
+}
+
+/* success — positive news (open source, milestone, savings) */
+.stage.cinema[data-grade="news"][data-theme="success"] {
+  --cinema-grade-color: #84cc16;
+  --cinema-grade-opacity: 0.13;
+}
+.stage.cinema[data-grade="news"][data-theme="success"] .glow-blob--red {
+  background: rgba(132, 204, 22, 0.45);  /* lime green */
+}
+.stage.cinema[data-grade="news"][data-theme="success"] .glow-blob--cyan {
+  background: rgba(245, 158, 11, 0.30);  /* warm amber accent */
+}

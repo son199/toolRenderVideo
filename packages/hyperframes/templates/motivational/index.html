@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Motivational</title>
+    <!-- Preload Fraunces serif so motivational first-frame doesn't render with fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&display=block" />
+    <link rel="stylesheet" href="../../shared/base.css" />
+    <link rel="stylesheet" href="../../shared/cinematic.css" />
+    <link rel="stylesheet" href="../../shared/subtitles.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="stage cinema" data-grade="motivational">
+
+      <!-- Cinema bg: scene-bg with radial gradient + Ken Burns target -->
+      <div class="cinema-bg depth-3">
+        <div class="scene-bg" id="scene-bg"></div>
+      </div>
+
+      <!-- Cinema mid: amber light shaft (parallax depth-2) -->
+      <div class="cinema-mid depth-2">
+        <div class="light-shaft" id="light-shaft"></div>
+      </div>
+
+      <!-- Scenes injected by animation.js -->
+      <div id="scenes" class="cinema-fg depth-1"></div>
+
+      <!-- Cinema grade stack -->
+      <div class="cinema-grade"></div>
+      <div class="cinema-vignette"></div>
+      <div class="cinema-grain"></div>
+      <div class="cinema-flash"></div>
+
+      <!-- Subtitle layer (motivational style: soft, low-contrast) -->
+      <div class="subtitle-layer">
+        <div class="subtitle-text" id="subtitle-text"></div>
+      </div>
+
+    </div>
+
+    <div class="runner-loading" id="runner-loading">Loading...</div>
+
+    <script type="module">
+      import { runTemplate } from "../../shared/runner.js";
+      import { buildTimeline } from "./animation.js";
+      runTemplate(buildTimeline);
+    </script>
+  </body>
+</html>

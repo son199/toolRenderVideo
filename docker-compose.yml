@@ -1,0 +1,99 @@
+# AIVidForge — optional docker-compose for the Phase 2 stack.
+#
+# Phase 1 runs everything natively (FastAPI + Vite, file-based JSON storage,
+# in-process job runner). This compose file is here for when the project
+# graduates to Postgres-backed multi-user mode with a Celery worker — those
+# services are not wired in code yet, but the dependency endpoints are pinned
+# so you can spin them up locally and start writing the swap.
+#
+# Usage (when Phase 2 services land):
+#
+#     docker compose up -d postgres redis
+#     # then run the backend natively pointing at these services via .env
+#
+# `backend` and `frontend` services below are scaffolds — uncomment + finish
+# the Dockerfiles once you containerise the apps.
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: aividforge
+      POSTGRES_PASSWORD: aividforge
+      POSTGRES_DB: aividforge
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aividforge"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  # MinIO is optional — only if storage_backend=minio in .env (Phase 2).
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: aividforge
+      MINIO_ROOT_PASSWORD: aividforge_change_me
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+
+  # --- Scaffolded services. Wire Dockerfiles + uncomment when you containerise. ---
+  #
+  # backend:
+  #   build:
+  #     context: ./apps/backend
+  #     dockerfile: Dockerfile
+  #   env_file: .env
+  #   environment:
+  #     DATABASE_URL: postgresql+psycopg://aividforge:aividforge@postgres:5432/aividforge
+  #     REDIS_URL: redis://redis:6379/0
+  #   depends_on:
+  #     postgres: { condition: service_healthy }
+  #     redis:    { condition: service_healthy }
+  #   ports: ["8000:8000"]
+  #   volumes:
+  #     - ./storage:/app/storage
+  #     - ./packages/hyperframes:/app/packages/hyperframes:ro
+  #
+  # worker:
+  #   build: { context: ./apps/backend, dockerfile: Dockerfile }
+  #   command: celery -A app.tasks.celery_app worker --loglevel=info
+  #   env_file: .env
+  #   environment:
+  #     DATABASE_URL: postgresql+psycopg://aividforge:aividforge@postgres:5432/aividforge
+  #     REDIS_URL: redis://redis:6379/0
+  #   depends_on:
+  #     postgres: { condition: service_healthy }
+  #     redis:    { condition: service_healthy }
+  #   volumes:
+  #     - ./storage:/app/storage
+  #     - ./packages/hyperframes:/app/packages/hyperframes:ro
+  #
+  # frontend:
+  #   build: { context: ./apps/frontend, dockerfile: Dockerfile }
+  #   ports: ["5173:5173"]
+  #   depends_on: [backend]
+
+volumes:
+  postgres_data:
+  redis_data:
+  minio_data:

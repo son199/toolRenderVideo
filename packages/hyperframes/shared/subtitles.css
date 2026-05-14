@@ -1,0 +1,60 @@
+/* Shared subtitle overlay — role: SUPPLEMENT (not main content).
+ *
+ * The body of each scene already shows the full Vietnamese narration
+ * (via spec.text / headline / line / question — rendered by template
+ * animation.js). The subtitle band is for SHORT ENGLISH caption only
+ * (caption.en, ≤10 words, punchy). Visual contrast:
+ *
+ *   - Body: large, Vietnamese, full info (24-90px depending on type)
+ *   - Subtitle: smaller, English short, supplementary (16-28px)
+ *
+ * This avoids the "two-zone duplication" UX bug where viewer reads the
+ * same Vietnamese text twice on screen.
+ *
+ * Templates can override .subtitle-text per niche (eg promo accent
+ * border, motivational softer opacity) in their own style.css.
+ */
+
+.subtitle-layer {
+  position: absolute;
+  inset: auto 0 8% 0;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.subtitle-layer .subtitle-text {
+  max-width: 76%;
+  padding: 0.4em 0.8em;
+  background: rgba(0, 0, 0, 0.50);
+  color: rgba(255, 255, 255, 0.92);
+  border-radius: 0.4rem;
+  /* Smaller font-size — secondary role vs body */
+  font-size: clamp(16px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: 0.005em;
+  text-align: center;
+  text-wrap: balance;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  /* Monospace-ish hint for English subtitle role — feels like a chyron */
+  font-family: "Inter", "SF Mono", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Empty subtitle stays invisible (no padding/background flash between cuts) */
+.subtitle-layer .subtitle-text:empty {
+  background: transparent;
+  padding: 0;
+}
+
+.subtitle-layer .subtitle-text .word {
+  opacity: 0.65;
+  transition: opacity 80ms linear, color 80ms linear;
+}
+
+.subtitle-layer .subtitle-text .word.active {
+  opacity: 1;
+  color: #facc15;
+}

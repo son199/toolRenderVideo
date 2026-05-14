@@ -1,0 +1,56 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Env
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Node
+node_modules/
+dist/
+build/
+.vite/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Alembic - keep migrations dir tracked, ignore caches only
+apps/backend/alembic/versions/__pycache__/
+
+# Runtime storage (uploads, audio, frames, output)
+storage/audio/*
+storage/frames/*
+storage/output/*
+storage/uploads/*
+!storage/**/.gitkeep
+
+# Playwright
+.playwright/
+playwright-report/
+test-results/
+
+# Misc
+*.tmp
+*.bak

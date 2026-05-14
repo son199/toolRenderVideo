@@ -1,0 +1,362 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400;1,700&display=block");
+
+/* Motivational template — cinematic dark + amber/teal glow + Fraunces serif.
+ * Rich scene types: question-hero, line-statement, quote-card, closing-card.
+ *
+ * Phase 2E: cinematic layer added via shared/cinematic.css. Existing
+ * .stage::after vignette below is kept under :not(.cinema) selector so
+ * it only fires when cinema class is absent.
+ */
+
+/* ============================================================
+ * Phase 2E — Cinematic palette tokens (motivational keeps Fraunces serif).
+ * ============================================================ */
+.stage.cinema[data-grade="motivational"] {
+  --cinema-grade-color: #f59e0b;
+  --cinema-grade-opacity: 0.16;
+  --cinema-vignette-strength: 0.65;
+  --cinema-grain-opacity: 0.07;
+  --cinema-display-font: "Fraunces", Georgia, "Times New Roman", serif;
+}
+
+.stage {
+  background: #0a0908;
+  color: #f5efe6;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  overflow: hidden;
+}
+
+/* Cinematic radial gradient overlay (Ken Burns target — animated via GSAP). */
+.scene-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(245, 158, 11, 0.16), transparent 62%),
+    radial-gradient(ellipse at 70% 70%, rgba(20, 184, 166, 0.12), transparent 62%),
+    linear-gradient(180deg, #1c1a17 0%, #0a0908 100%);
+  z-index: 1;
+  will-change: transform;
+}
+
+/* Soft vignette to keep text readable when bg drifts brighter. */
+/* Legacy vignette — only fires when .cinema class is absent.
+ * With .cinema active, shared/cinematic.css's .cinema-vignette takes over. */
+.stage:not(.cinema)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(10, 9, 8, 0.55) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.scene {
+  padding: 11% 8%;
+  justify-content: center;
+  z-index: 5;
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Shared eyebrow style (sans-serif, amber-faded) */
+.question-eyebrow,
+.line-eyebrow,
+.quote-eyebrow,
+.closing-eyebrow {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(12px, 1.4vw, 16px);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(245, 158, 11, 0.7);
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+/* ============================================================
+ * question-hero — scene 0 (Câu hỏi mở)
+ * ============================================================ */
+.s-question {
+  justify-content: center;
+}
+.question-emoji {
+  font-size: clamp(40px, 6vw, 72px);
+  margin-bottom: 22px;
+  filter: drop-shadow(0 4px 18px rgba(245, 158, 11, 0.4));
+}
+.question-text {
+  font-size: clamp(34px, 5.2vw, 84px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+  max-width: 92%;
+  text-wrap: balance;
+  color: #fff5e4;
+}
+
+/* ============================================================
+ * line-statement — scenes 1 + 2 (Bối cảnh + Insight)
+ * ============================================================ */
+.s-line {
+  justify-content: center;
+}
+.line-text {
+  font-size: clamp(30px, 4.4vw, 64px);
+  font-weight: 400;
+  line-height: 1.24;
+  letter-spacing: -0.005em;
+  max-width: 92%;
+  text-wrap: balance;
+  color: #f5efe6;
+}
+.line-text .line-emphasis {
+  font-style: italic;
+  color: #fbbf24;
+  font-weight: 700;
+  text-shadow: 0 0 24px rgba(251, 191, 36, 0.35);
+}
+
+/* ============================================================
+ * quote-card — scene 3 (Quote / khẳng định)
+ * ============================================================ */
+.s-quote {
+  justify-content: center;
+  align-items: flex-start;
+}
+.s-quote .quote-mark {
+  font-size: clamp(110px, 16vw, 200px);
+  line-height: 0.6;
+  color: #fbbf24;
+  text-shadow: 0 0 40px rgba(251, 191, 36, 0.5);
+  margin-bottom: 6px;
+  font-family: Georgia, serif;
+}
+.s-quote .quote-text {
+  font-size: clamp(28px, 4.4vw, 64px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  max-width: 92%;
+  text-wrap: balance;
+  margin-bottom: 28px;
+  color: #fff5e4;
+}
+.s-quote .quote-source {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(14px, 1.6vw, 20px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(251, 191, 36, 0.78);
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ============================================================
+ * closing-card — scene cuối (CTA mềm)
+ * ============================================================ */
+.s-closing {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.s-closing .closing-eyebrow {
+  margin-bottom: 22px;
+  text-align: center;
+  align-self: center;
+}
+.closing-card {
+  border-top: 1.5px solid rgba(245, 158, 11, 0.45);
+  border-bottom: 1.5px solid rgba(245, 158, 11, 0.45);
+  padding: 36px 24px;
+  width: min(92%, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  background: rgba(28, 22, 16, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.closing-line {
+  font-size: clamp(28px, 4.4vw, 60px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.22;
+  letter-spacing: -0.005em;
+  color: #fff5e4;
+  text-wrap: balance;
+}
+.closing-footer {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(13px, 1.5vw, 18px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 158, 11, 0.65);
+  font-weight: 500;
+}
+
+/* Subtitle layer override — soft, low contrast (motivational mood) */
+.subtitle-layer {
+  bottom: 7%;
+}
+.subtitle-layer .subtitle-text {
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================
+ * Legacy fallback styles (Sprint 4 scenes — scene-quote / scene-line)
+ * Kept for older fixtures / projects still using flat schema.
+ * ============================================================ */
+.scene-eyebrow {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(245, 158, 11, 0.7);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+.scene-quote {
+  font-size: clamp(32px, 5vw, 80px);
+  line-height: 1.15;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.005em;
+  margin-bottom: 24px;
+  max-width: 92%;
+  text-wrap: balance;
+}
+.scene-quote::before {
+  content: "\201C";
+  display: inline-block;
+  font-size: 1.4em;
+  line-height: 0;
+  vertical-align: -0.4em;
+  color: #f59e0b;
+  margin-right: 0.1em;
+}
+.scene-quote::after {
+  content: "\201D";
+  display: inline-block;
+  font-size: 1.4em;
+  line-height: 0;
+  vertical-align: -0.4em;
+  color: #f59e0b;
+  margin-left: 0.05em;
+}
+.scene-line {
+  font-size: clamp(28px, 4vw, 60px);
+  line-height: 1.25;
+  font-weight: 400;
+  margin-bottom: 18px;
+  max-width: 92%;
+  text-wrap: balance;
+}
+.scene-attribution {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: clamp(13px, 1.4vw, 18px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 239, 230, 0.5);
+  font-style: normal;
+}
+
+/* ============================================================
+ * Phase 2G — Per-storyboard theme palette overrides for MOTIVATIONAL
+ *
+ * Default + success: amber/golden warm (current behaviour).
+ * default theme: teal/dusk cool (suy tư / vượt khó).
+ * warning: sepia/vintage (nostalgia / tiếc nuối).
+ *
+ * Selectors flip:
+ *   - cinema-grade tint
+ *   - scene-bg radial gradients (overrides the default mix)
+ *   - light-shaft color
+ *   - quote-mark + emphasis colors
+ * ============================================================ */
+
+/* success (default) — amber/golden warm hope */
+.stage.cinema[data-grade="motivational"][data-theme="success"],
+.stage.cinema[data-grade="motivational"]:not([data-theme]) {
+  --cinema-grade-color: #f59e0b;
+  --cinema-grade-opacity: 0.16;
+}
+/* current .scene-bg gradient + light-shaft already amber-themed; no override */
+
+/* default — teal/dusk cool (suy tư) */
+.stage.cinema[data-grade="motivational"][data-theme="default"] {
+  --cinema-grade-color: #14b8a6;
+  --cinema-grade-opacity: 0.14;
+}
+.stage.cinema[data-grade="motivational"][data-theme="default"] .scene-bg {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(20, 184, 166, 0.18), transparent 62%),
+    radial-gradient(ellipse at 70% 70%, rgba(99, 102, 241, 0.14), transparent 62%),
+    linear-gradient(180deg, #0f1419 0%, #050708 100%);
+}
+.stage.cinema[data-grade="motivational"][data-theme="default"] .light-shaft {
+  background: linear-gradient(
+    45deg,
+    transparent 35%,
+    rgba(20, 184, 166, 0.10) 50%,
+    transparent 65%
+  );
+}
+.stage.cinema[data-grade="motivational"][data-theme="default"] .s-quote .quote-mark,
+.stage.cinema[data-grade="motivational"][data-theme="default"] .scene-quote::before,
+.stage.cinema[data-grade="motivational"][data-theme="default"] .scene-quote::after {
+  color: #5eead4;
+}
+.stage.cinema[data-grade="motivational"][data-theme="default"] .line-text .line-emphasis {
+  color: #5eead4;
+  text-shadow: 0 0 24px rgba(94, 234, 212, 0.35);
+}
+
+/* warning — sepia/vintage (nostalgia, tiếc nuối, ký ức) */
+.stage.cinema[data-grade="motivational"][data-theme="warning"] {
+  --cinema-grade-color: #b45309;
+  --cinema-grade-opacity: 0.18;
+}
+.stage.cinema[data-grade="motivational"][data-theme="warning"] .scene-bg {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(180, 83, 9, 0.18), transparent 62%),
+    radial-gradient(ellipse at 70% 70%, rgba(120, 53, 15, 0.16), transparent 62%),
+    linear-gradient(180deg, #1c1410 0%, #0a0706 100%);
+  filter: sepia(0.25) saturate(0.85);
+}
+.stage.cinema[data-grade="motivational"][data-theme="warning"] .light-shaft {
+  background: linear-gradient(
+    45deg,
+    transparent 35%,
+    rgba(180, 83, 9, 0.10) 50%,
+    transparent 65%
+  );
+}
+.stage.cinema[data-grade="motivational"][data-theme="warning"] .s-quote .quote-mark,
+.stage.cinema[data-grade="motivational"][data-theme="warning"] .scene-quote::before,
+.stage.cinema[data-grade="motivational"][data-theme="warning"] .scene-quote::after {
+  color: #d97706;
+}
+
+/* danger — rare for motivational, but support for completeness (vd mất mát lớn) */
+.stage.cinema[data-grade="motivational"][data-theme="danger"] {
+  --cinema-grade-color: #9f1239;
+  --cinema-grade-opacity: 0.16;
+}
+.stage.cinema[data-grade="motivational"][data-theme="danger"] .scene-bg {
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(159, 18, 57, 0.16), transparent 62%),
+    radial-gradient(ellipse at 70% 70%, rgba(76, 5, 25, 0.18), transparent 62%),
+    linear-gradient(180deg, #14080a 0%, #060304 100%);
+}

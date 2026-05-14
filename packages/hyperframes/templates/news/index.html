@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Flash</title>
+    <link rel="stylesheet" href="../../shared/base.css" />
+    <link rel="stylesheet" href="../../shared/cinematic.css" />
+    <link rel="stylesheet" href="../../shared/subtitles.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  </head>
+  <body>
+    <div class="stage cinema" data-grade="news">
+
+      <!-- Cinema layer: ambient backdrop (depth-3 parallax target) -->
+      <div class="cinema-bg depth-3" id="cinema-bg">
+        <div class="bg-animated" id="bg-animated"></div>
+      </div>
+
+      <!-- Cinema layer: mid-depth glow blobs (depth-2 parallax target) -->
+      <div class="cinema-mid depth-2" id="cinema-mid">
+        <div class="glow-blob glow-blob--red" id="glow-blob-red"></div>
+        <div class="glow-blob glow-blob--cyan" id="glow-blob-cyan"></div>
+      </div>
+
+      <!-- Floating sticker emoji (preserved from baseline) -->
+      <div class="sticker-emoji" id="sticker-emoji">🔥</div>
+
+      <!-- Ticker: LIVE badge + scrolling label -->
+      <div class="ticker">
+        <span class="ticker-dot"></span>
+        <span class="ticker-text">⚡ BREAKING · TIN TỨC CÔNG NGHỆ</span>
+        <span class="ticker-badge">LIVE</span>
+      </div>
+
+      <!-- Scenes injected by animation.js (depth-1) -->
+      <div id="scenes" class="cinema-fg depth-1"></div>
+
+      <!-- CTA bar slides up at end -->
+      <div class="cta-bar" id="cta-bar"></div>
+
+      <!-- Cinema grade stack — color overlay + vignette + grain + flash -->
+      <div class="cinema-grade"></div>
+      <div class="cinema-vignette"></div>
+      <div class="cinema-grain"></div>
+      <div class="cinema-flash"></div>
+
+      <!-- Subtitle layer -->
+      <div class="subtitle-layer">
+        <div class="subtitle-text" id="subtitle-text"></div>
+      </div>
+
+    </div>
+
+    <div class="runner-loading" id="runner-loading">Loading...</div>
+
+    <script type="module">
+      import { runTemplate } from "../../shared/runner.js";
+      import { buildTimeline } from "./animation.js";
+      runTemplate(buildTimeline);
+    </script>
+  </body>
+</html>

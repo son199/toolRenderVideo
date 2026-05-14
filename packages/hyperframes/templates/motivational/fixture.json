@@ -1,0 +1,69 @@
+{
+  "storyboard": {
+    "title": "Một việc nhỏ — mỗi ngày",
+    "slug": "atomic-habits-small-steps",
+    "aspect_ratio": "9:16",
+    "template": "motivational",
+    "theme": "success",
+    "voice": "vi-VN-HoaiMyNeural",
+    "scenes": [
+      {
+        "id": 0,
+        "type": "question-hero",
+        "duration_sec": 6.0,
+        "emoji": "☕",
+        "question": "Mỗi sáng thức dậy, bạn nghĩ điều gì trước tiên?",
+        "caption": {
+          "vi": "Mỗi sáng thức dậy, bạn nghĩ điều gì trước tiên?",
+          "en": "Every morning — what's your first thought?"
+        }
+      },
+      {
+        "id": 1,
+        "type": "line-statement",
+        "duration_sec": 6.5,
+        "line": "Phần lớn chúng ta bị cuốn vào những việc gấp, không phải việc quan trọng.",
+        "emphasis": "gấp",
+        "caption": {
+          "vi": "Phần lớn chúng ta bị cuốn vào những việc gấp, không phải việc quan trọng.",
+          "en": "Most of us chase urgent, not important"
+        }
+      },
+      {
+        "id": 2,
+        "type": "line-statement",
+        "duration_sec": 7.0,
+        "line": "Cuộc sống đo bằng những lựa chọn nhỏ, lặp đi lặp lại mỗi ngày.",
+        "emphasis": "lựa chọn nhỏ",
+        "caption": {
+          "vi": "Cuộc sống đo bằng những lựa chọn nhỏ, lặp đi lặp lại mỗi ngày.",
+          "en": "Life is measured in small daily choices"
+        }
+      },
+      {
+        "id": 3,
+        "type": "quote-card",
+        "duration_sec": 6.5,
+        "text": "Một thói quen tốt hôm nay là phiên bản tốt hơn của bạn ngày mai.",
+        "attr": "James Clear — Atomic Habits",
+        "caption": {
+          "vi": "James Clear viết: thói quen tốt hôm nay là phiên bản tốt hơn của bạn ngày mai.",
+          "en": "James Clear: good habits today, better self tomorrow"
+        }
+      },
+      {
+        "id": 4,
+        "type": "closing-card",
+        "duration_sec": 6.0,
+        "line": "Hôm nay, hãy bắt đầu bằng một việc nhỏ — đủ rồi.",
+        "footer": "— Một việc nhỏ mỗi ngày —",
+        "caption": {
+          "vi": "Hôm nay, hãy bắt đầu bằng một việc nhỏ — đủ rồi.",
+          "en": "Today: start with one small thing"
+        }
+      }
+    ],
+    "total_duration_sec": 32.0
+  },
+  "audio_meta": null
+}

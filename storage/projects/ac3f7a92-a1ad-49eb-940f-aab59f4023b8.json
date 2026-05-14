@@ -1,0 +1,233 @@
+{
+  "id": "ac3f7a92-a1ad-49eb-940f-aab59f4023b8",
+  "user_id": null,
+  "title": "Quảng bá",
+  "input_type": "url",
+  "input_value": "https://9router.com/",
+  "upload_path": null,
+  "raw_text": "One Router.\n60+ AI Providers. Zero Downtime.\nConnect every CLI/IDE to all major AI providers through one OpenAI-compatible endpoint.\n9Router is a smart gateway between your tools (Cursor, Claude Code, Codex, Cline, Copilot…) and 60+ AI providers. Smart 3-tier fallback maximizes your subscriptions and keeps you coding when limits hit. Bonus: built-in RTK & Caveman save 20–65% tokens.\nnpm install -g 9router\n9router\napi9 Service Kinds OpenAI-Compatible\nEvery endpoint is OpenAI-compatible. Point your tool to one URL — run LLM, Embedding, TTS, STT, Image, Video, Web Search and more.\nChat / LLM\nOpenAI-compatible chat completions across 60+ providers.\nEmbeddings\nVoyage, Jina, OpenAI, Cohere, Mistral, NVIDIA, Together, Fireworks.\nText-to-Speech\nElevenLabs, Deepgram, Inworld, AWS Polly, Google/Edge TTS, OpenAI.\nSpeech-to-Text\nDeepgram, AssemblyAI, OpenAI Whisper, Qwen STT.\nImage Generation\nFal, Stability, BFL Flux, Recraft, OpenAI, Gemini, MiniMax.\nVision / Image-to-Text\nOpenAI, Gemini, Anthropic, Groq, xAI, Mistral, HuggingFace.\nVideo Generation\nRunway ML, Topaz.\nWeb Search\nTavily, Brave, Serper, Exa, Linkup, Perplexity, Google PSE, SearchAPI.\nWeb Fetch\nTavily, Exa, Firecrawl, Jina Reader.\nHow 9Router Works\nInstall once, connect providers, code non-stop with smart 3-tier fallback.\nInstall & Connect\nnpm install -g 9router\n- Dashboard opens automatically\n- OAuth or API key per provider\nSmart 3-Tier Routing\n⚡ Auto fallback when quota runs out\nCode Non-Stop\n- Point your CLI to\nlocalhost:20128\n- Zero downtime, automatic switching\n- Track quota & usage in real time\nhub60+ AI Providers\nOAuth, API key or browser cookie. Featured 24 below — full list inside the app.\nterminalCLI / IDE Integrations\nPoint any tool to localhost:20128. Per-tool setup guides included.\nterminalCLI Tools (10)\nClaude Code\nAnthropic Claude CLI\nOpenAI Codex\nOpenAI Codex CLI\nOpenClaw\nOpen Claw assistant\nCursor\nAI code editor\nCline\nAI coding assistant\nKilo Code\nKilo Code AI\nRoo\nRoo AI\nContinue\nContinue AI\nFactory Droid\nFactory AI\nHermes Agent\nSelf-improving agent\nshieldMITM Bridge — IDE Subscription Intercept\nIntercept Antigravity / GitHub Copilot / Kiro IDE traffic — use IDE subscriptions to call any backend through 9Router (mind each tool's policy).\nAntigravity\nGoogle Antigravity IDE\nGitHub Copilot\nVS Code Copilot intercept\nKiro IDE\nAWS Kiro IDE intercept\nauto_awesomeAdvanced Features\nCombos, Translator, RTK, Caveman, Multi-account, Cloud sync, Tunnel, Proxy pools, MITM bridge.\nSmart Combos\nChain providers into one virtual provider with sticky round-robin and automatic fallback.\nReal-time Quota\nLive token tracking, reset countdown, cost estimation per provider.\nFormat Translator\nConvert between OpenAI / Anthropic / Gemini formats — any tool with any provider.\nMulti-Account\nMultiple accounts per provider, round-robin load balancing, automatic failover.\nCloud Sync + Tunnel\nCloudflare edge tunnel — use your router from anywhere, 300+ global locations.\nProxy Pools\nVercel relay, outbound proxy, rotate IPs for region-restricted providers.\nMITM Bridge\nIntercept Antigravity / Copilot / Kiro IDE traffic — use IDE subscriptions with any backend.\nOpenAI-Compatible\nOne endpoint speaks chat, embeddings, TTS, STT, image, video, search and fetch.\nVisual Dashboard\nManage providers, keys, combos and usage from a clean local UI.\nAnd while we're at it, save 20–65% tokens for free\nRTK and Caveman Mode ship with 9Router. They quietly compress what goes in and trim what comes out — same answers, fewer tokens.\nRTK Token Saver\n−20–40%Auto-compress tool_result content (git diff, grep, ls, find, tree…) before it reaches the LLM. Lossless, safe, default ON.\nCaveman Mode\n−65%Inject a terse-style system prompt — LLM replies stay technical but compact. Five intensity levels.\n💡 Combine with FREE-tier providers and you're routing for $0/month with built-in token savings.\nrocket_launchGet Started in Two Commands\nInstall globally, connect providers, code with smart auto-fallback.\nInstall Globally\nOne command installs 9Router system-wide.\nnpm install -g 9router\nConnect Providers\nOpen the dashboard and add OAuth or API keys per tier.\nPoint Your Tool\nSet Cursor / Cline / Claude Code / Codex to the OpenAI-compatible endpoint.\nhttp://localhost:20128/v1\nhttp://localhost:20128/v1\nStop Wasting Your AI Subscriptions\nSubscription quota expires unused every month\nRate limits cut your coding session mid-flow\nManually switching between providers wastes time",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "completed",
+  "storyboard": {
+    "title": "9Router — kết nối mọi CLI/IDE tới 60+ AI providers chỉ qua 1 endpoint",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "success",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 3.5,
+        "visual_prompt": "split-screen: bên trái là dòng code với lỗi quota exhausted, bên phải là đồng hồ token quay nhanh về 0, tone xanh lá highlight số 65%",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "emoji": "🚀",
+        "headline": "Bạn vẫn lãng phí 65% token AI mỗi tháng?",
+        "sub": "60+ AI providers, quota vẫn cứ hết",
+        "accent": true,
+        "caption": {
+          "vi": "🚀 Bạn vẫn lãng phí tới 65% token AI mỗi tháng khi xài 60 dịch vụ?",
+          "en": "Still wasting 65% of AI tokens monthly with 60+ providers?"
+        },
+        "text": "🚀 Bạn vẫn lãng phí tới 65% token AI mỗi tháng khi xài 60 dịch vụ?"
+      },
+      {
+        "id": 1,
+        "duration_sec": 4.0,
+        "visual_prompt": "Tầng lồng nhau mô tả code IDE báo lỗi downtime, mồ hôi rơi khi phải dán token và chuyển endpoint nhiều lần",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "headline": "Quota hết, downtime, chuyển provider mất công",
+        "sub": "Mỗi CLI/IDE lại phải cấu hình lại",
+        "accent": true,
+        "caption": {
+          "vi": "Quota hết liên tục, downtime giữa chừng, tốn công chuyển endpoint thủ công cho từng tool.",
+          "en": "Quota runs out, downtime disrupts, manual switching drains time."
+        },
+        "text": "Quota hết liên tục, downtime giữa chừng, tốn công chuyển endpoint thủ công cho từng tool."
+      },
+      {
+        "id": 2,
+        "duration_sec": 4.0,
+        "visual_prompt": "Green glowing router icon, các mũi tên chụm vào một điểm, nhiều logo AI nổi bật xung quanh",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "product-card",
+        "name": "9Router",
+        "tagline": "1 endpoint kết nối 60+ AI provider",
+        "badge": "🟢 SUCCESS",
+        "subtext": "BEFORE rối token → AFTER đồng bộ mọi AI",
+        "caption": {
+          "vi": "9Router — chỉ một endpoint duy nhất để kết nối mọi AI provider, luôn online, không sợ quota.",
+          "en": "9Router — one endpoint, 60+ AI providers, always-on."
+        },
+        "text": "9Router — chỉ một endpoint duy nhất để kết nối mọi AI provider, luôn online, không sợ quota."
+      },
+      {
+        "id": 3,
+        "duration_sec": 4.5,
+        "visual_prompt": "Các thẻ feature sáng xanh lá, biểu tượng fallback xoay, biểu tượng tiết kiệm token và cắm thiết bị đơn giản",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "feature-grid",
+        "features": [
+          {
+            "icon": "🛡️",
+            "title": "Smart fallback 3 tầng",
+            "desc": "Luôn tự động chuyển khi hết quota"
+          },
+          {
+            "icon": "💡",
+            "title": "Tiết kiệm đến 65% token",
+            "desc": "RTK & Caveman tối ưu chi phí AI"
+          },
+          {
+            "icon": "🔌",
+            "title": "Cắm là chạy mọi CLI/IDE",
+            "desc": "Tương thích Cursor, Claude Code, Copilot…"
+          }
+        ],
+        "caption": {
+          "vi": "Smart fallback 3 tầng, tiết kiệm tối đa token, cắm là chạy mọi CLI, IDE phổ biến.",
+          "en": "3-tier smart fallback · save up to 65% tokens · plug CLI/IDE & go"
+        },
+        "text": "Smart fallback 3 tầng, tiết kiệm tối đa token, cắm là chạy mọi CLI, IDE phổ biến."
+      },
+      {
+        "id": 4,
+        "duration_sec": 4.0,
+        "visual_prompt": "Terminal show lệnh npm install, dashboard UI sáng hiện danh sách provider đủ màu thương hiệu AI",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "cta-url",
+        "label": "Cài đặt miễn phí chỉ với 2 lệnh",
+        "url": "npmjs.com/package/9router",
+        "sub": "npm install -g 9router · Dashboard trực quan",
+        "caption": {
+          "vi": "Chỉ cần npm install -g 9router để kết nối hơn 60 AI provider ngay lập tức.",
+          "en": "Install 9router: link 60+ AI providers in two commands"
+        },
+        "text": "Chỉ cần npm install -g 9router để kết nối hơn 60 AI provider ngay lập tức."
+      }
+    ],
+    "total_duration_sec": 20.0
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8\\subtitle.srt",
+  "output_path": "..\\..\\storage\\output\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8.mp4",
+  "error": null,
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 7.032,
+      "visual_prompt": "split-screen: bên trái là dòng code với lỗi quota exhausted, bên phải là đồng hồ token quay nhanh về 0, tone xanh lá highlight số 65%",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "emoji": "🚀",
+      "headline": "Bạn vẫn lãng phí 65% token AI mỗi tháng?",
+      "sub": "60+ AI providers, quota vẫn cứ hết",
+      "accent": true,
+      "caption": {
+        "vi": "🚀 Bạn vẫn lãng phí tới 65% token AI mỗi tháng khi xài 60 dịch vụ?",
+        "en": "Still wasting 65% of AI tokens monthly with 60+ providers?"
+      },
+      "text": "🚀 Bạn vẫn lãng phí tới 65% token AI mỗi tháng khi xài 60 dịch vụ?",
+      "audio_path": "..\\..\\storage\\audio\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8\\scene_00.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 7.08,
+      "visual_prompt": "Tầng lồng nhau mô tả code IDE báo lỗi downtime, mồ hôi rơi khi phải dán token và chuyển endpoint nhiều lần",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "headline": "Quota hết, downtime, chuyển provider mất công",
+      "sub": "Mỗi CLI/IDE lại phải cấu hình lại",
+      "accent": true,
+      "caption": {
+        "vi": "Quota hết liên tục, downtime giữa chừng, tốn công chuyển endpoint thủ công cho từng tool.",
+        "en": "Quota runs out, downtime disrupts, manual switching drains time."
+      },
+      "text": "Quota hết liên tục, downtime giữa chừng, tốn công chuyển endpoint thủ công cho từng tool.",
+      "audio_path": "..\\..\\storage\\audio\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8\\scene_01.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 8.544,
+      "visual_prompt": "Green glowing router icon, các mũi tên chụm vào một điểm, nhiều logo AI nổi bật xung quanh",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "product-card",
+      "name": "9Router",
+      "tagline": "1 endpoint kết nối 60+ AI provider",
+      "badge": "🟢 SUCCESS",
+      "subtext": "BEFORE rối token → AFTER đồng bộ mọi AI",
+      "caption": {
+        "vi": "9Router — chỉ một endpoint duy nhất để kết nối mọi AI provider, luôn online, không sợ quota.",
+        "en": "9Router — one endpoint, 60+ AI providers, always-on."
+      },
+      "text": "9Router — chỉ một endpoint duy nhất để kết nối mọi AI provider, luôn online, không sợ quota.",
+      "audio_path": "..\\..\\storage\\audio\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8\\scene_02.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 8.184,
+      "visual_prompt": "Các thẻ feature sáng xanh lá, biểu tượng fallback xoay, biểu tượng tiết kiệm token và cắm thiết bị đơn giản",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "feature-grid",
+      "features": [
+        {
+          "icon": "🛡️",
+          "title": "Smart fallback 3 tầng",
+          "desc": "Luôn tự động chuyển khi hết quota"
+        },
+        {
+          "icon": "💡",
+          "title": "Tiết kiệm đến 65% token",
+          "desc": "RTK & Caveman tối ưu chi phí AI"
+        },
+        {
+          "icon": "🔌",
+          "title": "Cắm là chạy mọi CLI/IDE",
+          "desc": "Tương thích Cursor, Claude Code, Copilot…"
+        }
+      ],
+      "caption": {
+        "vi": "Smart fallback 3 tầng, tiết kiệm tối đa token, cắm là chạy mọi CLI, IDE phổ biến.",
+        "en": "3-tier smart fallback · save up to 65% tokens · plug CLI/IDE & go"
+      },
+      "text": "Smart fallback 3 tầng, tiết kiệm tối đa token, cắm là chạy mọi CLI, IDE phổ biến.",
+      "audio_path": "..\\..\\storage\\audio\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8\\scene_03.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 7.536,
+      "visual_prompt": "Terminal show lệnh npm install, dashboard UI sáng hiện danh sách provider đủ màu thương hiệu AI",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "cta-url",
+      "label": "Cài đặt miễn phí chỉ với 2 lệnh",
+      "url": "npmjs.com/package/9router",
+      "sub": "npm install -g 9router · Dashboard trực quan",
+      "caption": {
+        "vi": "Chỉ cần npm install -g 9router để kết nối hơn 60 AI provider ngay lập tức.",
+        "en": "Install 9router: link 60+ AI providers in two commands"
+      },
+      "text": "Chỉ cần npm install -g 9router để kết nối hơn 60 AI provider ngay lập tức.",
+      "audio_path": "..\\..\\storage\\audio\\ac3f7a92-a1ad-49eb-940f-aab59f4023b8\\scene_04.mp3",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T09:06:38.276398Z",
+  "updated_at": "2026-05-14T09:45:41.171596Z"
+}

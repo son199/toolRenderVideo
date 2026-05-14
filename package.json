@@ -1,0 +1,17 @@
+{
+  "name": "aividforge",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AIVidForge - AI tool to auto-generate short videos (Shorts/Reels/TikTok) end-to-end",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev:frontend": "pnpm --filter @aividforge/frontend dev",
+    "build:frontend": "pnpm --filter @aividforge/frontend build",
+    "lint": "pnpm --filter '*' lint",
+    "typecheck": "pnpm --filter '*' typecheck"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  }
+}

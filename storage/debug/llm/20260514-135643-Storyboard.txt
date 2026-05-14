@@ -1,0 +1,243 @@
+=== Primary error ===
+1 validation error for Storyboard
+total_duration_sec
+  Field required [type=missing, input_value={'title': '840.000 ngư...cale:1→1.02 0.3s'}}}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+
+=== Parsed (but invalid) ===
+{'title': '840.000 người chết mỗi năm vì độc hại nơi làm việc', 'slug': 'ilo-toxic-workplace-840k', 'aspect_ratio': '9:16', 'template': 'news', 'variant': 'STATS_HEAVY', 'theme': 'warning', 'voice': 'vi-VN-HoaiMyNeural', 'render_hints': {'bg_base': 'radial-gradient(ellipse at 20% 50%, #1a0e00 0%, #0d0d0d 60%)', 'accent_color': '#f59e0b', 'hold_fps': 30}, 'scenes': [{'id': 0, 'type': 'hero-text', 'duration_sec': 3.5, 'emoji': '⚠️', 'headline': '840.000 người chết mỗi năm vì nơi làm việc', 'sub': 'Độc hại tinh thần — nhưng bị xem là bình thường', 'accent': True, 'text': '840.000 người chết mỗi năm vì rủi ro tâm lý tại nơi làm việc.', 'visual_prompt': 'Văn phòng tối tăm, ánh đèn màn hình máy tính chiếu lên khuôn mặt mệt mỏi, bóng người cô đơn giữa không gian rộng lớn.', 'voice': 'vi-VN-HoaiMyNeural', 'animation_phases': {'intro': {'emoji': 'bounce-in 0.3s spring', 'headline_words': 'stagger-up 0.08s/word ease-out', 'accent_bar': 'width 0→100% 0.4s ease-out delay:0.2s'}, 'hold': {'emoji': 'float y:-6px 1.8s ease-in-out repeat:-1 yoyo:true', 'accent_bar': 'opacity 0.6↔1.0 2.0s repeat:-1 yoyo:true', 'bg_gradient': 'hue-shift 4s ease-in-out repeat:-1 yoyo:true'}, 'outro': {'all': 'blur-out scale:1→0.95 0.3s ease-in'}}, 'tts_beats': [{'at_word': 0, 'action': 'intro_start'}, {'at_word': 4, 'action': 'accent_highlight'}, {'at_word': 7, 'action': 'hold_start'}, {'at_word': -1, 'action': 'outro_start'}], 'caption': {'vi': '⚠️ 840.000 người chết mỗi năm vì rủi ro tâm lý tại nơi làm việc.', 'en': '840,000 deaths per year linked to toxic workplaces'}}, {'id': 1, 'type': 'stats-grid', 'duration_sec': 5.0, 'layout': 'grid-3', 'stats': [{'big': '840K', 'label': 'ca tử vong/năm', 'accent': True, 'counter_animate': False}, {'big': '35%', 'label': 'làm quá 48h/tuần', 'counter_animate': False}, {'big': '18%', 'label': 'bị bạo lực tinh thần', 'counter_animate': False}], 'text': '840.000 ca tử vong mỗi năm. 35% lao động thế giới làm quá 48 giờ mỗi tuần. 18% từng bị bạo lực tinh thần.', 'visual_prompt': 'Infographic tối với các con số nổi bật màu hổ phách trên nền đen, biểu đồ cột mờ phía sau.', 'voice': 'vi-VN-HoaiMyNeural', 'animation_phases': {'intro': {'eyebrow': 'fade-slide-down 0.3s', 'cards': 'stagger-pop-in 0.12s/card spring delay:0.2s'}, 'hold': {'accent_card': 'border-glow pulse 1.6s repeat:-1 yoyo:true', 'bg_particles': 'drift-up opacity:0.08 30s repeat:-1', 'card_1': 'subtle-float y:-4px 2.5s ease-in-out repeat:-1 yoyo:true'}, 'outro': {'cards': 'stagger-fade-down 0.08s/card'}}, 'tts_beats': [{'at_word': 0, 'action': 'intro_start'}, {'at_word': 3, 'action': 'counter_trigger'}, {'at_word': 8, 'action': 'hold_start'}, {'at_word': -1, 'action': 'outro_start'}], 'caption': {'vi': '840.000 ca tử vong mỗi năm. 35% lao động làm quá 48 giờ mỗi tuần. 18% từng bị bạo lực tinh thần.', 'en': '840K deaths · 35% overworked · 18% psychologically abused'}}, {'id': 2, 'type': 'stats-grid', 'duration_sec': 5.0, 'layout': 'comparison', 'stats': [{'big': '77%', 'label': 'đánh đổi lương lấy môi trường lành mạnh', 'accent': True, 'counter_animate': False}, {'big': '50%', 'label': 'lao động trẻ ưu tiên môi trường thân thiện', 'counter_animate': False}, {'big': '25%', 'label': 'chấp nhận giảm lương >10%', 'counter_animate': False}], 'text': '77% lao động Việt Nam sẵn sàng đánh đổi thu nhập để có môi trường làm việc lành mạnh hơn. 50% lao động trẻ ưu tiên môi trường thân thiện hơn mức lương cao.', 'visual_prompt': 'Biểu đồ tròn màu hổ phách và trắng trên nền tối, các thanh so sánh với nhãn rõ ràng.', 'voice': 'vi-VN-HoaiMyNeural', 'animation_phases': {'intro': {'eyebrow': 'fade-slide-down 0.3s', 'cards': 'stagger-pop-in 0.15s/card spring delay:0.25s'}, 'hold': {'accent_card': 'border-glow pulse amber 1.8s repeat:-1 yoyo:true', 'card_0': 'subtle-float y:-5px 2.8s ease-in-out repeat:-1 yoyo:true', 'bg_particles': 'drift-up opacity:0.06 35s repeat:-1'}, 'outro': {'cards': 'stagger-fade-down 0.09s/card'}}, 'tts_beats': [{'at_word': 0, 'action': 'intro_start'}, {'at_word': 4, 'action': 'accent_highlight'}, {'at_word': 10, 'action': 'hold_start'}, {'at_word': -1, 'action': 'outro_start'}], 'caption': {'vi': '77% lao động Việt Nam sẵn sàng giảm lương để có môi trường làm việc lành mạnh hơn.', 'en': '77% Vietnamese workers trade salary for healthier workplaces'}}, {'id': 3, 'type': 'quote', 'duration_sec': 4.5, 'size': 'normal', 'text': 'Nhiều lao động làm việc trong lo âu kéo dài, kết nối 24/7, về nhà vẫn phải nhận việc từ quản lý.', 'attr': 'Bà Hồ Thị Kim Ngân — Tổng Liên đoàn Lao động Việt Nam', 'highlight_words': ['lo âu kéo dài', 'kết nối 24/7'], 'visual_prompt': 'Người phụ nữ mệt mỏi ngồi trước màn hình máy tính trong căn phòng tối, ánh đèn xanh của điện thoại chiếu vào mặt.', 'voice': 'vi-VN-HoaiMyNeural', 'animation_phases': {'intro': {'quote_mark': 'drop-in scale:3→1 0.4s spring', 'text_words': 'stagger-fade-up 0.06s/word', 'attr_line': 'slide-right 0.3s delay:0.8s'}, 'hold': {'quote_mark': 'opacity 0.15↔0.35 3s ease-in-out repeat:-1 yoyo:true', 'highlight_words': 'bg-pulse amber 2.5s repeat:-1 yoyo:true', 'text': 'breathe scale:1.0↔1.005 3s repeat:-1 yoyo:true', 'attr_badge': 'border-glow subtle 2s repeat:-1 yoyo:true'}, 'outro': {'all': 'fade-out scale:1→0.97 0.3s'}}, 'tts_beats': [{'at_word': 0, 'action': 'intro_start'}, {'at_word': 5, 'action': 'accent_highlight'}, {'at_word': 10, 'action': 'hold_start'}, {'at_word': -1, 'action': 'outro_start'}], 'caption': {'vi': 'Nhiều lao động lo âu kéo dài, kết nối 24/7, về nhà vẫn không được nghỉ ngơi.', 'en': 'Workers anxious, always-on 24/7, no rest even at home'}}, {'id': 4, 'type': 'hero-text', 'duration_sec': 4.0, 'emoji': '🧠', 'headline': 'KPI, deadline và văn hóa im lặng đang hủy hoại sức khỏe', 'sub': 'Sợ nói mệt vì sợ bị đưa vào tầm ngắm tinh giản', 'accent': False, 'text': 'KPI, deadline và văn hóa im lặng đang hủy hoại sức khỏe tinh thần lao động.', 'visual_prompt': 'Màn hình máy tính hiển thị bảng KPI màu đỏ, bàn tay gõ phím muộn đêm, đồng hồ chỉ 2 giờ sáng.', 'voice': 'vi-VN-HoaiMyNeural', 'animation_phases': {'intro': {'emoji': 'slide-left 0.3s spring', 'headline_words': 'stagger-up 0.09s/word ease-out', 'sub': 'fade-in 0.2s delay:0.5s'}, 'hold': {'emoji': 'float y:-5px 2.0s ease-in-out repeat:-1 yoyo:true', 'headline': 'text-shadow-pulse amber 2.5s repeat:-1 yoyo:true', 'sub': 'opacity 0.7↔1.0 2.0s repeat:-1 yoyo:true'}, 'outro': {'all': 'slide-left fade-out 0.3s'}}, 'tts_beats': [{'at_word': 0, 'action': 'intro_start'}, {'at_word': 4, 'action': 'accent_highlight'}, {'at_word': 7, 'action': 'hold_start'}, {'at_word': -1, 'action': 'outro_start'}], 'caption': {'vi': 'KPI, deadline và văn hóa im lặng đang hủy hoại sức khỏe tinh thần người lao động.', 'en': 'KPIs, deadlines and silence culture destroying mental health'}}, {'id': 5, 'type': 'cta-url', 'duration_sec': 4.0, 'label': 'Hỏi chính mình: Hôm nay bạn có ổn không?', 'url': 'ilo.org/vi/topics/psychosocial-risks', 'sub': 'Tọa đàm ILO Việt Nam · 12/5/2025 · Hà Nội', 'urgency_badge': '🔴 Ngay', 'text': 'Hỏi chính mình ngay hôm nay: Hôm nay bạn có ổn không? Đừng im lặng.', 'visual_prompt': 'Bàn tay mở hướng lên trên nền sáng dịu, biểu tượng trái tim và đường link ILO nổi bật.', 'voice': 'vi-VN-HoaiMyNeural', 'animation_phases': {'intro': {'label': 'bounce-in 0.4s spring', 'url_box': 'fade-slide-up 0.3s delay:0.3s', 'sub': 'fade-in 0.2s delay:0.5s', 'urgency_badge': 'scale:0→1 0.3s spring delay:0.6s'}, 'hold': {'label': 'text-glow-pulse amber 2s repeat:-1 yoyo:true', 'urgency_badge': 'scale 1.0↔1.06 1.5s ease-in-out repeat:-1 yoyo:true', 'url_box': 'border-color-cycle amber→orange 3s repeat:-1 yoyo:true', 'bg': 'vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true'}, 'outro': {'all': 'fade-out scale:1→1.02 0.3s'}}}]}
+
+=== Raw LLM output ===
+```json
+{
+  "title": "840.000 người chết mỗi năm vì độc hại nơi làm việc",
+  "slug": "ilo-toxic-workplace-840k",
+  "aspect_ratio": "9:16",
+  "template": "news",
+  "variant": "STATS_HEAVY",
+  "theme": "warning",
+  "voice": "vi-VN-HoaiMyNeural",
+  "render_hints": {
+    "bg_base": "radial-gradient(ellipse at 20% 50%, #1a0e00 0%, #0d0d0d 60%)",
+    "accent_color": "#f59e0b",
+    "hold_fps": 30
+  },
+  "scenes": [
+    {
+      "id": 0,
+      "type": "hero-text",
+      "duration_sec": 3.5,
+      "emoji": "⚠️",
+      "headline": "840.000 người chết mỗi năm vì nơi làm việc",
+      "sub": "Độc hại tinh thần — nhưng bị xem là bình thường",
+      "accent": true,
+      "text": "840.000 người chết mỗi năm vì rủi ro tâm lý tại nơi làm việc.",
+      "visual_prompt": "Văn phòng tối tăm, ánh đèn màn hình máy tính chiếu lên khuôn mặt mệt mỏi, bóng người cô đơn giữa không gian rộng lớn.",
+      "voice": "vi-VN-HoaiMyNeural",
+      "animation_phases": {
+        "intro": {
+          "emoji": "bounce-in 0.3s spring",
+          "headline_words": "stagger-up 0.08s/word ease-out",
+          "accent_bar": "width 0→100% 0.4s ease-out delay:0.2s"
+        },
+        "hold": {
+          "emoji": "float y:-6px 1.8s ease-in-out repeat:-1 yoyo:true",
+          "accent_bar": "opacity 0.6↔1.0 2.0s repeat:-1 yoyo:true",
+          "bg_gradient": "hue-shift 4s ease-in-out repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "blur-out scale:1→0.95 0.3s ease-in"
+        }
+      },
+      "tts_beats": [
+        { "at_word": 0, "action": "intro_start" },
+        { "at_word": 4, "action": "accent_highlight" },
+        { "at_word": 7, "action": "hold_start" },
+        { "at_word": -1, "action": "outro_start" }
+      ],
+      "caption": {
+        "vi": "⚠️ 840.000 người chết mỗi năm vì rủi ro tâm lý tại nơi làm việc.",
+        "en": "840,000 deaths per year linked to toxic workplaces"
+      }
+    },
+    {
+      "id": 1,
+      "type": "stats-grid",
+      "duration_sec": 5.0,
+      "layout": "grid-3",
+      "stats": [
+        { "big": "840K", "label": "ca tử vong/năm", "accent": true, "counter_animate": false },
+        { "big": "35%", "label": "làm quá 48h/tuần", "counter_animate": false },
+        { "big": "18%", "label": "bị bạo lực tinh thần", "counter_animate": false }
+      ],
+      "text": "840.000 ca tử vong mỗi năm. 35% lao động thế giới làm quá 48 giờ mỗi tuần. 18% từng bị bạo lực tinh thần.",
+      "visual_prompt": "Infographic tối với các con số nổi bật màu hổ phách trên nền đen, biểu đồ cột mờ phía sau.",
+      "voice": "vi-VN-HoaiMyNeural",
+      "animation_phases": {
+        "intro": {
+          "eyebrow": "fade-slide-down 0.3s",
+          "cards": "stagger-pop-in 0.12s/card spring delay:0.2s"
+        },
+        "hold": {
+          "accent_card": "border-glow pulse 1.6s repeat:-1 yoyo:true",
+          "bg_particles": "drift-up opacity:0.08 30s repeat:-1",
+          "card_1": "subtle-float y:-4px 2.5s ease-in-out repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "cards": "stagger-fade-down 0.08s/card"
+        }
+      },
+      "tts_beats": [
+        { "at_word": 0, "action": "intro_start" },
+        { "at_word": 3, "action": "counter_trigger" },
+        { "at_word": 8, "action": "hold_start" },
+        { "at_word": -1, "action": "outro_start" }
+      ],
+      "caption": {
+        "vi": "840.000 ca tử vong mỗi năm. 35% lao động làm quá 48 giờ mỗi tuần. 18% từng bị bạo lực tinh thần.",
+        "en": "840K deaths · 35% overworked · 18% psychologically abused"
+      }
+    },
+    {
+      "id": 2,
+      "type": "stats-grid",
+      "duration_sec": 5.0,
+      "layout": "comparison",
+      "stats": [
+        { "big": "77%", "label": "đánh đổi lương lấy môi trường lành mạnh", "accent": true, "counter_animate": false },
+        { "big": "50%", "label": "lao động trẻ ưu tiên môi trường thân thiện", "counter_animate": false },
+        { "big": "25%", "label": "chấp nhận giảm lương >10%", "counter_animate": false }
+      ],
+      "text": "77% lao động Việt Nam sẵn sàng đánh đổi thu nhập để có môi trường làm việc lành mạnh hơn. 50% lao động trẻ ưu tiên môi trường thân thiện hơn mức lương cao.",
+      "visual_prompt": "Biểu đồ tròn màu hổ phách và trắng trên nền tối, các thanh so sánh với nhãn rõ ràng.",
+      "voice": "vi-VN-HoaiMyNeural",
+      "animation_phases": {
+        "intro": {
+          "eyebrow": "fade-slide-down 0.3s",
+          "cards": "stagger-pop-in 0.15s/card spring delay:0.25s"
+        },
+        "hold": {
+          "accent_card": "border-glow pulse amber 1.8s repeat:-1 yoyo:true",
+          "card_0": "subtle-float y:-5px 2.8s ease-in-out repeat:-1 yoyo:true",
+          "bg_particles": "drift-up opacity:0.06 35s repeat:-1"
+        },
+        "outro": {
+          "cards": "stagger-fade-down 0.09s/card"
+        }
+      },
+      "tts_beats": [
+        { "at_word": 0, "action": "intro_start" },
+        { "at_word": 4, "action": "accent_highlight" },
+        { "at_word": 10, "action": "hold_start" },
+        { "at_word": -1, "action": "outro_start" }
+      ],
+      "caption": {
+        "vi": "77% lao động Việt Nam sẵn sàng giảm lương để có môi trường làm việc lành mạnh hơn.",
+        "en": "77% Vietnamese workers trade salary for healthier workplaces"
+      }
+    },
+    {
+      "id": 3,
+      "type": "quote",
+      "duration_sec": 4.5,
+      "size": "normal",
+      "text": "Nhiều lao động làm việc trong lo âu kéo dài, kết nối 24/7, về nhà vẫn phải nhận việc từ quản lý.",
+      "attr": "Bà Hồ Thị Kim Ngân — Tổng Liên đoàn Lao động Việt Nam",
+      "highlight_words": ["lo âu kéo dài", "kết nối 24/7"],
+      "text": "Nhiều lao động làm việc trong lo âu kéo dài, kết nối 24/7, về nhà vẫn phải nhận việc từ quản lý.",
+      "visual_prompt": "Người phụ nữ mệt mỏi ngồi trước màn hình máy tính trong căn phòng tối, ánh đèn xanh của điện thoại chiếu vào mặt.",
+      "voice": "vi-VN-HoaiMyNeural",
+      "animation_phases": {
+        "intro": {
+          "quote_mark": "drop-in scale:3→1 0.4s spring",
+          "text_words": "stagger-fade-up 0.06s/word",
+          "attr_line": "slide-right 0.3s delay:0.8s"
+        },
+        "hold": {
+          "quote_mark": "opacity 0.15↔0.35 3s ease-in-out repeat:-1 yoyo:true",
+          "highlight_words": "bg-pulse amber 2.5s repeat:-1 yoyo:true",
+          "text": "breathe scale:1.0↔1.005 3s repeat:-1 yoyo:true",
+          "attr_badge": "border-glow subtle 2s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out scale:1→0.97 0.3s"
+        }
+      },
+      "tts_beats": [
+        { "at_word": 0, "action": "intro_start" },
+        { "at_word": 5, "action": "accent_highlight" },
+        { "at_word": 10, "action": "hold_start" },
+        { "at_word": -1, "action": "outro_start" }
+      ],
+      "caption": {
+        "vi": "Nhiều lao động lo âu kéo dài, kết nối 24/7, về nhà vẫn không được nghỉ ngơi.",
+        "en": "Workers anxious, always-on 24/7, no rest even at home"
+      }
+    },
+    {
+      "id": 4,
+      "type": "hero-text",
+      "duration_sec": 4.0,
+      "emoji": "🧠",
+      "headline": "KPI, deadline và văn hóa im lặng đang hủy hoại sức khỏe",
+      "sub": "Sợ nói mệt vì sợ bị đưa vào tầm ngắm tinh giản",
+      "accent": false,
+      "text": "KPI, deadline và văn hóa im lặng đang hủy hoại sức khỏe tinh thần lao động.",
+      "visual_prompt": "Màn hình máy tính hiển thị bảng KPI màu đỏ, bàn tay gõ phím muộn đêm, đồng hồ chỉ 2 giờ sáng.",
+      "voice": "vi-VN-HoaiMyNeural",
+      "animation_phases": {
+        "intro": {
+          "emoji": "slide-left 0.3s spring",
+          "headline_words": "stagger-up 0.09s/word ease-out",
+          "sub": "fade-in 0.2s delay:0.5s"
+        },
+        "hold": {
+          "emoji": "float y:-5px 2.0s ease-in-out repeat:-1 yoyo:true",
+          "headline": "text-shadow-pulse amber 2.5s repeat:-1 yoyo:true",
+          "sub": "opacity 0.7↔1.0 2.0s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "slide-left fade-out 0.3s"
+        }
+      },
+      "tts_beats": [
+        { "at_word": 0, "action": "intro_start" },
+        { "at_word": 4, "action": "accent_highlight" },
+        { "at_word": 7, "action": "hold_start" },
+        { "at_word": -1, "action": "outro_start" }
+      ],
+      "caption": {
+        "vi": "KPI, deadline và văn hóa im lặng đang hủy hoại sức khỏe tinh thần người lao động.",
+        "en": "KPIs, deadlines and silence culture destroying mental health"
+      }
+    },
+    {
+      "id": 5,
+      "type": "cta-url",
+      "duration_sec": 4.0,
+      "label": "Hỏi chính mình: Hôm nay bạn có ổn không?",
+      "url": "ilo.org/vi/topics/psychosocial-risks",
+      "sub": "Tọa đàm ILO Việt Nam · 12/5/2025 · Hà Nội",
+      "urgency_badge": "🔴 Ngay",
+      "text": "Hỏi chính mình ngay hôm nay: Hôm nay bạn có ổn không? Đừng im lặng.",
+      "visual_prompt": "Bàn tay mở hướng lên trên nền sáng dịu, biểu tượng trái tim và đường link ILO nổi bật.",
+      "voice": "vi-VN-HoaiMyNeural",
+      "animation_phases": {
+        "intro": {
+          "label": "bounce-in 0.4s spring",
+          "url_box": "fade-slide-up 0.3s delay:0.3s",
+          "sub": "fade-in 0.2s delay:0.5s",
+          "urgency_badge": "scale:0→1 0.3s spring delay:0.6s"
+        },
+        "hold": {
+          "label": "text-glow-pulse amber 2s repeat:-1 yoyo:true",
+          "urgency_badge": "scale 1.0↔1.06 1.5s ease-in-out repeat:-1 yoyo:true",
+          "url_box": "border-color-cycle amber→orange 3s repeat:-1 yoyo:true",
+          "bg": "vignette-pulse opacity:0.3↔0.5 2.5s repeat:-1 yoyo:true"
+        },
+        "outro": {
+          "all": "fade-out scale:1→1.02 0.3s"
+        }
+      },
+      "tts_beats": [
+        { "at_word": 0, "action":

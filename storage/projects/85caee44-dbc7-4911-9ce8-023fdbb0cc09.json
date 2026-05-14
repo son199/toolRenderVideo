@@ -1,0 +1,283 @@
+{
+  "id": "85caee44-dbc7-4911-9ce8-023fdbb0cc09",
+  "user_id": null,
+  "title": "Quảng bá sản phẩm ",
+  "input_type": "url",
+  "input_value": "https://dantri.com.vn/",
+  "upload_path": null,
+  "raw_text": "01:39\nTIN HAY\nChủ đề nóng\n“Bác” thông tin ĐH Bách khoa dừng chuyển về Hưng Yên để lên Hòa Lạc\nHọc sinh lớp 6 bị bố và mẹ kế bạo hành do rửa bát, quét nhà chưa sạch?\nĐề xuất miễn học phí cho người học tiến sĩ chương trình trọng điểm quốc gia\nNhiều dự án trường học \"đắp chiếu\" ở TPHCM\nNữ sinh Việt mang “Bèo dạt mây trôi” đến sinh viên quốc tế\nVì sao thi lớp 10 căng thẳng hơn thi đại học?\nBí thư Hà Nội Trần Đức Thắng: Mỗi xã phường phải đủ trường công 3 cấp học\nBản cập nhật iOS 26.5 bổ sung loạt tính năng mới\nSiết phần mềm lậu, doanh nghiệp xoay xở bài toán chi phí\nSony Xperia 1 VIII ra mắt - Thiết kế mới, cấu hình mạnh, giá cao khó ngờ\nSiết chặt bản quyền phần mềm: Dân công nghệ “mách nước” giải pháp\nNhiều thuê bao bị khóa một chiều, người dân tấp nập đi xác thực SIM\nĐề nghị Zalo, Meta bảo vệ người dùng trước nguy cơ lừa đảo bằng AI\nĐánh giá chi tiết điện thoại OPPO Find X9s vừa ra mắt\nDân trí Spotlight\nLao động - Việc làm\n\"Giá trị cốt lõi của trợ cấp thất nghiệp không chỉ ở khoản hỗ trợ tạm thời\"\n\"Nhiều chương trình 0 đồng nhưng người lao động phải đóng phí khổng lồ\"\nChủ quán tạm nghỉ để cứu bé gái mắc bệnh hiểm nghèo và cái kết bất ngờ\nDoanh nghiệp nâng thu nhập sàn lên 10-20 triệu đồng khi tuyển lao động\nPháp luật\nBắt tạm giam thanh niên tấn công Thiếu tá CSGT ở Bắc Ninh\nBị cáo Bùi Đình Khánh gửi lời chia buồn gia đình liệt sỹ Nguyễn Đăng Khải\nBạn gái \"trùm\" ma túy Bùi Đình Khánh nói lời ân hận tại tòa\nHai người tàng trữ chất ma túy ở Lâm Đồng bị bắt\nTâm điểm\nThảm nhựa đường làng, nên và không nên\nKhông dùng phần mềm lậu\nKhi thầy cô cấm học sinh dùng AI viết bài\n\"Mặt trận là Nhân dân\"\nBạn đọc\nChuyển đổi số trong giáo dục mầm non: Bắt đầu từ những việc cụ thể nhất\nLên kế hoạch xây nhà thờ tổ mới biết thửa đất đã đứng tên người khác\nCơ quan chức năng có lý khi truy giấy tờ 80kg xác ve sầu khô?\nNgười sở hữu cây muội hồng có bị xử lý?\nThông tin doanh nghiệp - sản phẩm",
+  "template": "promo",
+  "aspect_ratio": "9:16",
+  "voice": "vi-VN-HoaiMyNeural",
+  "use_agent": true,
+  "burn_subtitle": false,
+  "status": "completed",
+  "storyboard": {
+    "title": "Công nghệ mới, giảm đau đầu chi phí phần mềm — iOS 26.5 & Xu hướng 2024",
+    "aspect_ratio": "9:16",
+    "template": "promo",
+    "theme": "default",
+    "scenes": [
+      {
+        "id": 0,
+        "duration_sec": 3.5,
+        "visual_prompt": "Split-screen cảnh doanh nghiệp cân nhắc trước màn hình máy tính hiện bảng giá phần mềm, bên phải là icon iOS nổi bật và thiết bị công nghệ mới.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "emoji": "💸",
+        "headline": "Bạn vẫn phải xoay xở với chi phí bản quyền phần mềm?",
+        "sub": "i OS 26.5 ra mắt, công nghệ liên tục đổi mới",
+        "accent": true,
+        "caption": {
+          "vi": "💸 Vẫn chật vật với chi phí bản quyền phần mềm?",
+          "en": "Still struggling with software licensing costs?"
+        },
+        "text": "💸 Vẫn chật vật với chi phí bản quyền phần mềm?"
+      },
+      {
+        "id": 1,
+        "duration_sec": 4.0,
+        "visual_prompt": "Hình minh họa doanh nghiệp với nhiều laptop, cảnh báo bản quyền phần mềm hiện lên, và góc nhỏ thoại xác thực SIM.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "hero-text",
+        "headline": "Doanh nghiệp đau đầu bài toán phần mềm lậu",
+        "sub": "Nhiều thuê bao còn bị khóa một chiều",
+        "accent": false,
+        "caption": {
+          "vi": "Doanh nghiệp đau đầu phần mềm lậu, SIM bị khóa.",
+          "en": "Headaches: illegal software, blocked SIMs."
+        },
+        "text": "Doanh nghiệp đau đầu phần mềm lậu, SIM bị khóa."
+      },
+      {
+        "id": 2,
+        "duration_sec": 4.5,
+        "visual_prompt": "Các thiết bị iPhone với logo iOS 26.5, cạnh OPPO Find X9s cùng Sony Xperia mới trên nền hiện đại.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "product-card",
+        "name": "iOS 26.5 & Tech News",
+        "tagline": "Loạt công nghệ mới vừa ra mắt",
+        "badge": "🚀 LAUNCH",
+        "subtext": "Từ iOS 26.5 đến OPPO Find X9s",
+        "caption": {
+          "vi": "i OS 26.5 & Tech News, công nghệ mới nhất, từ i OS đến Sony, OPPO.",
+          "en": "i OS 26.5 & Tech News — new tech just dropped."
+        },
+        "text": "i OS 26.5 & Tech News, công nghệ mới nhất, từ i OS đến Sony, OPPO."
+      },
+      {
+        "id": 3,
+        "duration_sec": 4.5,
+        "visual_prompt": "Ba khung hình split-screen: 1. Giao diện iOS mới, 2. Sony Xperia vừa ra mắt đặt lên giá đỡ, 3. Hình SIM điện thoại bị khóa.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "feature-grid",
+        "features": [
+          {
+            "icon": "🆕",
+            "title": "iOS 26.5 nhiều cải tiến",
+            "desc": "Nâng cấp bảo mật, thêm tiện ích"
+          },
+          {
+            "icon": "📱",
+            "title": "Sony Xperia thiết kế mới",
+            "desc": "Hiệu suất mạnh, kiểu dáng khác biệt"
+          },
+          {
+            "icon": "🔒",
+            "title": "SIM bị khóa một chiều",
+            "desc": "Xác thực, bảo vệ thuê bao"
+          }
+        ],
+        "caption": {
+          "vi": "i OS 26.5 bổ sung tiện ích, Xperia khác biệt, nhiều SIM bị khóa.",
+          "en": "i OS 26.5 upgrades, Xperia launches, SIMs blocked."
+        },
+        "text": "i OS 26.5 bổ sung tiện ích, Xperia khác biệt, nhiều SIM bị khóa.",
+        "tts_beats": [
+          {
+            "at_word": 0,
+            "action": "focus_item",
+            "item": 0
+          },
+          {
+            "at_word": 7,
+            "action": "focus_item",
+            "item": 1
+          },
+          {
+            "at_word": 14,
+            "action": "focus_item",
+            "item": 2
+          },
+          {
+            "at_word": 20,
+            "action": "hold_start"
+          },
+          {
+            "at_word": -1,
+            "action": "outro_start"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "duration_sec": 4.0,
+        "visual_prompt": "Nút bấm sáng nổi bật trên nền các thiết bị di động, cùng logo thương hiệu nổi rõ.",
+        "style": null,
+        "voice": "vi-VN-HoaiMyNeural",
+        "type": "cta-url",
+        "label": "Khám phá giải pháp công nghệ mới",
+        "url": "dantri.com.vn/cong-nghe",
+        "sub": "Liên tục cập nhật · Xu hướng 2024",
+        "caption": {
+          "vi": "Khám phá công nghệ mới nhất tại dantri.com.vn/cong-nghe.",
+          "en": "Explore tech at dantri.com.vn/cong-nghe. Stay updated."
+        },
+        "text": "Khám phá công nghệ mới nhất tại dantri.com.vn/cong-nghe."
+      }
+    ],
+    "total_duration_sec": 20.5
+  },
+  "subtitle_path": "..\\..\\storage\\audio\\85caee44-dbc7-4911-9ce8-023fdbb0cc09\\subtitle.srt",
+  "output_path": "..\\..\\storage\\output\\85caee44-dbc7-4911-9ce8-023fdbb0cc09.mp4",
+  "error": null,
+  "scenes": [
+    {
+      "id": 0,
+      "duration_sec": 3.312,
+      "visual_prompt": "Split-screen cảnh doanh nghiệp cân nhắc trước màn hình máy tính hiện bảng giá phần mềm, bên phải là icon iOS nổi bật và thiết bị công nghệ mới.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "emoji": "💸",
+      "headline": "Bạn vẫn phải xoay xở với chi phí bản quyền phần mềm?",
+      "sub": "i OS 26.5 ra mắt, công nghệ liên tục đổi mới",
+      "accent": true,
+      "caption": {
+        "vi": "💸 Vẫn chật vật với chi phí bản quyền phần mềm?",
+        "en": "Still struggling with software licensing costs?"
+      },
+      "text": "💸 Vẫn chật vật với chi phí bản quyền phần mềm?",
+      "audio_path": "..\\..\\storage\\audio\\85caee44-dbc7-4911-9ce8-023fdbb0cc09\\scene_00.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 1,
+      "duration_sec": 3.672,
+      "visual_prompt": "Hình minh họa doanh nghiệp với nhiều laptop, cảnh báo bản quyền phần mềm hiện lên, và góc nhỏ thoại xác thực SIM.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "hero-text",
+      "headline": "Doanh nghiệp đau đầu bài toán phần mềm lậu",
+      "sub": "Nhiều thuê bao còn bị khóa một chiều",
+      "accent": false,
+      "caption": {
+        "vi": "Doanh nghiệp đau đầu phần mềm lậu, SIM bị khóa.",
+        "en": "Headaches: illegal software, blocked SIMs."
+      },
+      "text": "Doanh nghiệp đau đầu phần mềm lậu, SIM bị khóa.",
+      "audio_path": "..\\..\\storage\\audio\\85caee44-dbc7-4911-9ce8-023fdbb0cc09\\scene_01.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 8.352,
+      "visual_prompt": "Các thiết bị iPhone với logo iOS 26.5, cạnh OPPO Find X9s cùng Sony Xperia mới trên nền hiện đại.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "product-card",
+      "name": "iOS 26.5 & Tech News",
+      "tagline": "Loạt công nghệ mới vừa ra mắt",
+      "badge": "🚀 LAUNCH",
+      "subtext": "Từ iOS 26.5 đến OPPO Find X9s",
+      "caption": {
+        "vi": "i OS 26.5 & Tech News, công nghệ mới nhất, từ i OS đến Sony, OPPO.",
+        "en": "i OS 26.5 & Tech News — new tech just dropped."
+      },
+      "text": "i OS 26.5 & Tech News, công nghệ mới nhất, từ i OS đến Sony, OPPO.",
+      "audio_path": "..\\..\\storage\\audio\\85caee44-dbc7-4911-9ce8-023fdbb0cc09\\scene_02.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 7.488,
+      "visual_prompt": "Ba khung hình split-screen: 1. Giao diện iOS mới, 2. Sony Xperia vừa ra mắt đặt lên giá đỡ, 3. Hình SIM điện thoại bị khóa.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "feature-grid",
+      "features": [
+        {
+          "icon": "🆕",
+          "title": "iOS 26.5 nhiều cải tiến",
+          "desc": "Nâng cấp bảo mật, thêm tiện ích"
+        },
+        {
+          "icon": "📱",
+          "title": "Sony Xperia thiết kế mới",
+          "desc": "Hiệu suất mạnh, kiểu dáng khác biệt"
+        },
+        {
+          "icon": "🔒",
+          "title": "SIM bị khóa một chiều",
+          "desc": "Xác thực, bảo vệ thuê bao"
+        }
+      ],
+      "caption": {
+        "vi": "i OS 26.5 bổ sung tiện ích, Xperia khác biệt, nhiều SIM bị khóa.",
+        "en": "i OS 26.5 upgrades, Xperia launches, SIMs blocked."
+      },
+      "text": "i OS 26.5 bổ sung tiện ích, Xperia khác biệt, nhiều SIM bị khóa.",
+      "tts_beats": [
+        {
+          "at_word": 0,
+          "action": "focus_item",
+          "item": 0
+        },
+        {
+          "at_word": 7,
+          "action": "focus_item",
+          "item": 1
+        },
+        {
+          "at_word": 14,
+          "action": "focus_item",
+          "item": 2
+        },
+        {
+          "at_word": 20,
+          "action": "hold_start"
+        },
+        {
+          "at_word": -1,
+          "action": "outro_start"
+        }
+      ],
+      "audio_path": "..\\..\\storage\\audio\\85caee44-dbc7-4911-9ce8-023fdbb0cc09\\scene_03.mp3",
+      "word_timings": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 8.16,
+      "visual_prompt": "Nút bấm sáng nổi bật trên nền các thiết bị di động, cùng logo thương hiệu nổi rõ.",
+      "style": null,
+      "voice": "vi-VN-HoaiMyNeural",
+      "type": "cta-url",
+      "label": "Khám phá giải pháp công nghệ mới",
+      "url": "dantri.com.vn/cong-nghe",
+      "sub": "Liên tục cập nhật · Xu hướng 2024",
+      "caption": {
+        "vi": "Khám phá công nghệ mới nhất tại dantri.com.vn/cong-nghe.",
+        "en": "Explore tech at dantri.com.vn/cong-nghe. Stay updated."
+      },
+      "text": "Khám phá công nghệ mới nhất tại dantri.com.vn/cong-nghe.",
+      "audio_path": "..\\..\\storage\\audio\\85caee44-dbc7-4911-9ce8-023fdbb0cc09\\scene_04.mp3",
+      "word_timings": null
+    }
+  ],
+  "created_at": "2026-05-14T10:02:34.639296Z",
+  "updated_at": "2026-05-14T10:04:22.387197Z"
+}
