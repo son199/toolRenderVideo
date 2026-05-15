@@ -116,18 +116,31 @@ async def render_remotion(
     with props_path.open("w", encoding="utf-8") as f:
         json.dump({"scenes": remotion_scenes, "template": template}, f, ensure_ascii=False)
 
-    # 3. Run Remotion CLI with Ultimate Stability Flags
+    # 3. Run Remotion CLI — flags chọn theo machine spec (config-driven)
+    cpu_count = os.cpu_count() or 4
+    if settings.render_low_resource_mode:
+        # Máy không có GPU / share resource: software GL + ít CPU
+        concurrency = settings.render_concurrency or max(1, cpu_count // 4)
+        gl_flag = "swiftshader"
+        mode_label = "low-resource (software GL)"
+    else:
+        # Máy bình thường: ANGLE (DirectX/Metal-backed) + nhiều CPU
+        concurrency = settings.render_concurrency or max(1, min(cpu_count - 2, 16))
+        gl_flag = "angle"
+        mode_label = "standard (hardware GL)"
+
+    # Bảo vệ tuyệt đối: không vượt số core thực để tránh validate-concurrency error
+    concurrency = max(1, min(concurrency, cpu_count))
+
     if on_progress:
-        await on_progress("Đang Render với chế độ chống Crash (ANGLE Engine)...")
-        
+        await on_progress(f"Đang Render — {mode_label}, concurrency={concurrency}...")
+
     cmd = (
         f'npx remotion render src/index.ts MainVideo "{output_path.absolute()}" '
-        f'--props ./props.json --concurrency=24 --codec=h264 --pixel-format=yuv420p '
-        f'--browser=chrome --network-timeout=90000 '
-        f'--chromium-flags="--gl=angle --headless=new --ignore-certificate-errors"'
+        f'--props ./props.json --concurrency={concurrency} --codec=h264 --pixel-format=yuv420p '
+        f'--gl={gl_flag} --timeout=90000'
     )
-    
-    # Tận dụng 128GB RAM của bạn bằng cách nâng giới hạn cho Node.js
+
     env = os.environ.copy()
     env["NODE_OPTIONS"] = "--max-old-space-size=4096"
     

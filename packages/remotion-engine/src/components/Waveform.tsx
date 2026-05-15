@@ -2,18 +2,22 @@ import React from "react";
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import { useAudioData, visualizeAudio } from "@remotion/media-utils";
 
-export const Waveform: React.FC<{ audioSrc: string, color?: string }> = ({ audioSrc, color = "#38bdf8" }) => {
+export type WaveformPosition = "top" | "bottom" | "none";
+
+export const Waveform: React.FC<{
+  audioSrc: string;
+  color?: string;
+  position?: WaveformPosition;
+}> = ({ audioSrc, color = "#38bdf8", position = "bottom" }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  
-  // Load audio data for visualization
+
   const audioData = useAudioData(audioSrc);
 
-  if (!audioData) {
+  if (!audioData || position === "none") {
     return null;
   }
 
-  // Generate 64 frequency bars for the current frame
   const visualization = visualizeAudio({
     fps,
     frame,
@@ -21,18 +25,22 @@ export const Waveform: React.FC<{ audioSrc: string, color?: string }> = ({ audio
     numberOfSamples: 64,
   });
 
+  const isTop = position === "top";
+
   return (
-    <AbsoluteFill style={{ 
-      justifyContent: "flex-end", 
-      alignItems: "center", 
-      paddingBottom: "80px", // Put it near the bottom
-      zIndex: 20,
-      pointerEvents: "none"
-    }}>
+    <AbsoluteFill
+      style={{
+        justifyContent: isTop ? "flex-start" : "flex-end",
+        alignItems: "center",
+        paddingTop: isTop ? "80px" : 0,
+        paddingBottom: isTop ? 0 : "80px",
+        zIndex: 20,
+        pointerEvents: "none",
+      }}
+    >
       <div style={{ display: "flex", alignItems: "flex-end", gap: "5px", height: "120px" }}>
         {visualization.map((v, i) => {
-          // Amp up the visualizer height, maxing out cleanly
-          const height = Math.max(8, v * 280); 
+          const height = Math.max(8, v * 280);
           return (
             <div
               key={i}

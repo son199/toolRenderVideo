@@ -17,11 +17,13 @@ from pathlib import Path
 from app import repository
 from app.config import get_settings
 from app.events import ProgressEvent, get_bus
+from app.services.broll import pick_broll, reset_rotation
 from app.services.ingest import IngestError, ingest
+from app.services.text_clean import clean_vi_deep
 from app.services.llm import get_provider as get_llm_provider
 from app.services.llm.base import LLMError
 from app.services.scene_text import narration_text
-from app.services.subtitle import timings_to_dict, write_srt
+from app.services.subtitle import timings_to_dict, whisper_align, write_srt
 from app.services.tts import get_provider as get_tts_provider
 from app.services.tts.base import TTSError
 
@@ -144,6 +146,13 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
 
 
 
+            # NFC-normalize + glue back single-consonant artifacts (e.g.
+            # "cạnh t ranh" → "cạnh tranh", "h ai" → "hai") across EVERY string
+            # in the storyboard. Done before fix_spacing/narration_text so all
+            # downstream consumers (TTS, Remotion captions, item_phrases) see
+            # the same cleaned strings.
+            sb_dict = clean_vi_deep(sb_dict)
+
             scenes = sb_dict.get("scenes")
             if isinstance(scenes, list):
                 for scene in scenes:
@@ -152,7 +161,7 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
                         for capk in ("vi", "en"):
                             if capk in scene["caption"] and isinstance(scene["caption"][capk], str):
                                 scene["caption"][capk] = fix_spacing(scene["caption"][capk])
-                    
+
                     # Đảm bảo luôn có text (Remotion sẽ dùng word_timings là chính, nhưng cần text dự phòng)
                     scene["text"] = narration_text(scene)
 
@@ -191,40 +200,116 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
                         text = "Chuyển cảnh."
 
                     result = await tts.synthesize(text=text, voice=voice, out_path=out_path)
-                    
-                    import random
-                    def get_mixkit_video(prompt: str) -> str:
-                        prompt = (prompt or "").lower()
-                        if "tech" in prompt or "hacker" in prompt or "server" in prompt or "code" in prompt:
-                            return random.choice([
-                                "https://assets.mixkit.co/videos/preview/mixkit-server-room-with-rows-of-computer-servers-and-blinking-lights-15822-large.mp4",
-                                "https://assets.mixkit.co/videos/preview/mixkit-software-developer-working-on-a-computer-at-night-17631-large.mp4"
-                            ])
-                        if "money" in prompt or "finance" in prompt or "crypto" in prompt or "business" in prompt:
-                            return "https://assets.mixkit.co/videos/preview/mixkit-falling-crypto-coins-39908-large.mp4"
-                        return random.choice([
-                            "https://assets.mixkit.co/videos/preview/mixkit-abstract-technology-connection-with-nodes-and-lines-27488-large.mp4",
-                            "https://assets.mixkit.co/videos/preview/mixkit-spinning-particles-in-the-shape-of-a-sphere-46903-large.mp4",
-                            "https://assets.mixkit.co/videos/preview/mixkit-neon-lights-in-the-shape-of-a-tunnel-34208-large.mp4"
-                        ])
+
+                    # Voice-sync fallback: nếu TTS không trả word_timings (provider không
+                    # hỗ trợ, hoặc Edge TTS không phát WordBoundary), chạy forced alignment
+                    # trên audio đã render để khôi phục timings thật.
+                    # Thứ tự thử: Groq STT (cloud) → faster-whisper local.
+                    # Không có timings → KineticScene rơi vào fallback chia đều, KHÔNG khớp voice.
+                    timings = result.word_timings
+                    aligned_via_stt = False
+                    if not timings and settings.tts_force_alignment_fallback:
+                        # 1. Groq cloud STT (preferred — free tier, no native deps)
+                        if settings.groq_api_key:
+                            try:
+                                from app.services.align import groq_align
+                                aligned = await asyncio.to_thread(
+                                    groq_align,
+                                    result.audio_path,
+                                    settings.whisper_language,
+                                )
+                                if aligned:
+                                    timings = aligned
+                                    aligned_via_stt = True
+                                    logger.info(
+                                        "groq_align: scene=%d recovered %d word timings",
+                                        scene_id,
+                                        len(aligned),
+                                    )
+                            except Exception as exc:  # noqa: BLE001
+                                logger.warning(
+                                    "groq_align failed for scene=%d, trying local whisper: %s",
+                                    scene_id,
+                                    exc,
+                                )
+                        # 2. openai-whisper local (PyTorch — stable on Windows)
+                        if not timings:
+                            try:
+                                from app.services.align import openai_whisper_align
+                                aligned = await asyncio.to_thread(
+                                    openai_whisper_align,
+                                    result.audio_path,
+                                    settings.whisper_language,
+                                )
+                                if aligned:
+                                    timings = aligned
+                                    aligned_via_stt = True
+                                    logger.info(
+                                        "openai_whisper_align: scene=%d recovered %d word timings",
+                                        scene_id,
+                                        len(aligned),
+                                    )
+                            except Exception as exc:  # noqa: BLE001
+                                logger.warning(
+                                    "openai_whisper_align failed for scene=%d, trying faster-whisper: %s",
+                                    scene_id,
+                                    exc,
+                                )
+                        # 3. faster-whisper local fallback (may segfault — last resort)
+                        if not timings:
+                            try:
+                                aligned = await asyncio.to_thread(
+                                    whisper_align,
+                                    result.audio_path,
+                                    settings.whisper_language,
+                                )
+                                if aligned:
+                                    timings = aligned
+                                    aligned_via_stt = True
+                                    logger.info(
+                                        "whisper_align: scene=%d recovered %d word timings",
+                                        scene_id,
+                                        len(aligned),
+                                    )
+                            except Exception as exc:  # noqa: BLE001
+                                logger.warning(
+                                    "whisper_align fallback failed for scene=%d: %s",
+                                    scene_id,
+                                    exc,
+                                )
+
+                    # STT mishears Vietnamese badly ("chỉ với router" → "chỉ vớ rút tơ").
+                    # Keep the audio span Whisper detected, but rewrite words from the
+                    # ground-truth narration so karaoke shows correct text.
+                    if aligned_via_stt and timings:
+                        from app.services.align import reseat_to_original
+                        timings = reseat_to_original(timings, text, result.duration_sec)
 
                     return {
                         **scene,
                         "audio_path": str(result.audio_path),
-                        "video_path": get_mixkit_video(scene.get("visual_prompt", "")),
+                        "video_path": pick_broll(
+                            scene.get("visual_prompt", ""),
+                            scene.get("type", ""),
+                            scene_id,
+                            job_id=pid,
+                        ),
                         "duration_sec": result.duration_sec,
-                        "word_timings": (timings_to_dict(result.word_timings) if result.word_timings else None),
+                        "word_timings": (timings_to_dict(timings) if timings else None),
                     }
 
                 # 3. Thực thi song song toàn bộ các tác vụ TTS
                 await emit("tts", 0.35, f"Đang sinh song song audio cho {len(scenes_input)} scenes...")
+                reset_rotation(pid)
                 tasks = [process_scene(i, scene) for i, scene in enumerate(scenes_input)]
                 updated_scenes = await asyncio.gather(*tasks)
             except TTSError as exc:
                 await fail(f"TTS failed: {exc}")
                 return
 
+            logger.info(f"[TTS] Đã sinh xong audio cho {len(updated_scenes)} scenes, ví dụ scene[0]: {updated_scenes[0] if updated_scenes else None}")
             srt_path = write_srt(updated_scenes, audio_dir / "subtitle.srt")
+            logger.info(f"[TTS] Đã ghi subtitle SRT: {srt_path}")
             repository.update_project(
                 project_id,
                 {
@@ -234,6 +319,7 @@ async def _run_full_pipeline(project_id: uuid.UUID, job_id: str) -> None:
                     "error": None,
                 },
             )
+            logger.info(f"[TTS] Đã update project với scenes và subtitle, chuẩn bị sang bước render...")
 
         # ----- 4. Render (Remotion Engine) -----
         project = repository.get_project(project_id) or project

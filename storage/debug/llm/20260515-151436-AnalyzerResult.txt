@@ -1,0 +1,30 @@
+=== Primary error ===
+1 validation error for AnalyzerResult
+theme
+  Input should be 'danger', 'warning', 'default' or 'success' [type=literal_error, input_value='inspiring', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+
+=== Parsed (but invalid) ===
+{'primary_hook': '🚀 Bạn đã từng thử mọi cách chữa lành… mà vẫn cảm thấy lạc lõng?', 'main_number': '3 giai đoạn then chốt: An toàn, Thấu cảm, Bảo vệ', 'theme': 'inspiring', 'tone': 'educational', 'key_facts': ['Cảm giác lạc lõng dù đã thử nhiều phương pháp chữa lành.', 'Nguyên nhân sâu xa là mẫu hình cha mẹ độc hại: thao túng, yêu thương có điều kiện, lạnh nhạt.', 'Khái niệm "tái làm cha mẹ cho chính mình" không phải chỉ là tích cực kiểu sáo rỗng.', 'Bước đầu tiên là xây dựng cảm giác an toàn với đứa trẻ bên trong.', 'Tiếp theo là giai đoạn thấu cảm—lắng nghe và thừa nhận cảm xúc của bản thân xưa cũ.', 'Giai đoạn cuối: trở thành người bảo vệ, đặt ra giới hạn lành mạnh với người khác và cả với tiếng nói tiêu cực nội tâm.', 'Nhận ra: Bạn không còn phải tự trách mình, mà đang là phụ huynh mà chính mình cần nhất.', 'Hành động nhỏ, thực tế: Chạm tay lên ngực và nói "Mình ở đây với bạn" là đủ để bắt đầu.'], 'suggested_scene_count': 12, 'language_register': 'narrative', 'content_summary': 'Video kể lại hành trình chữa lành của những người lớn từng chịu tổn thương từ cha mẹ ái kỷ: bắt đầu bằng cảm giác trống rỗng dù đã thử mọi phương pháp, nhận ra nguyên nhân là thiếu an toàn, thấu cảm và bảo vệ từ gia đình thời nhỏ. Nội dung dẫn dắt người xem tưởng tượng quay lại ngôi nhà tuổi thơ, lần lượt trải nghiệm và chủ động đáp ứng nhu cầu cảm xúc cho đứa trẻ bên trong qua 3 giai đoạn: tạo sự an toàn, thực sự lắng nghe, và bảo vệ bản thân trước các nguy cơ cũ. Thông điệp: Bạn có thể trở thành phụ huynh dịu dàng cho chính mình; sự chữa lành bắt đầu chỉ từ một hành động nhỏ.', 'visual_style': 'kinetic-remotion'}
+
+=== Raw LLM output ===
+{
+  "primary_hook": "🚀 Bạn đã từng thử mọi cách chữa lành… mà vẫn cảm thấy lạc lõng?",
+  "main_number": "3 giai đoạn then chốt: An toàn, Thấu cảm, Bảo vệ",
+  "theme": "inspiring",
+  "tone": "educational",
+  "key_facts": [
+    "Cảm giác lạc lõng dù đã thử nhiều phương pháp chữa lành.",
+    "Nguyên nhân sâu xa là mẫu hình cha mẹ độc hại: thao túng, yêu thương có điều kiện, lạnh nhạt.",
+    "Khái niệm \"tái làm cha mẹ cho chính mình\" không phải chỉ là tích cực kiểu sáo rỗng.",
+    "Bước đầu tiên là xây dựng cảm giác an toàn với đứa trẻ bên trong.",
+    "Tiếp theo là giai đoạn thấu cảm—lắng nghe và thừa nhận cảm xúc của bản thân xưa cũ.",
+    "Giai đoạn cuối: trở thành người bảo vệ, đặt ra giới hạn lành mạnh với người khác và cả với tiếng nói tiêu cực nội tâm.",
+    "Nhận ra: Bạn không còn phải tự trách mình, mà đang là phụ huynh mà chính mình cần nhất.",
+    "Hành động nhỏ, thực tế: Chạm tay lên ngực và nói \"Mình ở đây với bạn\" là đủ để bắt đầu."
+  ],
+  "suggested_scene_count": 12,
+  "language_register": "narrative",
+  "content_summary": "Video kể lại hành trình chữa lành của những người lớn từng chịu tổn thương từ cha mẹ ái kỷ: bắt đầu bằng cảm giác trống rỗng dù đã thử mọi phương pháp, nhận ra nguyên nhân là thiếu an toàn, thấu cảm và bảo vệ từ gia đình thời nhỏ. Nội dung dẫn dắt người xem tưởng tượng quay lại ngôi nhà tuổi thơ, lần lượt trải nghiệm và chủ động đáp ứng nhu cầu cảm xúc cho đứa trẻ bên trong qua 3 giai đoạn: tạo sự an toàn, thực sự lắng nghe, và bảo vệ bản thân trước các nguy cơ cũ. Thông điệp: Bạn có thể trở thành phụ huynh dịu dàng cho chính mình; sự chữa lành bắt đầu chỉ từ một hành động nhỏ.",
+  "visual_style": "kinetic-remotion"
+}

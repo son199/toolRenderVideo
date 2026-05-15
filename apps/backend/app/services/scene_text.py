@@ -12,6 +12,8 @@ from __future__ import annotations
 
 from typing import Any
 
+from app.services.text_clean import clean_vi
+
 
 def narration_text(scene: dict[str, Any]) -> str:
     """Return the Vietnamese narration string for one scene.
@@ -28,29 +30,37 @@ def narration_text(scene: dict[str, Any]) -> str:
     if isinstance(caption, dict):
         vi = caption.get("vi")
         if isinstance(vi, str) and vi.strip():
-            return vi.strip()
+            return clean_vi(vi)
 
     text = scene.get("text")
     if isinstance(text, str) and text.strip():
-        return text.strip()
+        return clean_vi(text)
 
     # Type-specific body fallbacks (when caption.vi is missing entirely)
     scene_type = scene.get("type", "")
     fallback_keys: tuple[str, ...]
-    if scene_type in ("hero-text", "hook", "problem"):
+    if scene_type in ("hero", "hero-text", "hook", "problem"):
         fallback_keys = ("headline", "sub")
-    elif scene_type in ("product-card", "product"):
+    elif scene_type in ("stat", "stats-grid"):
+        fallback_keys = ("number", "label", "headline")
+    elif scene_type in ("product", "product-card"):
         fallback_keys = ("name", "tagline", "subtext")
     elif scene_type in ("question-hero", "question"):
         fallback_keys = ("question",)
     elif scene_type in ("line-statement", "line"):
         fallback_keys = ("line",)
     elif scene_type in ("quote", "quote-card"):
-        fallback_keys = ("text",)
+        fallback_keys = ("quote", "text", "attribution")
+    elif scene_type in ("comparison",):
+        fallback_keys = ("left", "right", "headline")
+    elif scene_type in ("list",):
+        fallback_keys = ("headline", "items")
     elif scene_type in ("closing-card", "closing"):
         fallback_keys = ("line", "footer")
-    elif scene_type in ("cta-url", "cta"):
+    elif scene_type in ("cta", "cta-url"):
         fallback_keys = ("label", "sub", "url")
+    elif scene_type in ("kinetic",):
+        fallback_keys = ("headline", "text")
     elif scene_type == "terminal":
         # Join terminal lines text fields
         lines = scene.get("lines")
@@ -72,6 +82,6 @@ def narration_text(scene: dict[str, Any]) -> str:
         if isinstance(value, str) and value.strip():
             parts.append(value.strip())
     if parts:
-        return ". ".join(parts)
+        return clean_vi(". ".join(parts))
 
     return ""

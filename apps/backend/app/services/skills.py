@@ -1,6 +1,7 @@
 """Load per-niche SKILL.md prompt files.
 
-Each Hyperframes template folder may contain a SKILL.md with optional YAML frontmatter:
+SKILL.md files live alongside the Remotion engine at
+``packages/remotion-engine/skills/<template>.md`` with optional YAML frontmatter:
 
     ---
     name: news
@@ -83,4 +84,4 @@ def _load_cached(template: str) -> Skill | None:
 
 
 def _skill_path(template: str) -> Path:
-    return get_settings().hyperframes_dir / "templates" / template / "SKILL.md"
+    return get_settings().remotion_dir / "skills" / f"{template}.md"

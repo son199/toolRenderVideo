@@ -72,7 +72,7 @@ services:
   #   ports: ["8000:8000"]
   #   volumes:
   #     - ./storage:/app/storage
-  #     - ./packages/hyperframes:/app/packages/hyperframes:ro
+  #     - ./packages/remotion-engine:/app/packages/remotion-engine:ro
   #
   # worker:
   #   build: { context: ./apps/backend, dockerfile: Dockerfile }
@@ -86,7 +86,7 @@ services:
   #     redis:    { condition: service_healthy }
   #   volumes:
   #     - ./storage:/app/storage
-  #     - ./packages/hyperframes:/app/packages/hyperframes:ro
+  #     - ./packages/remotion-engine:/app/packages/remotion-engine:ro
   #
   # frontend:
   #   build: { context: ./apps/frontend, dockerfile: Dockerfile }

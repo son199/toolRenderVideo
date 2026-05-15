@@ -9,6 +9,21 @@ from typing import Literal
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# Load .env into os.environ EARLY — before SSL/truststore patch reads
+# TTS_SSL_VERIFY_DISABLE. pydantic-settings only reads .env when Settings() is
+# instantiated, but the SSL patch runs at module import time. Without this,
+# the flag in .env never takes effect for the SSL bypass.
+_REPO_ROOT_FOR_ENV = Path(__file__).resolve().parents[3]
+try:
+    from dotenv import load_dotenv  # type: ignore
+
+    for _env_path in (_REPO_ROOT_FOR_ENV / ".env", Path(".env")):
+        if _env_path.exists():
+            load_dotenv(_env_path, override=False)
+            break
+except ImportError:
+    pass
+
 # Redirect Playwright's browser cache to a non-system-drive location when the
 # folder exists, so re-installs / multi-machine setups don't blow up C:.
 _PW_CACHE = Path("E:/playwright-browsers")
@@ -19,18 +34,34 @@ if _PW_CACHE.exists():
 # edge-tts (aiohttp) fails with "certificate verify failed". `truststore.inject_into_ssl`
 # patches ssl.create_default_context to use the OS trust store, fixing every async/HTTP
 # library transparently. Falls back to certifi env vars if truststore isn't installed.
-try:
-    import truststore  # type: ignore
+#
+# ESCAPE HATCH for corporate networks with MITM proxies whose root cert isn't in the
+# OS trust store: set TTS_SSL_VERIFY_DISABLE=true. ⚠️ This disables SSL verification
+# globally — only use on trusted intranets where you've already accepted the MITM.
+if os.environ.get("TTS_SSL_VERIFY_DISABLE", "").lower() in ("1", "true", "yes"):
+    import ssl as _ssl
 
-    truststore.inject_into_ssl()
-except ImportError:
+    def _unverified_ctx(*args, **kwargs):  # noqa: ANN001, ARG001
+        ctx = _ssl.SSLContext(_ssl.PROTOCOL_TLS_CLIENT)
+        ctx.check_hostname = False
+        ctx.verify_mode = _ssl.CERT_NONE
+        return ctx
+
+    _ssl.create_default_context = _unverified_ctx  # type: ignore[assignment]
+    _ssl._create_default_https_context = _unverified_ctx  # type: ignore[attr-defined]
+else:
     try:
-        import certifi as _certifi  # type: ignore
+        import truststore  # type: ignore
 
-        os.environ.setdefault("SSL_CERT_FILE", _certifi.where())
-        os.environ.setdefault("REQUESTS_CA_BUNDLE", _certifi.where())
+        truststore.inject_into_ssl()
     except ImportError:
-        pass
+        try:
+            import certifi as _certifi  # type: ignore
+
+            os.environ.setdefault("SSL_CERT_FILE", _certifi.where())
+            os.environ.setdefault("REQUESTS_CA_BUNDLE", _certifi.where())
+        except ImportError:
+            pass
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 
@@ -86,10 +117,25 @@ class Settings(BaseSettings):
     whisper_model: str = "base"
     whisper_device: str = "cpu"
     whisper_language: str = "vi"
+    # When True, jobs.py runs whisper_align() on the audio whenever the active TTS
+    # provider returns word_timings=None (or empty). Required for voice-sync animations.
+    tts_force_alignment_fallback: bool = True
+
+    # Groq STT (cloud Whisper, free tier ~14k seconds/day). Used as primary alignment
+    # backend when GROQ_API_KEY is set — faster + more accurate than local Whisper,
+    # works on machines where faster-whisper segfaults.
+    groq_api_key: str = ""
+    groq_base_url: str = "https://api.groq.com/openai/v1"
+    groq_stt_model: str = "whisper-large-v3-turbo"
 
     # Remotion config
     remotion_dir: Path = REPO_ROOT / "packages" / "remotion-engine"
     render_fps: int = 30
+    # 0 = auto (cpu_count - 2, capped at 16). Set lower nếu máy yếu / share resource.
+    render_concurrency: int = 0
+    # True = dùng software GL (swiftshader), thấp concurrency. Bật khi máy không có GPU
+    # rời (office laptop, VPS không có dedicated GPU) — render chậm hơn 30-50% nhưng ổn.
+    render_low_resource_mode: bool = False
 
     # Logging
     log_level: str = "INFO"

@@ -1,11 +1,21 @@
 import { Composition, getInputProps } from "remotion";
+import { loadAllFonts } from "./components/shared/fonts";
 import { MainVideo } from "./MainVideo";
 
+loadAllFonts();
+
 // This defines the video template
+type MainProps = {
+  scenes?: any[];
+  template?: string;
+  theme?: string;
+  [key: string]: unknown;
+};
+
 export const RemotionRoot: React.FC = () => {
   // Nhận dữ liệu động từ Python truyền vào qua CLI (--props)
-  const inputProps = getInputProps();
-  const scenes = inputProps.scenes || [
+  const inputProps = getInputProps<MainProps>();
+  const scenes: any[] = (inputProps.scenes as any[] | undefined) || [
     {
       id: "1",
       text: "Đây là kỷ nguyên của AI tự động hóa hoàn toàn.",

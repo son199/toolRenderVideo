@@ -27,10 +27,9 @@ toolVideoShort/
 │   ├── frontend/                # React + Vite UI
 │   └── backend/                 # FastAPI + async pipeline
 ├── packages/
-│   └── hyperframes/             # 3 template (news / promo / motivational)
-│       ├── shared/              # base.css + runner.js + subtitles.css
-│       ├── templates/<id>/      # SKILL.md + index.html + style.css + animation.js + meta.json + fixture.json
-│       └── dev.html             # Dev preview page
+│   └── remotion-engine/         # Remotion (React) — engine render duy nhất
+│       ├── src/                 # MainVideo + components/{scenes,*}
+│       └── skills/<id>.md       # SKILL.md per-niche (news / promo / motivational) — drives LLM prompt
 ├── scripts/
 │   └── smoke.py                 # CLI test text → MP4 không cần UI
 ├── storage/                     # runtime (gitignored: audio/, output/, frames/, projects/, uploads/)
@@ -110,7 +109,7 @@ Mở **http://localhost:5173**.
 
 - `GET /health` → `{"status":"ok"}`
 - API docs Swagger: http://localhost:8000/docs
-- Hyperframes dev preview: http://localhost:8000/static/hyperframes/dev.html
+- Remotion Studio (dev preview): `cd packages/remotion-engine && npm run start`
 
 ---
 
@@ -162,14 +161,14 @@ Xem [.env.example](./.env.example) cho list đầy đủ. Các key chính:
 Mỗi template có 1 file `SKILL.md`:
 
 ```
-packages/hyperframes/templates/news/SKILL.md
-packages/hyperframes/templates/promo/SKILL.md
-packages/hyperframes/templates/motivational/SKILL.md
+packages/remotion-engine/skills/news.md
+packages/remotion-engine/skills/promo.md
+packages/remotion-engine/skills/motivational.md
 ```
 
 Format: YAML frontmatter (`name`, `description`) + markdown body. Body chính là system prompt cho LLM khi sinh storyboard cho ngách đó. Sửa markdown → restart backend → request `POST /projects/{id}/storyboard` mới — không động code.
 
-Thêm ngách mới: `mkdir templates/explainer`, copy 5 file từ `news/` rồi sửa. Backend auto-detect; frontend cần thêm option trong `apps/frontend/src/pages/NewProject.tsx`.
+Thêm ngách mới: tạo `packages/remotion-engine/skills/explainer.md` theo cùng format. Backend auto-detect; frontend cần thêm option trong `apps/frontend/src/pages/NewProject.tsx`.
 
 ---
 

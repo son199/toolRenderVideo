@@ -28,14 +28,19 @@ chấm điểm và liệt kê issue cụ thể. Trả về JSON đúng schema.
 
 - **A4. total_duration_sec** = sum(duration_sec) của các scene, sai số ≤0.1s.
 
-- **A5. Scene `type`**: 
-  - Hiện tại hệ thống ưu tiên sử dụng type `kinetic` cho tất cả các scenes.
-  - Chấp nhận các type cũ nếu AI vẫn cố tình sinh ra, nhưng khuyến khích `kinetic`.
-  - Check schema fields: Cần có `visual_prompt` và `caption.vi`.
+- **A5. Scene `type`**:
+  - Type hợp lệ: hero, stat, quote, comparison, list, product, cta, kinetic.
+  - Check schema fields: cần có `visual_prompt` và `caption.vi`.
 
-- **A6. Animation Quality**:
-  - Remotion sẽ tự xử lý animation dựa trên word timings và B-roll.
-  - Cần `visual_prompt` rõ ràng để lấy Stock Video nền.
+- **A6. Variety (CRITICAL — chống "1000 video như 1")**:
+  - 1 storyboard PHẢI có ≥3 scene type khác nhau. Toàn `kinetic` → HIGH severity.
+  - KHÔNG quá 2 scene cùng type đứng kề nhau → LOW severity nếu vi phạm.
+  - Scene cuối PHẢI là `cta` (lời kêu gọi hành động) → HIGH severity nếu thiếu.
+  - Scene 0 nên là `hero` hoặc `stat` (hook mạnh) → LOW severity nếu khác.
+
+- **A7. Animation Quality**:
+  - Remotion sẽ tự xử lý animation dựa trên word timings và type.
+  - Cần `visual_prompt` rõ ràng (≥10 từ tiếng Anh) để background động khớp content.
 
 ## B. QUALITY — chất lượng câu chữ + tốc độ đọc
 

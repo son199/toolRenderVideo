@@ -37,6 +37,46 @@ class AnalyzerResult(BaseModel):
     content_summary: str
     # Optional: visual style hint for Remotion/Hyperframes render engine
     visual_style: Literal["text-dominant", "split-screen", "kinetic-typography", "b-roll", "kinetic-remotion"] = "kinetic-remotion"
+    # Scene-type mix gợi ý cho LLM storyboard — keys phải nằm trong SCENE_TYPES
+    # (xem app.services.scene_types). Mặc định trống → analyzer suy ra trong post-process.
+    scene_type_mix: dict[str, int] = Field(default_factory=dict)
+
+
+def _derive_scene_type_mix(
+    tone: str,
+    theme: str,
+    template: str,
+    scene_count: int,
+) -> dict[str, int]:
+    """Suy ra mix scene-type từ tone/theme/template khi LLM analyzer chưa tự đề xuất.
+
+    Mục tiêu: luôn có ≥3 type khác nhau, mở bằng hero/stat, đóng bằng cta.
+    """
+    # Base: hook + closing
+    mix: dict[str, int] = {"hero": 1, "cta": 1}
+    remaining = max(0, scene_count - 2)
+
+    if tone == "urgent" or theme == "danger":
+        # Tin tức/cảnh báo: nhiều stat + comparison
+        plan = ["stat", "comparison", "stat", "kinetic", "list"]
+    elif tone == "inspiring" or theme == "success":
+        # Motivational: nhiều quote + hero
+        plan = ["quote", "stat", "kinetic", "list", "quote"]
+    elif tone == "educational":
+        plan = ["list", "comparison", "stat", "kinetic", "quote"]
+    elif tone == "playful":
+        plan = ["kinetic", "stat", "product", "comparison", "kinetic"]
+    else:  # factual / default
+        plan = ["stat", "kinetic", "list", "comparison", "quote"]
+
+    if template == "promo":
+        # Promo nghiêng về product + cta
+        plan = ["product", "stat", "comparison", "product", "kinetic"]
+
+    for i in range(remaining):
+        t = plan[i % len(plan)]
+        mix[t] = mix.get(t, 0) + 1
+    return mix
 
 
 class ContentAnalyzerAgent(BaseAgent):
@@ -53,9 +93,21 @@ class ContentAnalyzerAgent(BaseAgent):
             result = parse_json_model(raw, AnalyzerResult)
         except LLMError as exc:
             raise AgentError(self.stage_name, str(exc)) from exc
+
+        # Backfill scene_type_mix nếu LLM analyzer không tự đề xuất → đảm bảo
+        # storyboard prompt luôn có gợi ý đa dạng visual.
+        if not result.scene_type_mix:
+            result.scene_type_mix = _derive_scene_type_mix(
+                tone=result.tone,
+                theme=result.theme,
+                template=template,
+                scene_count=result.suggested_scene_count,
+            )
+
+        mix_summary = ", ".join(f"{k}×{v}" for k, v in result.scene_type_mix.items())
         await self._emit(
             self.stage_name,
             0.25,
-            f"Hook: {result.primary_hook[:50]} · theme={result.theme} · main={result.main_number[:30]}",
+            f"Hook: {result.primary_hook[:50]} · theme={result.theme} · mix=[{mix_summary}]",
         )
         return result

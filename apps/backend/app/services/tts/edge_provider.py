@@ -53,6 +53,13 @@ class EdgeTTSProvider(TTSProvider):
             raise TTSError(f"Edge-TTS synthesis failed after 3 attempts: {last_error}")
 
         duration = word_timings[-1].end if word_timings else _estimate_duration(text)
+        if not word_timings:
+            logger.warning(
+                "edge-tts: voice=%s emitted 0 WordBoundary events — Whisper fallback "
+                "will run if tts_force_alignment_fallback=True (path=%s)",
+                voice,
+                out_path.name,
+            )
         logger.info(
             "edge-tts: voice=%s words=%d duration=%.2fs path=%s",
             voice,

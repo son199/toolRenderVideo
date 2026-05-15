@@ -1,0 +1,29 @@
+=== Primary error ===
+1 validation error for AnalyzerResult
+theme
+  Input should be 'danger', 'warning', 'default' or 'success' [type=literal_error, input_value='inspiring', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/literal_error
+
+=== Parsed (but invalid) ===
+{'primary_hook': '🚀 Bạn đã từng tự hỏi tại sao chữa lành vẫn thấy trống rỗng?', 'main_number': '3 pha reparenting: an toàn, đồng cảm, bảo vệ', 'theme': 'inspiring', 'tone': 'educational', 'key_facts': ['Liên tục chữa lành mà vẫn cảm giác lạc lõng do nền tảng gia đình độc hại.', 'Reparenting thực chất không phải là những điều nhỏ nhặt như trà hay affirmations mà là cung cấp sự an toàn, đồng cảm, bảo vệ đích thực cho inner child.', 'Nền tảng của cha mẹ thao túng, yêu thương có điều kiện, bỏ bê cảm xúc khiến người lớn hiện tại không có mô hình làm cha mẹ lành mạnh.', "Giai đoạn 1 (an toàn): Luôn hiện diện, xác nhận cảm xúc đau khổ và khẳng định: 'Bạn an toàn rồi, tôi sẽ không đi đâu cả.'", 'Giai đoạn 2 (đồng cảm/attunement): Lắng nghe, công nhận nội tâm trẻ, không buộc tội hoặc phủ nhận cảm xúc như cha mẹ cũ.', 'Giai đoạn 3 (bảo vệ): Dám đứng lên bảo vệ phần trẻ bên trong khỏi những chỉ trích, kiểu cũ và thiết lập giới hạn mới.', "Điều quan trọng nhất không phải là 'chữa lành hoàn toàn' mà là trở thành người cha/mẹ yêu thương, kiên định mà bản thân luôn cần từ bé."], 'suggested_scene_count': 9, 'language_register': 'narrative', 'content_summary': "Video kể về hành trình chữa lành nội tâm sau tuổi thơ với cha mẹ ái kỷ, nhấn mạnh sự khác biệt giữa các kỹ thuật phổ biến (affirmation, tặng quà...) và việc tái làm cha mẹ thật sự cho phần trẻ tổn thương—trải qua ba pha: Tạo sự an toàn, lắng nghe cảm xúc và bảo vệ nội tâm. Giúp người xem nhận ra giá trị của việc trở thành điểm tựa kiên định, thay vì cố gắng trở nên 'ổn' theo chuẩn ngoài xã hội.", 'visual_style': 'kinetic-remotion'}
+
+=== Raw LLM output ===
+{
+  "primary_hook": "🚀 Bạn đã từng tự hỏi tại sao chữa lành vẫn thấy trống rỗng?",
+  "main_number": "3 pha reparenting: an toàn, đồng cảm, bảo vệ",
+  "theme": "inspiring",
+  "tone": "educational",
+  "key_facts": [
+    "Liên tục chữa lành mà vẫn cảm giác lạc lõng do nền tảng gia đình độc hại.",
+    "Reparenting thực chất không phải là những điều nhỏ nhặt như trà hay affirmations mà là cung cấp sự an toàn, đồng cảm, bảo vệ đích thực cho inner child.",
+    "Nền tảng của cha mẹ thao túng, yêu thương có điều kiện, bỏ bê cảm xúc khiến người lớn hiện tại không có mô hình làm cha mẹ lành mạnh.",
+    "Giai đoạn 1 (an toàn): Luôn hiện diện, xác nhận cảm xúc đau khổ và khẳng định: 'Bạn an toàn rồi, tôi sẽ không đi đâu cả.'",
+    "Giai đoạn 2 (đồng cảm/attunement): Lắng nghe, công nhận nội tâm trẻ, không buộc tội hoặc phủ nhận cảm xúc như cha mẹ cũ.",
+    "Giai đoạn 3 (bảo vệ): Dám đứng lên bảo vệ phần trẻ bên trong khỏi những chỉ trích, kiểu cũ và thiết lập giới hạn mới.",
+    "Điều quan trọng nhất không phải là 'chữa lành hoàn toàn' mà là trở thành người cha/mẹ yêu thương, kiên định mà bản thân luôn cần từ bé."
+  ],
+  "suggested_scene_count": 9,
+  "language_register": "narrative",
+  "content_summary": "Video kể về hành trình chữa lành nội tâm sau tuổi thơ với cha mẹ ái kỷ, nhấn mạnh sự khác biệt giữa các kỹ thuật phổ biến (affirmation, tặng quà...) và việc tái làm cha mẹ thật sự cho phần trẻ tổn thương—trải qua ba pha: Tạo sự an toàn, lắng nghe cảm xúc và bảo vệ nội tâm. Giúp người xem nhận ra giá trị của việc trở thành điểm tựa kiên định, thay vì cố gắng trở nên 'ổn' theo chuẩn ngoài xã hội.",
+  "visual_style": "kinetic-remotion"
+}

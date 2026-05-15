@@ -11,7 +11,7 @@ export const KineticScene: React.FC<{ scene: any, template: string, theme: strin
   let badgeText = "";
   let badgeColor = "linear-gradient(90deg, #1e293b 0%, #334155 100%)";
   let highlightColor = "#fbbf24"; 
-  let fontFam = "'Inter', sans-serif";
+  let fontFam = "'Be Vietnam Pro', sans-serif";
   let glassBg = "rgba(0, 0, 0, 0.6)";
   
   // 1. Base on Template
@@ -37,10 +37,17 @@ export const KineticScene: React.FC<{ scene: any, template: string, theme: strin
   }
 
   // ----- ANIMATIONS & TIMINGS -----
-  // Fallback: Nếu thiếu word_timings (khi xem trước storyboard), tự tạo nhịp điệu giả lập
+  // Fallback: Nếu thiếu word_timings (khi xem trước storyboard), tự tạo nhịp điệu giả lập.
+  // CẢNH BÁO: fallback này KHÔNG khớp với voice thật — production phải có word_timings.
   const words = React.useMemo(() => {
     if (scene.word_timings && scene.word_timings.length > 0) return scene.word_timings;
-    
+
+    if (typeof console !== "undefined" && console.warn) {
+      console.warn(
+        "[KineticScene] scene.word_timings missing — using linear fallback. " +
+        "Animation will NOT match voice. Check backend TTS / Whisper alignment."
+      );
+    }
     const textToSplit = scene.text || scene.headline || "";
     const splitWords = textToSplit.split(" ");
     return splitWords.map((word: string, i: number) => ({
